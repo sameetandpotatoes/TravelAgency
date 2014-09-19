@@ -1,0 +1,106 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.bg1{
+	background-image: asset-data-url('home.jpg');
+}
+.panel-fixed {
+	height: 545px;
+	z-index: -50;
+	position: fixed;
+	width: 100%;
+	background-size: cover;
+}
+.panel {
+	float: left;
+	position: relative;
+	width: 100%;
+	min-width: 1280px;
+	height: 545px;
+	text-align: center;
+	background-size: cover;
+}
+.gray{
+	background-color: #8F3931;
+}
+.white{
+	background-color: white;
+}
+.panel-title {
+	position: relative;
+	top: 185px;
+	padding-bottom: 30px;
+	font-size: 40px;
+	color: white;
+	z-index: -1;
+}
+
+.panel-subtitle {
+	position: relative;
+	top: 180px;
+	margin: auto;
+	width: 1020px;
+	font-size: 26px;
+	font-weight: 300;
+	line-height: 35px;
+	color: white;
+	z-index: -1;
+}
+
+.col {
+	float: left;
+	margin: 0 auto;
+	width: 290px;
+	border: 1px solid #B8B7B9;
+	border-radius: 8px;
+	background: none repeat scroll 0 0 #FFFFFF;
+	box-shadow: 0 0 4px #CCCCCC;
+	text-align: center;
+	font-family: 'Lato', Verdana;
+	h3{
+		color: white;
+		font-weight: bold;
+		font-size: 23px;
+		font-family: 'Lato', Verdana;
+	}
+}
+#pro, #con {
+  padding: 0 30px;
+  min-width: 400px;
+  height: auto;
+  text-align: justify;
+}
+.f-col-wrapper{
+	display: inline-block;
+	display: inline-block;
+	clear: both;
+	margin-bottom: 20px;
+	width: 290px;
+	height: 300px;
+}
+#pro:after, #con:after {
+  display: inline-block;
+  width: 100%;
+  content: '';
+}
+.col .icon-wrap {
+	display: block;
+	padding: 24px 10px 40px;
+	border-radius: 6px 6px 0 0;
+}
+#pro .col .icon-wrap{
+	background: url(<%= asset_path 'f-box-bg.png' %>) no-repeat scroll center bottom #8DC63F;
+	background-size: 100%;
+}
+#con .col .icon-wrap{
+	background: url(<%= asset_path 'f-box-bg.png' %>) no-repeat scroll center bottom #C82829;
+	background-size: 100%;
+}
+.col-content {
+  padding: 0 10px;
+  min-height: 93px;
+  height: 123px;
+  font-size: 20px;
+}

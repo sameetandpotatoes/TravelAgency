@@ -1,0 +1,51 @@
+/ :javascript
+/ 	var YOUR_KEY, myLoc, myWeather, theURL;
+/ 	myLoc = 0;
+/ 	YOUR_KEY = "63bec244efb3cba1a6518814444c0595afca5a68035482dd36d5e68f6d4fa5e7";
+/ 	theURL = "http://api.ipinfodb.com/v3/ip-city/?key=" + YOUR_KEY + "&format=json&callback=?";
+/ 	$.ajax({
+/ 		type: "POST",
+/ 		url: theURL,
+/ 		contentType: "application/json; charset=utf-8",
+/ 		dataType: "json",
+/ 		method: "GET",
+/ 		success: function(data) {
+/ 			myLoc = data;
+/ 			var weatherURL = "http://api.forecast.io/forecast/7e109685b7d69eebef08c42f922fec79/"+myLoc.latitude+","+myLoc.longitude;
+/ 			$.ajax({
+/ 				type: "POST",
+/ 				url: weatherURL,
+/ 				contentType: "application/x-www-form-urlencoded; charset=utf-8",
+/ 				dataType: "json",
+/ 				method: "GET",
+/ 				success: function(data) {
+/ 					myWeather = data
+/ 					// myWeather.currently.summary;
+/ 					// myWeather.currently.temperature;
+/ 					// myWeather.currently.humidity;
+/ 					// myWeather.currently.windSpeed;
+/ 					// myWeather.currently.icon;
+/ 					alert(myWeather.currently.summary);
+/ 				},
+/ 				error: function(x, t, m){
+/ 					if (t==="timeout"){
+/ 					}
+/ 				},
+/ 				timeout: 2000
+/ 			});
+
+/ 		},
+/ 		error: function(x, t, m){
+/ 			if (t==="timeout"){
+/ 			}
+/ 		},
+/ 		timeout: 2000
+/ 	});
+.panel-fixed.bg1
+.panel
+	%h1.panel-title Hawaii
+	.panel-subtitle
+		%p Hello Subtext
+.panel
+	#menuwrap
+		.menu-item.fa.fa-facebook

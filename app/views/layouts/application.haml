@@ -1,0 +1,23 @@
+!!!
+%html
+	%head
+		/[if lt IE 9]
+			%script{src: "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+		/[if lt IE 8]
+			%script{src: "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+		/[if lt IE 7]
+			%script{src: "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+		%meta{content: "yes", name: "apple-mobile-web-app-capable"}/
+		%meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+		%meta{content: "black", name: "apple-mobile-web-app-status-bar-style"}/
+		%title TravelAgency
+		= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+		= javascript_include_tag "application", "data-turbolinks-track" => true
+		= csrf_meta_tags
+	%body
+		%header
+			%a.link{href: "/"}
+				Travel Agency
+				\#{image_tag("logo.png", :class=>"header-logo", :width=>"40", :height => "40")}
+		.content
+			= yield

@@ -1,0 +1,33 @@
+source 'https://rubygems.org'
+ruby '2.0.0'
+gem 'rails', '4.0.4'
+gem 'jquery-easing-rails'
+gem 'pg'
+gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'haml'
+gem 'haml-rails'
+gem 'jbuilder', '~> 1.2'
+gem 'pg_search'
+gem 'asset_packager', '~> 0.2.0'
+gem 'newrelic_rpm'
+gem 'sitemap_generator'
+gem 'actionpack-page_caching'
+gem 'figaro'
+gem 'cloudinary'
+gem 'rack-cache'
+gem 'rack-cors', :require => 'rack/cors'
+group :doc do
+  gem 'sdoc', require: false
+end
+group :development do
+  gem 'quiet_assets'
+end
+group :assets do
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
+end
+group :production, :staging do
+  gem 'rails_12factor'
+end
