@@ -17,6 +17,7 @@ gem 'actionpack-page_caching'
 gem 'figaro'
 gem 'cloudinary'
 gem 'rack-cache'
+gem 'pry-rails', :group => :development
 gem 'rack-cors', :require => 'rack/cors'
 group :doc do
   gem 'sdoc', require: false

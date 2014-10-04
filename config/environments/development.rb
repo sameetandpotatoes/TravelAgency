@@ -8,4 +8,12 @@ TravelAgency::Application.configure do
   config.active_record.migration_error = :page_load
   config.assets.debug = true
   config.static_cache_control = 'public, max-age=31536000'
+	# Use Pry instead of IRB
+  silence_warnings do
+    begin
+      require 'pry'
+      IRB = Pry
+    rescue LoadError
+    end
+  end
 end

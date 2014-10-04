@@ -1,5 +1,6 @@
 class TravelsController < ApplicationController
+	before_filter :get_weather
 	def hawaii
-		headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+		@weatherData = cookies[:weather][1][1]
 	end
 end
