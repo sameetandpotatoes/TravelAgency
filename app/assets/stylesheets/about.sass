@@ -1,0 +1,92 @@
+.team:after
+  clear: both
+  content: ""
+  display: table
+
+.about tr:first-child td
+  max-width: 150px !important
+
+.about
+  border: none
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  background: #52be7f
+  font-family: 'Droid Sans', Verdana
+  tr:first-child td, td
+    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(0, 0, 0, 0.25)
+  tr:first-child td
+    padding: 0.5em
+    color: rgba(0, 0, 0, 0.45)
+    text-align: center
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1)
+    font-weight: normal
+    font-size: 1.5em
+    -webkit-font-smoothing: antialiased
+  td
+    padding: 0.7em 1em 0.7em 1.15em
+    color: #f7f7f7
+    text-align: center
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1)
+    font-size: 1.4em
+  tr
+    -webkit-transition: background 0.3s, box-shadow 0.3s
+    -moz-transition: background 0.3s, box-shadow 0.3s
+    transition: background 0.3s, box-shadow 0.3s
+  tr:hover
+    background: rgba(0, 0, 0, 0.1)
+
+#about
+  width: 60%
+  margin-top: 30px
+  background: #336ca6
+  td
+    text-align: center
+
+.contact
+  border-radius: 50%
+  display: inline
+  height: auto !important
+  width: 200px
+  text-align: center
+  max-width: 200px
+
+.team article
+  display: inline
+  float: left
+  margin-top: 1%
+  text-align: center
+  width: 33.33%
+  -webkit-transition: all 0.5s ease
+  -moz-transition: all 0.5s ease
+  -o-transition: all 0.5s ease
+  -ms-transition: all 0.5s ease
+  transition: all 0.5s ease
+
+figcaption
+  font-weight: bold
+  text-transform: uppercase
+  padding: 10px
+  font-family: 'Droid Sans', Verdana
+
+.contact
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+figure > p
+  padding: 0px
+  margin: 0px
+
+@media all and (max-width: 800px)
+  .team article
+    float: none
+  #about
+    width: 90% !important
+  .averagecost
+    tr
+      border-width: 0px
+    td
+      font-size: 15px !important
+  #about td
+    padding: 5px !important

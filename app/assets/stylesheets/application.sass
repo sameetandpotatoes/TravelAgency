@@ -12,16 +12,61 @@
  *= require_tree .
  */
 
+html, head, body
+	overflow-x: hidden
+
 header
 	background-color: #232323
 	padding: 15px 0px 15px 15px !important
 	color: white
-	font: 30px 'Droid Sans', Verdana
+	font: 1.5em 'Droid Sans', Verdana
 	width: 100%
 	position: fixed
 	overflow: hidden
 	z-index: 10
 
+#nofix
+	position: inherit !important
+
+.link
+	font-size: 1.5em
+	text-decoration: none
+
 a:hover, a:visited
 	color: inherit
 
+.vacspots
+	font-size: 1.2em
+	position: relative
+	float: right
+	margin-right: 50px
+
+nav ul li
+	border-radius: 3px
+	float: left
+	padding: 5px 15px
+	transition: all 0.5s ease 0s
+	-webkit-transition: all 0.5s ease 0s
+
+nav .active, nav li:hover
+	background-color: gray
+
+footer
+	background-color: #232323
+	text-align: center
+
+footer a
+	text-color: white
+	text-decoration: none
+	font-size: 0.8em
+	padding: 5px
+	display: inline-block
+
+.info-links, .info-link
+	display: inline-block
+	color: white
+	margin-top: 10px
+	vertical-align: top
+
+ol, ul
+	list-style: outside none none

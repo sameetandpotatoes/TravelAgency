@@ -11,14 +11,36 @@
 		%meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
 		%meta{content: "black", name: "apple-mobile-web-app-status-bar-style"}/
 		%link{:href => "http://fonts.googleapis.com/css?family=Open+Sans", :rel => "stylesheet", :type => "text/css"}/
-		%title TravelAgency
+		%title=@title
+		%meta{content: "#{@meta}", name: "description"}/
 		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= csrf_meta_tags
 	%body
-		%header
-			%a.link{href: "/"}
-				Travel Agency
-				\#{image_tag("logo.png", :class=>"header-logo", :width=>"40", :height => "40")}
+		-if (current_page?(about_path))
+			%header#nofix
+				= render partial: "/pages/headercontent"
+		-else
+			%header
+				= render partial: "/pages/headercontent"
 		.content
 			= yield
+		%footer
+			.info-links
+				.info-link
+					%a{href: "/"}
+						%i.fa.fa-home
+						%span Home
+				.info-link
+					%a{href: "/about"}
+						%i.fa.fa-info
+						%span About
+				.info-link
+					%a{href: "/contact"}
+						%i.fa.fa-comments-o
+						%span Contact
+			.twitter-social.social-slide
+			.facebook-social.social-slide
+			.google-social.social-slide
+			.instagram-social.social-slide
+
