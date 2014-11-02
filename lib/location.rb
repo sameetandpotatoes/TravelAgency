@@ -10,14 +10,23 @@ module Location
 		}
 		result = JSON.parse(res.body[2..res.body.length-2])
 	end
-	def self.get_weather
-		location = self.from_browser_session
-		weatherURL = "http://api.wunderground.com/api/434dfd195958304a/conditions/q/"+location["latitude"]+","+location["longitude"]+".json";
+	def self.get_weather(location)
+		weatherURL = "http://api.wunderground.com/api/434dfd195958304a/conditions/q/"+location[:latitude]+","+location[:longitude]+".json";
 		url = URI.parse(weatherURL)
 		req = Net::HTTP::Get.new(url.to_s)
 		res = Net::HTTP.start(url.host, url.port) {|http|
 		  http.request(req)
 		}
 		result = JSON.parse(res.body)
+	end
+	def self.get_currency(currency_name)
+		currencyURL = "http://openexchangerates.org/api/latest.json?app_id=438a5d36861b441b806053dfe7e01bdd"
+		url = URI.parse(currencyURL)
+		req = Net::HTTP::Get.new(url.to_s)
+		res = Net::HTTP.start(url.host, url.port) {|http|
+		  http.request(req)
+		}
+		result = JSON.parse(res.body)
+		result["rates"][currency_name]
 	end
 end

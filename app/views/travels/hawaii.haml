@@ -1,26 +1,80 @@
 - @title="Travel Agency | Hawaii"
 - @meta="Hawaii"
-.panel-fixed.bg-hawaii
-.panel
-	%h1.panel-title Hawaii
-	.panel-subtitle
-		%p A beautiful place
-.panel.gray
-	.weather-data
-		%h1#weather-header Weather for #{@weatherData["display_location"]["full"]}
-		.basic-info
-			=image_tag @weatherData["icon_url"]
-			%p=@weatherData["temperature_string"]
-		%p Conditions: #{@weatherData["weather"]}
-		%p Wind: #{@weatherData["wind_string"]}
-		%p Local Time: #{@weatherData["local_time_rfc822"]}
-		%p Location: #{@weatherData["local_tz_long"]}
-	#outer-currency
-		#currency-container
-			= link_to "Currency Converter", "http://www.exchangeratewidget.com/"
-		%script{:src => "http://www.exchangeratewidget.com/converter.php?l=en&f=USD&t=EUR&a=1&d=F0F0F0&n=FFFFFF&o=000000&v=1", :type => "text/javascript"}
-	%input{"data-rangeslider" => "", :max => "15", :min => "5", :step => "15", :type => "range", :value => "8"}/
 
-
-:javascript
-	$('input[type="range"]').rangeslider();
+%section.module.parallax.parallax-1
+  .container
+    %h1 Serene
+%section.module.content
+  .container
+    .weather-data
+      %h1#weather-header Weather for #{@weatherData[1][1]["display_location"]["full"]}
+    .basic-info
+      =image_tag @weatherData[1][1]["icon_url"]
+      %p=@weatherData[1][1]["temperature_string"]
+      %p Conditions: #{@weatherData[1][1]["weather"]}
+      %p Wind: #{@weatherData[1][1]["wind_string"]}
+      %p Local Time: #{@weatherData[1][1]["local_time_rfc822"]}
+      %p Location: #{@weatherData[1][1]["local_tz_long"]}
+      #outer-currency
+        #currency-container
+          %p 1 USD = #{@currencyData} #{@localCurrency}
+%section.module.parallax.parallax-2
+  .container
+    %h1 Rise
+%section.module.content
+  .container
+    %input#days{"data-slider-id" => "daySlider", "data-slider-max" => "20", "data-slider-min" => "3", "data-slider-step" => "1", "data-slider-value" => "3", type: "text"}/
+    .itinerary
+      .event{"data-min-value" => "5", "data-min-value" => "1000"}
+        %p.entry-header Oahu 1000
+        .entry-content
+          %p Hotel: Hotel A
+          %p Visit 1
+          %p Visit 2
+      .event{"data-min-value" => "7", "data-min-value" => "1500"}
+        %p.entry-header Maui 1500
+        .entry-content
+          %p Hotel: Hotel B
+          %p Visit 1
+          %p Visit 2
+      .event{"data-min-value" => "10", "data-cost" => "2000"}
+        %p.entry-header Big Island 2000
+        .entry-content
+          %p Hotel: Hotel C
+          %p Visit 1
+          %p Visit 2
+      %span Total Price: $
+      %span#total-price 0
+      //Compute total price by looping through all with certain class and if it is not hidden,
+      //take its data attribute and add it together.
+    :javascript
+      $(document).ready(function() {
+      function dayhandler() {
+        //Change Pricing
+        var sum = 0;
+        var allEvents = document.getElementsByClassName("event");
+        console.log(allEvents.length);
+        for (var i = 0; i < allEvents.length; i++){
+          if (allEvents[i].dataset.minValue <= day.getValue()){
+            $(allEvents[i]).css("display","block");
+            sum += parseInt(allEvents[i].dataset.cost);
+            console.log(sum);
+          } else{
+            $(allEvents[i]).css("display","hidden");
+          }
+        }
+        var hotelCosts = 150 * day.getValue();
+        $('#total-price').text(sum + hotelCosts);
+      };
+      var day = $('#days').slider()
+        .on('slide', dayhandler)
+        .data('slider');
+      dayhandler();
+      });
+%section.module.parallax.parallax-3
+  .container
+    %h1 Calm
+%section.module.content
+  .container
+    %h2 Lorem Ipsum Dolor
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit...

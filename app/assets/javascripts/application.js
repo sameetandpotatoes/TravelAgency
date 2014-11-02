@@ -13,33 +13,42 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require turbolinks_transitions
+//= require pages.js
+//= require travels.js
+//= require bootstrap-slider
 
-$(document).ready(function(){
-	$('input[type="range"]').rangeslider({
-
-    // Feature detection the default is `true`.
-    // Set this to `false` if you want to use
-    // the polyfill also in Browsers which support
-    // the native <input type="range"> element.
-    polyfill: true,
-
-    // Default CSS classes
-    rangeClass: 'rangeslider',
-    fillClass: 'rangeslider__fill',
-    handleClass: 'rangeslider__handle',
-
-    // Callback function
-    onInit: function() {},
-
-    // Callback function
-    onSlide: function(position, value) {
-
-    },
-
-    // Callback function
-    onSlideEnd: function(position, value) {
-
-    }
+$(document).ready(function() {
+	prepareAccordion();
 });
-});
+function prepareAccordion(){
+	var accordionHeadings = document.getElementsByClassName('entry-header');
+	var accordionParagraphs = document.getElementsByClassName('entry-content');
+	for (var i = 0; i < accordionHeadings.length; i++){
+		accordionParagraphs[i].className = 'entry-content hide-content';
+		accordionHeadings[i].onclick = function accordion() {
+			var accParagraph = this.nextElementSibling;
+			hideAccordion(accParagraph);
+			if (accParagraph.className == 'entry-content hide-content')
+			{
+					$(accParagraph).animate({height:accParagraph.children[0].offsetHeight + 50}, 500, function(){
+						accParagraph.className = 'entry-content show-content';
+					});
+			}
+			else
+			{
+					$(accParagraph).animate({height:'5px'}, 500, function(){
+						accParagraph.className = 'entry-content hide-content';
+					});
+			}
+		}
+	}
+}
+function hideAccordion(accParagraph){
+	var accordionHeadings = document.getElementsByClassName('entry-header');
+	var accordionParagraphs = document.getElementsByClassName('entry-content');
+	for (var i = 0; i < accordionHeadings.length; i++){
+		if (accordionParagraphs[i] != accParagraph)
+			accordionParagraphs[i].className = 'entry-content hide-content';
+	}
+}
