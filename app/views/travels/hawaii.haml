@@ -1,4 +1,4 @@
-- @title="Travel Agency | Hawaii"
+- @title="Hawaii"
 - @meta="Hawaii"
 
 %section.module.parallax.parallax-1
@@ -23,54 +23,29 @@
     %h1 Rise
 %section.module.content
   .container
-    %input#days{"data-slider-id" => "daySlider", "data-slider-max" => "20", "data-slider-min" => "3", "data-slider-step" => "1", "data-slider-value" => "3", type: "text"}/
+    %p#current-days Current Days: 1
+    %input#days{"data-slider-id" => "daySlider", "data-slider-max" => "10", "data-slider-min" => "1", "data-slider-step" => "1", "data-slider-value" => "1", "data-slider-tooltip" => "hide", "data-slider-handle" => "round", type: "text"}/
     .itinerary
-      .event{"data-min-value" => "5", "data-min-value" => "1000"}
-        %p.entry-header Oahu 1000
+      .event{"data-min-value" => "5", "data-cost" => "1000"}
+        %p.entry-header Oahu
         .entry-content
           %p Hotel: Hotel A
           %p Visit 1
           %p Visit 2
-      .event{"data-min-value" => "7", "data-min-value" => "1500"}
-        %p.entry-header Maui 1500
+      .event{"data-min-value" => "3", "data-cost" => "1500"}
+        %p.entry-header Maui
         .entry-content
           %p Hotel: Hotel B
           %p Visit 1
           %p Visit 2
-      .event{"data-min-value" => "10", "data-cost" => "2000"}
-        %p.entry-header Big Island 2000
+      .event{"data-min-value" => "1", "data-cost" => "2000"}
+        %p.entry-header Big Island
         .entry-content
           %p Hotel: Hotel C
           %p Visit 1
           %p Visit 2
       %span Total Price: $
       %span#total-price 0
-      //Compute total price by looping through all with certain class and if it is not hidden,
-      //take its data attribute and add it together.
-    :javascript
-      $(document).ready(function() {
-      function dayhandler() {
-        //Change Pricing
-        var sum = 0;
-        var allEvents = document.getElementsByClassName("event");
-        console.log(allEvents.length);
-        for (var i = 0; i < allEvents.length; i++){
-          if (allEvents[i].dataset.minValue <= day.getValue()){
-            $(allEvents[i]).css("display","block");
-            sum += parseInt(allEvents[i].dataset.cost);
-            console.log(sum);
-          } else{
-            $(allEvents[i]).css("display","hidden");
-          }
-        }
-        var hotelCosts = 150 * day.getValue();
-        $('#total-price').text(sum + hotelCosts);
-      };
-      var day = $('#days').slider()
-        .on('slide', dayhandler)
-        .data('slider');
-      dayhandler();
-      });
 %section.module.parallax.parallax-3
   .container
     %h1 Calm

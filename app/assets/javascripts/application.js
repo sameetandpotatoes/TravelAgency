@@ -31,7 +31,7 @@ function prepareAccordion(){
 			hideAccordion(accParagraph);
 			if (accParagraph.className == 'entry-content hide-content')
 			{
-					$(accParagraph).animate({height:accParagraph.children[0].offsetHeight + 50}, 500, function(){
+					$(accParagraph).animate({height:accParagraph.children[0].offsetHeight + 100}, 500, function(){
 						accParagraph.className = 'entry-content show-content';
 					});
 			}
