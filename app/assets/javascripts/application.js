@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require turbolinks_transitions
 //= require pages.js
 //= require travels.js
 //= require bootstrap-slider
@@ -31,13 +29,13 @@ function prepareAccordion(){
 			hideAccordion(accParagraph);
 			if (accParagraph.className == 'entry-content hide-content')
 			{
-					$(accParagraph).animate({height:accParagraph.children[0].offsetHeight + 100}, 500, function(){
+					$(accParagraph).animate({height:accParagraph.children[0].offsetHeight + 100}, 200, function(){
 						accParagraph.className = 'entry-content show-content';
 					});
 			}
 			else
 			{
-					$(accParagraph).animate({height:'5px'}, 500, function(){
+					$(accParagraph).animate({height:'5px'}, 200, function(){
 						accParagraph.className = 'entry-content hide-content';
 					});
 			}
