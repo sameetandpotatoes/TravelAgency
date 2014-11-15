@@ -1,41 +1,52 @@
-#outer-currency
-	width: 198px
-	border: 1px solid #55A516
-	margin: 0 auto
+// #outer-currency
+// 	width: 198px
+// 	border: 1px solid #55A516
+// 	margin: 0 auto
 
-#currency-container
-	text-align: center
-	background-color: #55A516
-	width: 100%
-	font-size: 13px
-	font-weight: bold
-	height: 18px
-	padding-top: 2px
+// #currency-container
+// 	text-align: center
+// 	background-color: #55A516
+// 	width: 100%
+// 	font-size: 13px
+// 	font-weight: bold
+// 	height: 18px
+// 	padding-top: 2px
 
-#currency-container > a
-	color: #FFFFFF
-	text-decoration: none
+// #currency-container > a
+// 	color: #FFFFFF
+// 	text-decoration: none
 
-.basic-info
+.weather-data
 	display: inline-block
 	font-size: 1.7em
 	width: 100%
 	text-align: center
+	img
+		display: block
+		margin: 0 auto
+	p
+		padding: 8px 0px 0 40px
 
-.basic-info > img
-	display: inline-block
+.grayscale
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale")
+	filter: gray
+	-webkit-filter: grayscale(100%)
+	&:hover
+		filter: none
+		-webkit-filter: grayscale(0%)
 
 #weather-header
-	font-size: 2.3em
+	font-size: 1.5em
 	font-family: 'Open Sans'
 	text-align: center
 	padding: 65px 0px 10px 0px
 
-.weather-data > p
-	padding: 8px 0px 0 40px
-
 .itinerary > span
 	display: inline-block
+
+.inline
+	display: inline-block
+	font-size: 20px !important
 
 .entry-content
 	overflow: hidden

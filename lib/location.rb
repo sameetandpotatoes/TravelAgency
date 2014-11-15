@@ -11,7 +11,7 @@ module Location
 		result = JSON.parse(res.body[2..res.body.length-2])
 	end
 	def self.get_weather(location)
-		weatherURL = "http://api.wunderground.com/api/434dfd195958304a/conditions/q/"+location[:latitude]+","+location[:longitude]+".json";
+		weatherURL = "http://api.wunderground.com/api/434dfd195958304a/forecast10day/q/"+location[:latitude]+","+location[:longitude]+".json";
 		url = URI.parse(weatherURL)
 		req = Net::HTTP::Get.new(url.to_s)
 		res = Net::HTTP.start(url.host, url.port) {|http|
