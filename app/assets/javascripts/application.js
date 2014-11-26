@@ -15,9 +15,25 @@
 //= require pages.js
 //= require travels.js
 //= require bootstrap-slider
+//= require jquery.scrollme.min.js
+//= require owl.carousel.min.js
 
 $(document).ready(function() {
 	prepareAccordion();
+	$("#owl-example").owlCarousel({
+		autoPlay: 3000, //Set AutoPlay to 3 seconds
+		items : 4,
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [979,3]
+	});
+  $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      if (scroll >= 500) {
+          $(".header").addClass('smaller');
+      } else {
+          $(".header").removeClass("smaller");
+      }
+  });
 });
 function prepareAccordion(){
 	var accordionHeadings = document.getElementsByClassName('entry-header');

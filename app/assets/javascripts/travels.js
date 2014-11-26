@@ -16,9 +16,11 @@ $(document).ready(function() {
         $(allEvents[i]).css("display","none");
       }
     }
-    var hotelCosts = 150 * day.getValue();
-    $('#total-price').text(sum + hotelCosts);
-    $('#current-days').text("Current Days: " + day.getValue());
+    if (day != null){
+      var hotelCosts = 150 * day.getValue();
+      $('#total-price').text(sum + hotelCosts);
+      $('#current-days').text("Current Days: " + day.getValue());
+    }
   };
   var day = $('#days').slider()
     .on('slide', dayhandler)

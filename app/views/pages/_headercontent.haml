@@ -1,11 +1,10 @@
-%a.link{href: "/"}
+%h1.link
 	TopTierTraveling
-	\#{image_tag("logo.png", :class=>"header-logo", :width=>"40", :height => "40")}
+	\#{image_tag("logo.png", :class=>"header-logo")}
 %nav.vacspots
-	%ul
-		%li.tab
-			= link_to "Hawaii", "/travels/hawaii"
-		%li.tab
-			= link_to "Vac 2", "/"
-		%li.tab
-			= link_to "Vac 3", "/"
+	%span
+		= link_to "Hawaii", hawaii_path
+	%span
+		= link_to "Vac 2", "/"
+	%span
+		= link_to "Vac 3", "/"

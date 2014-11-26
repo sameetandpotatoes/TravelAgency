@@ -23,18 +23,30 @@
     %td 2015
 %h1.header The Team
 %section.team
-  %article
-    %figure
-      = image_tag("sameet.png", :class => "contact", :alt => "Sameet Sapra")
-      %figcaption Sameet Sapra
-      %p Web Developer
-  %article
-    %figure
-      = image_tag("andrew.png", :class => "contact", :alt => "Andrew Merkley")
-      %figcaption Andrew Merkley
-      %p Content Researcher
-  %article
-    %figure
-      = image_tag("john.png", :class => "contact", :alt => "John Stavropoulos")
-      %figcaption John Stavropoulos
-      %p Responsive Design / SEO
+  .scrollme
+    .animateme{"data-from" => "0.5", "data-opacity" => "0", "data-rotatez" => "90", "data-to" => "0", "data-translatex" => "-200", "data-when" => "enter"}
+      %article
+        %figure
+          .inline
+            = image_tag("sameet.png", :class => "contact", :alt => "Sameet Sapra")
+          .inline
+            %figcaption Sameet Sapra
+            %p Web Developer
+  .scrollme
+    .animateme{"data-from" => "0.5", "data-opacity" => "0", "data-rotatez" => "90", "data-to" => "0", "data-translatex" => "-200", "data-when" => "enter"}
+      %article
+        %figure
+          .inline
+            = image_tag("andrew.png", :class => "contact", :alt => "Andrew Merkley")
+          .inline
+            %figcaption Andrew Merkley
+            %p Content Researcher
+  .scrollme
+    .animateme{"data-from" => "0.5", "data-opacity" => "0", "data-rotatez" => "90", "data-to" => "0", "data-translatex" => "-200", "data-when" => "enter"}
+      %article
+        %figure
+          .inline
+            = image_tag("john.png", :class => "contact", :alt => "John Stavropoulos")
+          .inline
+            %figcaption John Stavropoulos
+            %p Responsive Design / SEO
