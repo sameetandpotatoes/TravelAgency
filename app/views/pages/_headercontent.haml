@@ -1,5 +1,10 @@
-%h1.link
-	TopTierTraveling
+%h1
+	%p
+		=link_to "Top", home_path, class: 'link'
+	%p
+		=link_to "Tier", home_path, class: 'link'
+	%p
+		=link_to "Traveling", home_path, class: 'link'
 	\#{image_tag("logo.png", :class=>"header-logo")}
 %nav.vacspots
 	%span

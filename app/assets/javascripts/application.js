@@ -20,15 +20,22 @@
 
 $(document).ready(function() {
 	prepareAccordion();
-	$("#owl-example").owlCarousel({
+	$(".welcome").owlCarousel({
+		autoPlay: 3000, //Set AutoPlay to 3 seconds
+		items : 1,
+		itemsMobile : true
+	});
+	$(".vacation").owlCarousel({
 		autoPlay: 3000, //Set AutoPlay to 3 seconds
 		items : 4,
-		itemsDesktop : [1199,3],
-		itemsDesktopSmall : [979,3]
+		itemsDesktop : [1000,3],
+		itemsDesktopSmall : [900,2],
+		itemsTablet: [600,2],
+		itemsMobile : true
 	});
   $(window).scroll(function() {
       var scroll = $(window).scrollTop();
-      if (scroll >= 500) {
+      if (scroll >= 300) {
           $(".header").addClass('smaller');
       } else {
           $(".header").removeClass("smaller");
