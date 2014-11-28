@@ -137,6 +137,8 @@ footer a
 	-moz-border-radius: 3px
 	border-radius: 3px
 	text-align: center
+	img
+		max-width: 90%
 
 .owl-carousel
 	width: 90%
@@ -152,3 +154,32 @@ footer a
 
 .random-image
 	background-image: asset-data-url('random.jpg')
+
+.arrow
+	background: rgb(0, 0, 0)
+	background: rgba(0, 0, 0, 0.7)
+	width: 50px
+	height: 50px
+	display: block
+	text-decoration: none
+	position: absolute
+	right: 10px
+	-webkit-border-radius: 35px
+	-moz-border-radius: 35px
+	border-radius: 35px
+	i
+		color: #fff
+		margin: 0
+		position: relative
+		left: 1px
+		top: 13px
+		font-size: 2.2em
+		-webkit-transition: all 0.3s ease
+		-moz-transition: all 0.3s ease
+		-ms-transition: all 0.3s ease
+		-o-transition: all 0.3s ease
+		transition: all 0.3s ease
+	&:hover
+		cursor: pointer
+		i
+			top: 18px

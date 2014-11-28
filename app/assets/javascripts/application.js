@@ -27,7 +27,6 @@ $(document).ready(function() {
       version    : 'v2.2'
     });
   };
-
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -72,6 +71,12 @@ $(document).ready(function() {
 		});
 	$('.twitter-social').on('click', function(){
 		window.location.href = 'https://twitter.com/intent/tweet?screen_name=toptiertravelin&button_hashtag=ThanksTopTier'
+	});
+	$('.welcome-show').css("min-height", $(window).height() - $('.header').height() - $('.arrow').height() - 10);
+	$('.arrow').on('click', function(){
+		$('body,html').animate({
+			scrollTop : $('.welcome-show').height() + (2 * $('.arrow').height())
+		}, 500);
 	});
 });
 function prepareAccordion(){

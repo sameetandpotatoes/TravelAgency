@@ -1,17 +1,15 @@
 - @title = "Contact"
 - @meta = "Contact"
 = form_for @message, :url => send_path, :method => "post" do |form|
-  %p Hello Sameet,
+  %p To: toptiertraveling@gmail.com
   %fieldset.fields
-    .field.body
-      = form.text_area :body, :placeholder => "Your website is pretty cool. I am interested in learning more about you."
     .field.email
-      %p
-        You can reach me at this email: #{form.text_field :email, :placeholder => "example@123.com"}
+      %i.fa.fa-envelope-o.fa-lg
+      %p= form.text_field :email, :placeholder => "example@123.com"
     .field.name
-      %p
-        Looking forward to your reply, #{form.text_field :name, :placeholder => "John Smith"}
+      %i.fa.fa-user.fa-lg
+      %p= form.text_field :name, :placeholder => "John Smith"
+    .field.body
+      = form.text_area :body, :placeholder => ""
   %fieldset.actions
-    %div
-      %i.fa.fa-envelope-o.fa-lg.fa-fw.message-icon
-      = form.submit 'Submit your message', :id => "submit"
+    = form.submit 'Submit your message', :id => "submit"

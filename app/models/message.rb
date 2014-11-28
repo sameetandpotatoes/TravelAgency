@@ -4,7 +4,7 @@ class Message
 	include ActiveModel::Conversion
 	extend ActiveModel::Naming
 
-	attr_accessor :name, :body, :email
+	attr_accessor :name, :body, :email, :to
 	validates :name, :body, :email, :presence => true
 
 	def initialize(attributes = {})
