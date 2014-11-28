@@ -14,6 +14,8 @@
 
 $header-orig-height: 150px
 $header-small-height: 90px
+$logo-orig-size: 70px
+$logo-small-size: 50px
 
 html, head, body
 	overflow-x: hidden
@@ -29,6 +31,13 @@ html, head, body
 	position: fixed
 	overflow: hidden
 	z-index: 10
+	-webkit-transition: all 0.3s
+	moz-transition: all 0.3s
+	-ms-transition: all 0.3s
+	-o-transition: all 0.3s
+	transition: all 0.3s
+	&:hover
+		cursor: pointer
 
 .header p
 	display: inline-block
@@ -51,8 +60,14 @@ html, head, body
 	transition: all 0.3s
 
 .header-logo
-	width: 60px
-	height: 60px
+	width: $logo-orig-size
+	height: $logo-orig-size
+	vertical-align: bottom
+	-webkit-transition: all 0.3s
+	moz-transition: all 0.3s
+	-ms-transition: all 0.3s
+	-o-transition: all 0.3s
+	transition: all 0.3s
 
 header.smaller
 	height: $header-small-height
@@ -64,6 +79,10 @@ header.smaller > h1
 header.smaller .vacspots span
 	line-height: 90px
 
+.header-logo.smaller
+	width: $logo-small-size
+	height: $logo-small-size
+
 #adjust-content
 	margin-top: $header-orig-height
 
@@ -74,7 +93,7 @@ a, a:hover, a:visited
 	color: inherit
 
 .vacspots
-	font-size: 0.8em !important
+	font-size: 1.2em
 	float: right
 	margin-right: 30px
 	span
@@ -82,12 +101,13 @@ a, a:hover, a:visited
 		margin-left: 20px
 		font-weight: 700
 		float: left
-	a
-		border-radius: 3px
 		-webkit-transition: all 0.3s
-		moz-transition: all 0.3s
+		-moz-transition: all 0.3s
 		-ms-transition: all 0.3s
 		-o-transition: all 0.3s
+		transition: all 0.3s
+	a
+		border-radius: 3px
 		transition: all 0.3s
 		padding: 5px 10px
 		&:hover, .active
@@ -129,3 +149,6 @@ footer a
 .description-welcome
 	text-align: left
 	margin-left: 20px
+
+.random-image
+	background-image: asset-data-url('random.jpg')

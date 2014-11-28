@@ -20,9 +20,27 @@
 
 $(document).ready(function() {
 	prepareAccordion();
+	  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1582224785343435',
+      xfbml      : true,
+      version    : 'v2.2'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 	$(".welcome").owlCarousel({
 		autoPlay: 3000, //Set AutoPlay to 3 seconds
 		items : 1,
+		itemsDesktop : [1000,1],
+		itemsDesktopSmall : [900,1],
+		itemsTablet: [600,1],
 		itemsMobile : true
 	});
 	$(".vacation").owlCarousel({
@@ -33,14 +51,28 @@ $(document).ready(function() {
 		itemsTablet: [600,2],
 		itemsMobile : true
 	});
-  $(window).scroll(function() {
-      var scroll = $(window).scrollTop();
-      if (scroll >= 300) {
-          $(".header").addClass('smaller');
-      } else {
-          $(".header").removeClass("smaller");
-      }
-  });
+	$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
+			if (scroll >= 300) {
+					$(".header").addClass('smaller');
+					$('.header-logo').addClass('smaller');
+			} else {
+					$(".header").removeClass("smaller");
+					$('.header-logo').removeClass('smaller');
+			}
+	});
+	$('.header').on('click', function(){
+		window.location.href = '/'
+	});
+	$('.facebook-social').on('click', function(){
+		FB.ui({
+		  method: 'share',
+		  href: 'http://www.toptiertraveling.com/',
+		}, function(response){});
+		});
+	$('.twitter-social').on('click', function(){
+		window.location.href = 'https://twitter.com/intent/tweet?screen_name=toptiertravelin&button_hashtag=ThanksTopTier'
+	});
 });
 function prepareAccordion(){
 	var accordionHeadings = document.getElementsByClassName('entry-header');

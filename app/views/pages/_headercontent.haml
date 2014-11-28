@@ -1,15 +1,12 @@
 %h1
-	%p
-		=link_to "Top", home_path, class: 'link'
-	%p
-		=link_to "Tier", home_path, class: 'link'
-	%p
-		=link_to "Traveling", home_path, class: 'link'
+	%p Top
+	%p Tier
+	%p Traveling
 	\#{image_tag("logo.png", :class=>"header-logo")}
 %nav.vacspots
 	%span
 		= link_to "Hawaii", hawaii_path
 	%span
-		= link_to "Vac 2", "/"
+		= link_to "Italy", italy_path
 	%span
 		= link_to "Vac 3", "/"

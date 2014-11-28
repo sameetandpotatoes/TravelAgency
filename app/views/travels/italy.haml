@@ -1,5 +1,5 @@
-- @title="Hawaii"
-- @meta="Hawaii"
+- @title="Italy"
+- @meta="Italy"
 
 %section.module.parallax.parallax-1
   .container
@@ -32,31 +32,29 @@
     %h1 Rise
 %section.module.content{style: "min-height: 1000px"}
   .container
-    %h1.show-header Hawaii's Itinerary
+    %h1.show-header Italy's Itinerary
     .slider.left
       %h1 Choose the length of your vacation:
       %input#days{"data-slider-id" => "daySlider", "data-slider-max" => "10", "data-slider-min" => "1", "data-slider-step" => "1", "data-slider-value" => "1", "data-slider-tooltip" => "hide", "data-slider-handle" => "round", type: "text"}/
       %p#current-days Current Days: 1
     .itinerary.right
       %h1 Price Breakdown
-      .event{"data-min-value" => "5", "data-cost" => "4000"}
-        %p.entry-header Oahu ($4000)
+      .event{"data-min-value" => "3", "data-cost" => "4000"}
+        %p.entry-header Rome ($4000)
         .entry-content
-          %p Hotel: Hotel A ($2000)
-          %p Visit 1 ($1000)
-          %p Visit 2 ($1000)
-      .event{"data-min-value" => "5", "data-cost" => "1500"}
-        %p.entry-header Maui ($595 per person)
+          %p Hotel Delle Nazioni ($2000)
+          %p Standard Room
+      .event{"data-min-value" => "6", "data-cost" => "1500"}
+        %p.entry-header Florence
         .entry-content
-          %p Wailea Beach Marriott Resort & Spa
-          %li Daily buffet breakfast for two
-          %li Five-day full-size rental car
-      .event{"data-min-value" => "1", "data-cost" => "2000"}
-        %p.entry-header Big Island ($2000)
+          %p Hotel Pierre
+          %p Superior Double Room
+          %p EUR 25 voucher (per room, per stay) that may be used toward extras purchased at the hotel including restaurant, bar and minibar charges, plus complimentary internet at Hotel Delle Nazioni (per room, per night)**
+      .event{"data-min-value" => "9", "data-cost" => "2000"}
+        %p.entry-header Venice
         .entry-content
-          %p Hotel: Hotel C ($1000)
-          %p Visit 1 ($500)
-          %p Visit 2 ($500)
+          %p Papadopoli Venezia
+          %p One museum ticket (per person, per stay), 15% restaurant discount and VIP treatment (per room, per stay) at Papadopoli Venezia**
       %span Total Price: $
       %span#total-price 0
 %section.module.parallax.parallax-3
