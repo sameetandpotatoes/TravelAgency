@@ -1,0 +1,62 @@
+//Individual Activities Handler
+$('.dest-activities input').change(function(e){
+	//Loop through, add to sum price, add to night counter
+	var sum = 0, nights = 0;
+	var packages = "";
+	//Sum prices and nights
+	$('.dest-activities input').each(function(){
+		var activity = this;
+		if (activity.checked){
+			sum += parseInt($(activity).attr("value"));
+			nights += parseInt($(activity).attr("data-days"));
+			if (activity.name == "oahu" && packages.indexOf("oahu") < 0){
+				packages = "oahu";
+			} else if (activity.name == "maui" && packages.indexOf("maui") < 0){
+				packages += ",maui";
+			} else if (activity.name == "bigisland" && packages.indexOf("bigisland") < 0){
+				packages += ",bigisland";
+			}
+		}
+	});
+	$('#total-price').text(sum);
+	$('#estimated-days').text(nights + " nights");
+	//Display relevant packages
+	$('.package').each(function(){
+		var dest = this;
+		if ($(dest).attr("data-include") != packages && packages != ""){
+			$(dest).css("display","none");
+		} else{
+			$(dest).css("display","inline-block");
+		}
+	});
+});
+
+//Handle selection of map images
+$('.map-images img').click(function(e){
+		var clickedImage = $(e.target);
+		var allDesc =$('.descriptions').children();
+		for (var i = 0; i < allDesc.length; i++){
+			$(allDesc[i]).css("display","none");
+		}
+		var desc = $(clickedImage).data("desc");
+		$("."+desc).css("display","block");
+});
+
+//Currency Handler
+$('.currency_input').bind('input', function() {
+  var userinput = $(this).val();
+  var conversion = parseInt($('#currencyRate').text());
+  $('.currency_result').text(conversion * userinput);
+});
+
+//Social Handlers
+$('.facebook-social').on('click', function(){
+	FB.ui({
+		method: 'share',
+		href: 'http://www.toptiertraveling.com/',
+	}, function(response){});
+});
+
+$('.twitter-social').on('click', function(){
+	window.location.href = 'https://twitter.com/intent/tweet?screen_name=toptiertravelin&button_hashtag=ThanksTopTier'
+});

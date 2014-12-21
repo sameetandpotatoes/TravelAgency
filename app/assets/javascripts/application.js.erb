@@ -1,0 +1,39 @@
+//= require jquery
+//= require jquery_ujs
+//= require pages.js
+//= require travels.js
+//= require bootstrap-slider
+//= require jquery.scrollme.min.js
+//= require owl.carousel.min.js
+//= require mapbox.js
+
+$(document).ready(function() {
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : <%= ENV['FB_APP_ID'] %>,
+			xfbml      : true,
+			version    : 'v2.2'
+		});
+	};
+	(function(d, s, id){
+		 var js, fjs = d.getElementsByTagName(s)[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement(s); js.id = id;
+		 js.src = "//connect.facebook.net/en_US/sdk.js";
+		 fjs.parentNode.insertBefore(js, fjs);
+	 }(document, 'script', 'facebook-jssdk'));
+
+	$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
+			if (scroll >= 300) {
+					$(".header").addClass('smaller');
+					$('.header-logo').addClass('smaller');
+			} else {
+					$(".header").removeClass("smaller");
+					$('.header-logo').removeClass('smaller');
+			}
+	});
+	$('.header h1').on('click', function(){
+		window.location.href = '/'
+	});
+});

@@ -1,0 +1,34 @@
+L.mapbox.accessToken = "<%= ENV['MAPBOX_ACCESS'] %>";
+var map = L.mapbox.map('hawaii-map', "<%= ENV['MAPBOX_MAP'] %>");
+map.setView([20.5114, -156.4964], 7);
+map.dragging.disable();
+map.touchZoom.disable();
+map.doubleClickZoom.disable();
+map.scrollWheelZoom.disable();
+if (map.tap) map.tap.disable();
+var coords = [[-155.5000, 19.5667],[-156.3333, 20.8000],[-157.9833, 21.4667]];
+var titles = ["Big Island", "Maui", "Oahu"];
+var desc = ["big-desc, maui-desc, oahu-desc"];
+var colors = ["#f86767","#f86767","#f86767"];
+for (var i = 0; i < 3; i++){
+	L.mapbox.featureLayer({
+		type: 'Feature',
+		geometry: {
+			type: 'Point',
+			coordinates: coords[i]
+		},
+		properties: {
+			title: titles[i],
+			dest: desc[i],
+			'marker-color': colors[i]
+		}
+	}).addTo(map).on('click', mapClickHandler);
+}
+
+function mapClickHandler(e){
+	var allDesc =$('.descriptions').children();
+	for (var i = 0; i < allDesc.length; i++){
+		$(allDesc[i]).css("display","none");
+	}
+	$("."+e.layer.feature.properties['dest']).css("display","block");
+}

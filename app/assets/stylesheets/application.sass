@@ -13,7 +13,7 @@
  */
 
 $header-orig-height: 150px
-$header-small-height: 90px
+$header-small-height: 70px
 $logo-orig-size: 70px
 $logo-small-size: 50px
 
@@ -36,7 +36,7 @@ html, head, body
 	-ms-transition: all 0.3s
 	-o-transition: all 0.3s
 	transition: all 0.3s
-	&:hover
+	h1:hover
 		cursor: pointer
 
 .header p
@@ -75,9 +75,10 @@ header.smaller
 header.smaller > h1
 	height: $header-small-height - 40
 	font-size: 1.4em
+	margin-top: 5px
 
 header.smaller .vacspots span
-	line-height: 90px
+	line-height: $header-small-height
 
 .header-logo.smaller
 	width: $logo-small-size
@@ -116,6 +117,7 @@ a, a:hover, a:visited
 footer
 	background-color: #232323
 	text-align: center
+	padding: 10px 0 !important
 
 footer a
 	text-color: white
@@ -127,7 +129,6 @@ footer a
 .info-links, .info-link
 	display: inline-block
 	color: white
-	margin-top: 10px
 	vertical-align: top
 
 .owl-carousel .owl-item
@@ -138,10 +139,10 @@ footer a
 	border-radius: 3px
 	text-align: center
 	img
-		max-width: 90%
+		width: 50%
 
 .owl-carousel
-	width: 90%
+	width: 100%
 	margin-left: auto
 	margin-right: auto
 

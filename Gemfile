@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-gem 'rails', '4.0.4'
+ruby '2.1.5'
+gem 'rails', '4.1.8'
 gem 'skrollr-rails'
 gem 'jquery-easing-rails'
 gem 'pg'

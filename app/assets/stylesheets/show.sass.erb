@@ -1,45 +1,79 @@
-// #outer-currency
-// 	width: 198px
-// 	border: 1px solid #55A516
-// 	margin: 0 auto
+.map
+	width: 50%
+.map, .map-images
+	display: inline-block
+	margin: 0 2%
+#hawaii-map
+	height: 480px
+.map-images
+	span
+		display: inline-block
+		background: black
+		&:hover img
+			opacity: 0.7
+	img
+		width: 500px
+		height: 157px
+		display: block
+		-webkit-transition: all 0.3s linear
+		-moz-transition: all 0.3s linear
+		-ms-transition: all 0.3s linear
+		-o-transition: all 0.3s linear
+		transition: all 0.3s linear
+		&:hover
+			cursor: pointer
+.image
+	width: 100%
+	position: relative
+	h2
+		font-size: 24px
+		position: absolute
+		width: 100%
+		top: 0px
+		color: white
+		font-variant: small-caps
 
-// #currency-container
-// 	text-align: center
-// 	background-color: #55A516
-// 	width: 100%
-// 	font-size: 13px
-// 	font-weight: bold
-// 	height: 18px
-// 	padding-top: 2px
-
-// #currency-container > a
-// 	color: #FFFFFF
-// 	text-decoration: none
+.descriptions > div
+	display: none
+.single-day
+	float: left
+.multiple-days
+	float: right
+	box-sizing: content-box
 
 .weather-data
-	display: inline-block
-	font-size: 1.7em
-	width: 100%
-	text-align: center
+	position: relative
+	margin: 0 2%
+	top: 10em
+	color: white
 	img
-		display: block
 		margin: 0 auto
+
+.weather-time
+	text-align: left
 
 .weather-day
 	font-size: 18px
+	color: white
+	.day
+		padding-bottom: 15px
+
+.weather-day > div
+	font-size: 26px
 
 .weather-day.inline
+	background-color: rgba(0, 0, 0, 0.6)
 	font-size: 16px
 	min-width: 100px
-	padding: 10px
+	padding: 20px
 
 .grayscale
-	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale")
-	filter: gray
-	-webkit-filter: grayscale(100%)
+	filter: none
+	-webkit-filter: grayscale(0%)
 	&:hover
-		filter: none
-		-webkit-filter: grayscale(0%)
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale")
+		filter: gray
+		webkit-filter: grayscale(100%)
 
 .show-header
 	font-size: 1.5em
@@ -54,9 +88,6 @@
 .right
 	float: right
 	margin-right: 20%
-
-.gray
-	color: gray
 
 .bold
 	font-weight: bold
@@ -77,18 +108,28 @@
 		padding: 10px 0
 		line-height: 20px
 
-.hide-content
-	height: 5px
+.new-activities
+	display: inline-block
+	width: 33%
+	margin: 1.0em 0
 
-.show-content
-	height: auto
-	min-height: auto
+.package
+	display: inline-block
+	margin: 0.5em 0
+	min-width: 50%
 
-.entry-header
-	text-decoration: underline
-	&:hover
-		color: gray
-		cursor: pointer
+.pk-image
+	float: left
+	padding: 2em
+	min-width: 250px
+	min-height: 150px
+.pk-desc
+	padding: 2em
+	text-align: left
+
+.terms
+	text-align: left
+	font-size: 9px
 
 .currency_input
 	padding: 10px
@@ -98,3 +139,13 @@
 
 .currency_input:focus
 	border: solid 5px #969696
+
+.parallax-1
+	color: white
+
+.marker-title
+	text-align: center
+
+.price, .nights
+	display: block
+	font-size: 22px

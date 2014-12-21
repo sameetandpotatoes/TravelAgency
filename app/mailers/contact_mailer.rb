@@ -4,6 +4,6 @@ class ContactMailer < ActionMailer::Base
 
 		def new_message(message)
 			@message = message
-			mail(:subject => "TopTierLearning")
+			mail(:subject => "TopTierTraveling")
 		end
 end

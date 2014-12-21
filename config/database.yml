@@ -1,9 +1,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: TravelAgency_development
+  database: travelagency_development
   pool: 5
-  username: TravelAgency
+  username: travelagency
   password:
 test:
   adapter: postgresql

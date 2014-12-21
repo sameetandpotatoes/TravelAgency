@@ -1,82 +1,123 @@
 - @title="Hawaii"
 - @meta="Hawaii, TopTierTraveling, Oahu, Maui, Big Island, Wailea Beach Marriott Resort"
 
-%section.module.parallax.parallax-1.hawaii-1
+%section.module.parallax.parallax-1.hawaii-2
   .container
-    %h1 Serene
+    %h1 Welcome to Hawaii
+    %p The fresh, floral air energizes you. The warm, tranquil waters refresh you. The breathtaking, natural beauty renews you. Look around. There’s no place on earth like Hawaii. Whether you're a new visitor or returning, our six unique islands offer distinct experiences that will entice any traveler. We warmly invite you to explore our islands and discover your ideal travel experience.
 %section.module.content
   .container
+    .map
+      %h1 Learn about our destinations!
+      #hawaii-map.leaflet
+    .map-images
+      .image
+        %span
+          = image_tag "oahu1.jpg", data:{desc: "oahu-desc"}
+        %h2 Oahu
+      .image
+        %span
+          = image_tag "maui1.jpg", data:{desc: "maui-desc"}
+        %h2 Maui
+      .image
+        %span
+          = image_tag "big1.jpg", data:{desc: "big-desc"}
+        %h2 Big Island
+    .descriptions
+      .oahu-desc
+        Oahu is a great place!
+      .maui-desc
+        Maui is a great place!
+      .big-desc
+        Big Island is a great place!
+%section.module.parallax.parallax-2.hawaii-3
+  .container
     .weather-data
-      .weather-day
-        %p.show-header Weather for #{@weatherData[0]["date"]["tz_long"]}
-        =image_tag(@weatherData[0]["icon_url"], size: "100", :class => "grayscale")
-        =@weatherData[0]["date"]["pretty"].split(/\s+/, 3+1)[0...3].join(' ')
-        %p.bold #{@weatherData[0]["date"]["weekday"]}
-        %p.inline #{@weatherData[0]["high"]["fahrenheit"]}°F ~
-        %p.inline.gray.bold #{@weatherData[0]["conditions"].downcase}
-      - @weatherData = @weatherData[1..3] #Grabs the first three days of weather
-      - @weatherData.each do |element|
-        .weather-day.inline
-          =image_tag(element["icon_url"], size: "75", :class => "grayscale")
-          %p.bold=element["date"]["weekday"]
-          %p #{element["high"]["fahrenheit"]}°F
-          %p.gray.bold=element["conditions"].downcase
+      .weather-day.single-day
+        %p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
+        %p.weather-time=@weatherData[@weatherData.length - 1]
+        %div
+          =image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
+          %p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
+        %p.bold #{@weatherData[0]["conditions"]}
+      .multiple-days
+        - @weatherData = @weatherData[1..3] #Grabs the first three days of weather
+        - @weatherData.each do |element|
+          .weather-day.inline
+            %p.bold.day=element["date"]["weekday"]
+            =image_tag(element["icon_url"], size: "75")
+            %p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
+            %p.bold=element["conditions"]
+%section.module.content{style: "min-height: 1000px"}
+  .container
+    .new-activities
+      %h1 Oahu
+      .dest-activities
+        %input{name: "oahu", type: "checkbox", value: "100", "data-days" => "1"}/
+        Pearl Harbor
+      .dest-activities
+        %input{name: "oahu", type: "checkbox", value: "100", "data-days" => "1"}/
+        Pearl Harbor
+    .new-activities
+      %h1 Maui
+      .dest-activities
+        %input{name: "maui", type: "checkbox", value: "100", "data-days" => "1"}/
+        Polynesian Cultural Center
+      .dest-activities
+        %input{name: "maui", type: "checkbox", value: "100", "data-days" => "1"}/
+        Polynesian Cultural Center
+    .new-activities
+      %h1 Big Island
+      .dest-activities
+        %input{name: "bigisland", type: "checkbox", value: "100", "data-days" => "1"}/
+        Volcano Exploring
+      .dest-activities
+        %input{name: "bigisland", type: "checkbox", value: "100", "data-days" => "1"}/
+        Volcano Exploring
+    .calculations
+      .price
+        %span Total Price: $
+        %span#total-price 0
+      .nights
+        %span Estimated Days:
+        %span#estimated-days 0
     #outer-currency
       %p.show-header Currency Converter for #{@weatherData[0]["date"]["tz_long"]}
       #currency-container
         %input{:max => "100000", :min => "1", :name => "quantity", :type => "number", :class => "currency_input", :placeholder => "Enter value in USD"}/
         %p.inline.currency_result #{@currencyData}
         %p.inline #{@localCurrency}
-%section.module.parallax.parallax-2.hawaii-2
-  .container
-    %h1 Rise
-%section.module.content{style: "min-height: 1000px"}
-  .container
-    %h1.show-header Hawaii's Itinerary
-    .slider.left
-      %h1 Choose the length of your vacation:
-      %input#days{"data-slider-id" => "daySlider", "data-slider-max" => "10", "data-slider-min" => "1", "data-slider-step" => "1", "data-slider-value" => "1", "data-slider-tooltip" => "hide", "data-slider-handle" => "round", type: "text"}/
-      %p#current-days Current Days: 1
-    .itinerary.right
-      %h1 Price Breakdown
-      .event{"data-min-value" => "5", "data-cost" => "4000"}
-        %p.entry-header Oahu ($4000)
-        .entry-content
-          %p Hotel: Hotel A ($2000)
-          %p Visit 1 ($1000)
-          %p Visit 2 ($1000)
-      .event{"data-min-value" => "5", "data-cost" => "1500"}
-        %p.entry-header Maui ($595 per person)
-        .entry-content
-          %p Wailea Beach Marriott Resort & Spa
-          %li Daily buffet breakfast for two
-          %li Five-day full-size rental car
-      .event{"data-min-value" => "1", "data-cost" => "2000"}
-        %p.entry-header Big Island ($2000)
-        .entry-content
-          %p Hotel: Hotel C ($1000)
-          %p Visit 1 ($500)
-          %p Visit 2 ($500)
-      %span Total Price: $
-      %span#total-price 0
-%section.module.parallax.parallax-3.hawaii-3
-  .container
-    %h1 Calm
-%section.module.content
-  .container
+    %h2 Available Packages
+    .all-packages
+      .package{"data-include" => "oahu,maui,bigisland"}
+        .pk-image
+          = image_tag "hawaiianairlines.png", class: 'package-img'
+        .pk-desc
+          %h2
+            = link_to "Hawaiian Airlines", "http://pts.get2hawaii.com/ots/Index.do?agID=4"
+          %span Price: $
+      .package{"data-include" => "oahu"}
+        .pk-image
+          = image_tag "costcotravel.png", class: 'package-img'
+        .pk-desc
+          %h2
+            = link_to "Oahu: AULANI, A Disney Resort & Spa Spring Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWHNLAULANI20141107"
+          %span Price: $
+      .package{"data-include" => "maui"}
+        .pk-image
+          = image_tag "costcotravel.png", class: 'package-img'
+        .pk-desc
+          %h2
+            = link_to "Maui: The Ritz-Carlton, Kapalua Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Maui/Offers/HAWOGGRITZKAPALUA20131218"
+          %span Price: $
+      .package{"data-include" => "oahu,maui"}
+        .pk-image
+          = image_tag "costcotravel.png", class: 'package-img'
+        .pk-desc
+          %h2
+            = link_to "Oahu: Turtle Bay Resort Buyer's Choice Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWOAHTURTLEBAYBC20140121"
+          %span Price: $
+    = render "shared/social"
     %h2 Terms and Conditions
-    %ul
-      %li Prices are in U.S Dollars, are true and accurate at time of printing, are valid
-      for travel as specified, are valid for new bookings only. All offersand inclusions are subject to availability and may change or be terminated without notice. Seasonal
-      surcharge, availability, blackout dates and restrictions may apply. Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash. Cancellation and charge fees may apply.
-      %li Rental car includes unlimited mileage, one additional driver, all taxes and service
-      fees. It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
-    %h2 Booking Arrangements
-    = link_to "google", "http://www.google.com"
-
-:javascript
-  $('.currency_input').bind('input', function() {
-    var userinput = $(this).val();
-    var conversion = #{@currencyData};
-    $('.currency_result').text(conversion * userinput);
-  });
+    %p.terms Prices are in U.S Dollars, are true and accurate at time of printing, are valid for travel as specified, are valid for new bookings only. All offersand inclusions are subject to availability and may change or be terminated without notice. Seasonal surcharge, availability, blackout dates and restrictions may apply. Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash. Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees. It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
+%p#currencyRate{style: "display: none"}=@currencyData
