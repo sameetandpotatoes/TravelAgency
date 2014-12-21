@@ -9,7 +9,7 @@ module TravelAgency
 		config.assets.enabled = true
     config.assets.js_compressor = :uglifier
     config.assets.css_compressor = :sass
-    config.assets.precompile += %w( pages.js pages_home.js travels.js.erb travels_hawaii.js.erb )
+    config.assets.precompile += %w( pages.js pages_home.js travels.js travels_hawaii.js )
     config.action_controller.page_cache_directory = "#{Rails.root.to_s}/public/deploy"
     config.static_cache_control = "public, max-age=31536000"
   end
