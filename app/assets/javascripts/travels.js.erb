@@ -9,17 +9,19 @@ $('.dest-activities input').change(function(e){
 		if (activity.checked){
 			sum += parseInt($(activity).attr("value"));
 			nights += parseInt($(activity).attr("data-days"));
-			if (activity.name == "oahu" && packages.indexOf("oahu") < 0){
-				packages = "oahu";
-			} else if (activity.name == "maui" && packages.indexOf("maui") < 0){
-				packages += ",maui";
-			} else if (activity.name == "bigisland" && packages.indexOf("bigisland") < 0){
-				packages += ",bigisland";
+			if (activity.name == dest_1 && packages.indexOf(dest_1) < 0){
+				packages = dest_1;
+			} else if (activity.name == dest_2 && packages.indexOf(dest_2) < 0){
+				packages += "," + dest_2;
+			} else if (activity.name == dest_3 && packages.indexOf(dest_3) < 0){
+				packages += "," + dest_3;
 			}
 		}
 	});
+
 	$('#total-price').text(sum);
 	$('#estimated-days').text(nights + " nights");
+
 	//Display relevant packages
 	$('.package').each(function(){
 		var dest = this;
