@@ -1,15 +1,17 @@
 - @title = "Contact"
 - @meta = "Contact, Sameet Sapra, Andrew Merkley, John Stavropoulos, TopTierTraveling, toptiertraveling@gmail.com"
+%h1
+	Contact us at
+	=link_to "toptiertraveling@gmail.com", "mailto:toptiertraveling@gmail.com?Subject=Hello%20TopTierTraveling"
 = form_for @message, :url => send_path, :method => "post" do |form|
-  %p To: toptiertraveling@gmail.com
-  %fieldset.fields
-    .field.email
-      %i.fa.fa-envelope-o.fa-lg
-      %p= form.text_field :email, :placeholder => "example@123.com"
-    .field.name
-      %i.fa.fa-user.fa-lg
-      %p= form.text_field :name, :placeholder => "John Smith"
-    .field.body
-      = form.text_area :body, :placeholder => ""
-  %fieldset.actions
-    = form.submit 'Submit your message', :id => "submit"
+	%fieldset.fields
+		.field
+			= form.label :name, "Name"
+			= form.text_field :name, :placeholder => "&#xf007; John Smith".html_safe
+		.field
+			= form.label :email, "Email"
+			= form.text_field :email, :placeholder => "&#xf003; example@123.com".html_safe
+		.field.body
+			= form.label :body, "Content"
+			= form.text_area :body, :placeholder => ""
+	%fieldset.actions= form.submit "&#xf1d9; Send".html_safe, :id => "submit", class: 'fa fa-send-o'
