@@ -10,7 +10,7 @@ test:
   encoding: unicode
   database: TravelAgency_test
   pool: 5
-  username: TravelAgency
+  username: travelagency
   password:
 
 production:
@@ -18,5 +18,5 @@ production:
   encoding: unicode
   database: TravelAgency_production
   pool: 5
-  username: TravelAgency
+  username: travelagency
   password:

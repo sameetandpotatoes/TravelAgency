@@ -1,18 +1,15 @@
 - @title = "Home"
 - @meta = "TopTierTraveling, Italy, Hawaii, Florence, Rome, Venice, Maui, Oahu, Big Island"
 .welcome-show
-	.container1
-		.row
-			.span12
-				.welcome.owl-carousel
-					.item
-						%h1 1
-					.item
-						%h1 2
-					.item
-						%h1 3
-					.item
-						%h1 4
+	.welcome.owl-carousel
+		.item
+			%h1 1
+		.item
+			%h1 2
+		.item
+			%h1 3
+		.item
+			%h1 4
 	.description-welcome
 		%h1 Our Mission
 		%p At TopTierTraveling, we deliver global corporate travel solutions that meet the complex demands of companies and their travelers. Building on TopTierTraveling's legacy of innovation in online travel and its multinational footprint, we offer a full service and fully integrated approach to travel and expense management. By combining leading technology with expert support, we've helped hundreds of consumers achieve the savings they need.
@@ -20,102 +17,35 @@
 	%i.fa.fa-angle-down.fa-lg
 .all-packages
 	.vacation-show
-		.container1
-			.row
-				.span12
-					.vacation.owl-carousel
-						.item
-							= image_tag("oahu1.jpg")
-						.item
-							= image_tag("oahu2.jpg")
-						.item
-							= image_tag("oahu3.jpg")
-						.item
-							= image_tag("maui1.jpg")
-						.item
-							= image_tag("maui2.jpg")
-						.item
-							= image_tag("maui3.jpg")
-						.item
-							= image_tag("big1.jpg")
-						.item
-							= image_tag("big2.jpg")
-						.item
-							= image_tag("big3.jpg")
-		.description
+		.vacation.owl-carousel.inline-home
+			%div= image_tag("oahu1.jpg")
+			%div= image_tag("oahu2.jpg")
+			%div= image_tag("oahu3.jpg")
+			%div= image_tag("maui1.jpg")
+			%div= image_tag("maui2.jpg")
+			%div= image_tag("maui3.jpg")
+			%div= image_tag("big1.jpg")
+			%div= image_tag("big2.jpg")
+			%div= image_tag("big3.jpg")
+		.description.inline-home
 			%h1 Hawaii
-			%p Blah Blah Blah
+			%p The fresh, floral air energizes you. The warm, tranquil waters refresh you. The breathtaking, natural beauty renews you. Look around. There’s no place on earth like Hawaii. Whether you're a new visitor or returning, our six unique islands offer distinct experiences that will entice any traveler. We warmly invite you to explore our islands and discover your ideal travel experience.
+			%a.button.blue{href: hawaii_path}
+				Find Out
+				%br>/
+				More
 	.vacation-show
-		.container1
-			.row
-				.span12
-					.vacation.owl-carousel
-						.item
-							= image_tag("rome1.jpg")
-						.item
-							= image_tag("rome2.jpg")
-						.item
-							= image_tag("rome3.jpg")
-						.item
-							= image_tag("florence1.jpg")
-						.item
-							= image_tag("florence2.jpg")
-						.item
-							= image_tag("florence3.jpg")
-						.item
-							= image_tag("venice1.jpg")
-						.item
-							= image_tag("venice2.jpg")
-						.item
-							= image_tag("venice3.jpg")
-		.description
+		.vacation.owl-carousel.inline-home
+			%div= image_tag("florence1.jpg")
+			%div= image_tag("florence2.jpg")
+			%div= image_tag("florence3.jpg")
+			%div= image_tag("rome1.jpg")
+			%div= image_tag("rome2.jpg")
+			%div= image_tag("rome3.jpg")
+			%div= image_tag("venice1.jpg")
+			%div= image_tag("venice2.jpg")
+			%div= image_tag("venice3.jpg")
+		.description.inline-home
 			%h1 Italy
 			%p Blah Blah Blah
-	.vacation-show
-		.container1
-			.row
-				.span12
-					.vacation.owl-carousel
-						.item
-							%h1 1
-						.item
-							%h1 2
-						.item
-							%h1 3
-						.item
-							%h1 4
-						.item
-							%h1 5
-						.item
-							%h1 6
-						.item
-							%h1 7
-						.item
-							%h1 8
-						.item
-							%h1 9
-						.item
-							%h1 10
-						.item
-							%h1 11
-						.item
-							%h1 12
-						.item
-							%h1 13
-						.item
-							%h1 14
-						.item
-							%h1 15
-						.item
-							%h1 16
-		.description
-			%h1 Hawaii
-			%p Blah Blah Blah
-	.vacation-show
-		.container1
-			.row
-				.span12
-					= image_tag("random.jpg", :alt => "Random Vacation")
-		.description
-			%h1 Let Us Choose
-			%p Can't decide where to go? Let us choose for you!
+	

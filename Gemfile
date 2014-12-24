@@ -20,13 +20,15 @@ gem 'actionpack-page_caching'
 gem 'figaro'
 gem 'cloudinary'
 gem 'rack-cache'
-gem 'pry-rails', :group => :development
 gem 'rack-cors', :require => 'rack/cors'
+gem 'compass-rails'
+gem "compass", "~> 0.12.1"
 group :doc do
   gem 'sdoc', require: false
 end
 group :development do
-  gem 'quiet_assets'
+	gem 'quiet_assets'
+	gem 'pry-rails'
 end
 group :assets do
   gem 'sass-rails', '~> 4.0.0'

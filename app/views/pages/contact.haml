@@ -5,10 +5,10 @@
 	=link_to "toptiertraveling@gmail.com", "mailto:toptiertraveling@gmail.com?Subject=Hello%20TopTierTraveling"
 = form_for @message, :url => send_path, :method => "post" do |form|
 	%fieldset.fields
-		.field
+		.field.name
 			= form.label :name, "Name"
 			= form.text_field :name, :placeholder => "&#xf007; John Smith".html_safe
-		.field
+		.field.email
 			= form.label :email, "Email"
 			= form.text_field :email, :placeholder => "&#xf003; example@123.com".html_safe
 		.field.body

@@ -35,6 +35,7 @@ GEM
     bootstrap-slider-rails (1.9.0)
       railties (>= 3.2, < 5.0)
     builder (3.2.2)
+    chunky_png (1.3.3)
     cloudinary (1.0.76)
       aws_cf_signer
       rest-client
@@ -46,11 +47,18 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    compass (0.12.7)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.2.19)
+    compass-rails (2.0.0)
+      compass (>= 0.12.2)
     erubis (2.7.0)
     execjs (2.2.1)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    fssm (0.2.10)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -167,6 +175,8 @@ DEPENDENCIES
   bootstrap-slider-rails
   cloudinary
   coffee-rails (~> 4.0.0)
+  compass (~> 0.12.1)
+  compass-rails
   figaro
   haml
   haml-rails
