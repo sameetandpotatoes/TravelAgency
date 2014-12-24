@@ -83,22 +83,10 @@
             %p 'Iolani Palace
         .dest-activities
           .squareChkBox
-            %input{id: '8', name: "oahu", type: "checkbox", value: "100", "data-days" => "1"}/
-            %label{:for => "8"}
-          .activity-title
-            %p Nu'uanu Pali
-        .dest-activities
-          .squareChkBox
             %input{id: '9', name: "oahu", type: "checkbox", value: "100", "data-days" => "1"}/
             %label{:for => "9"}
           .activity-title
             %p Manoa Falls
-        .dest-activities
-          .squareChkBox
-            %input{id: '10', name: "oahu", type: "checkbox", value: "100", "data-days" => "1"}/
-            %label{:for => "10"}
-          .activity-title
-            %p Hālona Blowhole
         .dest-activities
           .squareChkBox
             %input{id: '11', name: "oahu", type: "checkbox", value: "100", "data-days" => "1"}/
@@ -181,12 +169,6 @@
             %label{:for => "23"}
           .activity-title
             %p Kohala (Volcano)
-        .dest-activities
-          .squareChkBox
-            %input{id: '24', name: "bigisland", type: "checkbox", value: "100", "data-days" => "1"}/
-            %label{:for => "24"}
-          .activity-title
-            %p Hawaii Tropical Botanical Garden
       .calculations
         .price
           %span Total Price: $
@@ -195,12 +177,12 @@
           %span Estimated Days:
           %span#estimated-days 0
     .pk-selections.right
-      #outer-currency
-        %p.show-header Currency Converter for #{@weatherData[0]["date"]["tz_long"]}
-        #currency-container
-          %input{:max => "100000", :min => "1", :name => "quantity", :type => "number", :class => "currency_input", :placeholder => "Enter value in USD"}/
-          %p.inline.currency_result #{@currencyData}
-          %p.inline #{@localCurrency}
+      / #outer-currency
+      /   %p.show-header Currency Converter for #{@weatherData[0]["date"]["tz_long"]}
+      /   #currency-container
+      /     %input{:max => "100000", :min => "1", :name => "quantity", :type => "number", :class => "currency_input", :placeholder => "Enter value in USD"}/
+      /     %p.inline.currency_result #{@currencyData}
+      /     %p.inline #{@localCurrency}
       %h2 Available Packages
       .all-packages
         .package{"data-include" => "oahu,maui,bigisland"}
@@ -231,7 +213,8 @@
             %h2
               = link_to "Oahu: Turtle Bay Resort Buyer's Choice Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWOAHTURTLEBAYBC20140121"
             %span Price: $
-    =# render "shared/social"
-    /%h2 Terms and Conditions
-    /%p.terms Prices are in U.S Dollars, are true and accurate at time of printing, are valid for travel as specified, are valid for new bookings only. All offersand inclusions are subject to availability and may change or be terminated without notice. Seasonal surcharge, availability, blackout dates and restrictions may apply. Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash. Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees. It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
+    .conditions
+      = render "shared/social"
+      %h2 Terms and Conditions
+      %p.terms Prices are in U.S Dollars, are true and accurate at time of printing, are valid for travel as specified, are valid for new bookings only. All offersand inclusions are subject to availability and may change or be terminated without notice. Seasonal surcharge, availability, blackout dates and restrictions may apply. Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash. Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees. It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
 %p#currencyRate{style: "display: none"}=@currencyData
