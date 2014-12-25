@@ -1,3 +1,12 @@
+// var link = document.createElement('a');
+// link.setAttribute('href', 'https://twitter.com/share');
+// link.setAttribute('class', 'twitter-share-button');
+// link.setAttribute('style', 'width: 48px; height: 48px;');
+// link.setAttribute("data-text" , "TopTierTraveling is awesome" );
+// link.setAttribute("data-size" ,"large");
+// document.getElementById('twitter-social').appendChild(link);
+// twttr.widgets.load();
+
 //Individual Activities Handler
 $('.dest-activities input').change(function(e){
 	//Loop through, add to sum price, add to night counter
@@ -12,9 +21,9 @@ $('.dest-activities input').change(function(e){
 			if (activity.name == dest_1 && packages.indexOf(dest_1) < 0){
 				packages = dest_1;
 			} else if (activity.name == dest_2 && packages.indexOf(dest_2) < 0){
-				packages += "," + dest_2;
+				packages += (packages == "") ? dest_2 : "," + dest_2;
 			} else if (activity.name == dest_3 && packages.indexOf(dest_3) < 0){
-				packages += "," + dest_3;
+				packages += (packages == "") ? dest_3 : "," + dest_3;
 			}
 		}
 	});
@@ -26,8 +35,10 @@ $('.dest-activities input').change(function(e){
 	$('.package').each(function(){
 		var dest = this;
 		if ($(dest).attr("data-include") != packages && packages != ""){
-			$(dest).css("display","none");
+			$(dest).fadeOut(500);
+			// $(dest).css("display","none");
 		} else{
+			$(dest).fadeIn(500);
 			$(dest).css("display","inline-block");
 		}
 	});
@@ -60,7 +71,7 @@ $('.facebook-social').on('click', function(){
 });
 
 $('.twitter-social').on('click', function(){
-	window.location.href = 'https://twitter.com/intent/tweet?screen_name=toptiertravelin&button_hashtag=ThanksTopTier'
+	// window.location.href = 'https://twitter.com/intent/tweet?screen_name=toptiertravelin&button_hashtag=ThanksTopTier'
 });
 
 $($('.module')[3]).css("min-height", $('.pk-selections').height() + 150);

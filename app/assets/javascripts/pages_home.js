@@ -8,17 +8,31 @@ $(".welcome").owlCarousel({
 });
 
 $(".vacation").owlCarousel({
-	autoPlay: 3000,
+	autoplay: true,
+	autoplayTimeout: 2000,
+	autoplayHoverPause: true,
 	items : 2,
 	itemsDesktop : [1199,2],
 	itemsDesktopSmall : [979,1]
 });
 
+$('.vacation').mouseenter(function(){
+	console.log("MOUSE HAS ENTERED THE BUILDING");
+	$('.vacation').trigger('autoplay.play.owl',[2000]);
+});
+
+$('.vacation').mouseleave(function(){
+	console.log("MOUSE HAS LEFT THE BUILDING");
+	$('.vacation').trigger('autoplay.stop.owl');
+});
+
 $('.welcome-show').css("min-height", $(window).height() - $('.header').height() - $('.arrow').height() - 10);
+$('.vacation-show').css("min-height", $(window).height() - $('.header').height());
 
 $('.arrow').on('click', function(){
+	var nextDiv = $(this).parent().next();
 	$('body,html').animate({
-		scrollTop : $('.welcome-show').height() + (2 * $('.arrow').height())
+		scrollTop : nextDiv.offset().top - 70
 	}, 500);
 });
 

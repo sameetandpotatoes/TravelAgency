@@ -4,7 +4,13 @@
 %section.module.parallax.parallax-1.hawaii-2
   .container
     %h1 Welcome to Hawaii
-    %p The fresh, floral air energizes you. The warm, tranquil waters refresh you. The breathtaking, natural beauty renews you. Look around. There’s no place on earth like Hawaii. Whether you're a new visitor or returning, our six unique islands offer distinct experiences that will entice any traveler. We warmly invite you to explore our islands and discover your ideal travel experience.
+    %p
+      "The fresh, floral air energizes you. The warm, tranquil waters refresh you.
+      The breathtaking, natural beauty renews you. Look around. There’s no place on earth like Hawaii.
+      Whether you're a new visitor or returning, our six unique islands offer distinct experiences that
+      will entice any traveler. We warmly invite you to explore our islands and discover your ideal
+      travel experience."
+    %p{style: "text-align: right;"} ~ From the State of Hawaii
 %section.module.content
   .container
     %h1 Learn about our destinations!
@@ -37,6 +43,7 @@
   .container
     .weather-data
       .weather-day.single-day
+        %p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
         %p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
         %p.weather-time=@weatherData[@weatherData.length - 1]
         %div
@@ -44,7 +51,7 @@
           %p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
         %p.bold #{@weatherData[0]["conditions"]}
       .multiple-days
-        - @weatherData = @weatherData[1..3] #Grabs the first three days of weather
+        - @weatherData = @weatherData[1..4] #Grabs the first three days of weather
         - @weatherData.each do |element|
           .weather-day.inline
             %p.bold.day=element["date"]["weekday"]
@@ -185,34 +192,62 @@
       /     %p.inline #{@localCurrency}
       %h2 Available Packages
       .all-packages
-        .package{"data-include" => "oahu,maui,bigisland"}
+        .package{"data-include" => "bigisland"}
           .pk-image
-            = image_tag "hawaiianairlines.png", class: 'package-img'
+            = image_tag "costcotravel.png", class: 'package-img'
           .pk-desc
             %h2
-              = link_to "Hawaiian Airlines", "http://pts.get2hawaii.com/ots/Index.do?agID=4"
-            %span Price: $
+              = link_to "Hawaii Island: Hilton Waikoloa Village® Value Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Hawaii-Island/Offers/HAWBIGHILTONWVPKG2009052"
+            %span 5 Nights from $719 per person
         .package{"data-include" => "oahu"}
           .pk-image
             = image_tag "costcotravel.png", class: 'package-img'
           .pk-desc
             %h2
               = link_to "Oahu: AULANI, A Disney Resort & Spa Spring Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWHNLAULANI20141107"
-            %span Price: $
+            %span 5 Nights from $1,055 per person
         .package{"data-include" => "maui"}
           .pk-image
             = image_tag "costcotravel.png", class: 'package-img'
           .pk-desc
             %h2
               = link_to "Maui: The Ritz-Carlton, Kapalua Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Maui/Offers/HAWOGGRITZKAPALUA20131218"
-            %span Price: $
+            %span 5 Nights from $1,405 per person
         .package{"data-include" => "oahu,maui"}
           .pk-image
             = image_tag "costcotravel.png", class: 'package-img'
           .pk-desc
             %h2
-              = link_to "Oahu: Turtle Bay Resort Buyer's Choice Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWOAHTURTLEBAYBC20140121"
-            %span Price: $
+              = link_to "Oahu and Maui 2-Island Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWHNLOGG20140307"
+            %span >7 Nights from $
+        .package{"data-include" => "oahu,bigisland"}
+          .pk-image
+            = image_tag "costcotravel.png", class: 'package-img'
+          .pk-desc
+            %h2
+              = link_to "Oahu and Hawaii Island Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWHNLKOA20140313"
+            %span >7 Nights from $
+        .package{"data-include" => "oahu,maui"}
+          .pk-image
+            = image_tag "costcotravel.png", class: 'package-img'
+          .pk-desc
+            %h2
+              = link_to "Maui and Oahu: 2-Island Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWOAHTURTLEBAYBC20140121"
+            %span >7 Nights from $
+        .package{"data-include" => "oahu,maui"}
+          .pk-image
+            = image_tag "costcotravel.png", class: 'package-img'
+          .pk-desc
+            %h2
+              = link_to "Maui and Oahu: 2-Island Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWKOAHNL20140313"
+            %span >7 Nights from $
+        .package{"data-include" => "maui,bigisland"}
+          .pk-image
+            = image_tag "costcotravel.png", class: 'package-img'
+          .pk-desc
+            %h2
+              = link_to "Maui and Hawaii Island: 2-Island Package", "http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWOGGKOA20140313"
+            %span >7 Nights from $
     .conditions
       = render "shared/social"
       %h2 Terms and Conditions
