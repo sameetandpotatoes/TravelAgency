@@ -3,14 +3,9 @@
 
 %section.module.parallax.parallax-1.hawaii-2
   .container
-    %h1 Welcome to Hawaii
-    %p
-      "The fresh, floral air energizes you. The warm, tranquil waters refresh you.
-      The breathtaking, natural beauty renews you. Look around. There’s no place on earth like Hawaii.
-      Whether you're a new visitor or returning, our six unique islands offer distinct experiences that
-      will entice any traveler. We warmly invite you to explore our islands and discover your ideal
-      travel experience."
-    %p{style: "text-align: right;"} ~ From the State of Hawaii
+    %h1 Welcome to #{@dest}
+    %p=INFORMATION["Hawaii"]["description"]
+    /# %p{style: "text-align: right;"} ~ From the State of Hawaii
 %section.module.content
   .container
     %h1 Learn about our destinations!

@@ -155,8 +155,10 @@ footer a
 	height: 50px
 	display: block
 	text-decoration: none
+	// float: right
 	position: absolute
 	right: 10px
+	bottom: 10px
 	-webkit-border-radius: 35px
 	-moz-border-radius: 35px
 	border-radius: 35px
@@ -176,6 +178,61 @@ footer a
 		cursor: pointer
 		i
 			top: 18px
+
+.row, .desc-texts
+	// display: table-cell
+	display: inline-block
+
+
+.row div
+	-webkit-transition: all 0.3s ease
+	-moz-transition: all 0.3s ease
+	-ms-transition: all 0.3s ease
+	-o-transition: all 0.3s ease
+	transition: all 0.3s ease
+	position: relative
+	h1
+		color: white
+		bottom: -90px
+		position: relative
+	img
+		max-width: 200px
+		max-height: 200px
+		min-width: 200px
+		min-height: 200px
+		border-radius: 100px
+
+// .centered>.row:nth-of-type(2)
+.centered:nth-child(1) div:hover
+	right: 5px
+
+.centered:nth-child(3) div:hover
+	left: 5px
+
+.desc-texts > div
+	-webkit-transition: all 0.3s ease
+	-moz-transition: all 0.3s ease
+	-ms-transition: all 0.3s ease
+	-o-transition: all 0.3s ease
+	transition: all 0.3s ease
+	max-width: 90%
+	padding: 0 5%
+	text-align: left
+	// display: none
+	opacity: 0
+
+.centered
+	margin-top: 5%
+	width: 100%
+	text-align: center
+	h1
+		margin-bottom: 0px
+
+.grayscale
+	-webkit-filter: grayscale(100%)
+	filter: grayscale(100%)
+	filter: gray
+	filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale")
 
 //Smartphones portrait and landscape
 @media all and (min-device-width: 320px) and (max-device-width: 480px)

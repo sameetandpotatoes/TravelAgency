@@ -20,21 +20,6 @@
 		= csrf_meta_tags
 	%body
 		%a#twitter-mention-button{"data-dnt" => "true", "data-related" => "toptiertravelin", "data-size" => "large", :href => "https://twitter.com/intent/tweet?screen_name=toptiertravelin&text=BlahBlahBlah", style: "display: none"} Tweet to @toptiertravelin
-		:javascript
-			window.twttr = (function(d, s, id) {
-					var t, js, fjs = d.getElementsByTagName(s)[0];
-					if (d.getElementById(id)) return;
-					js = d.createElement(s);
-					js.id = id;
-					js.src = "https://platform.twitter.com/widgets.js";
-					fjs.parentNode.insertBefore(js, fjs);
-					return window.twttr || (t = {
-						_e: [],
-						ready: function(f) {
-							t._e.push(f)
-						}
-					});
-			}(document, "script", "twitter-wjs"));
 		-if (current_page?(about_path) or current_page?(contact_path) or current_page?(home_path))
 			%header.header
 				= render partial: "/pages/headercontent"
@@ -60,7 +45,7 @@
 						%i.fa.fa-comments-o
 						%span Contact
 			#fb-root
-		= javascript_include_tag params[:controller]
 		= javascript_include_tag "#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}"
+		= javascript_include_tag params[:controller]
 		:javascript
 			window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
