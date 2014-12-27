@@ -13,7 +13,7 @@ function initialize_map(){
 	L.mapbox.accessToken = "<%= ENV['MAPBOX_ACCESS'] %>";
 	map = L.mapbox.map('hawaii-map', "<%= ENV['MAPBOX_MAP'] %>");
 	map.setView(<%= INFO[current_dest]['location'] %>, 7);
-	map.dragging.disable();
+	// map.dragging.disable();
 	map.touchZoom.disable();
 	map.doubleClickZoom.disable();
 	map.scrollWheelZoom.disable();
