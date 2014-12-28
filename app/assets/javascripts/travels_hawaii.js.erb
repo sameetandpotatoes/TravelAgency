@@ -38,12 +38,15 @@ function overlay_markers(){
 }
 
 function mapClickHandler(e){
-	var allDesc =$('.descriptions').children();
-	for (var i = 0; i < allDesc.length; i++){
-		$(allDesc[i]).css('display','none');
+	//Makes it so that only one can be flipped currently
+	$('.flipper').removeClass("flipped");
+
+	//Toggle
+	if ($('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').hasClass("flipped")){
+		$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').removeClass('flipped');
+	} else{
+		$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').addClass('flipped');
 	}
-	// console.log(e.layer.feature.properties['dest']);
-	$('.'+e.layer.feature.properties['dest']).css('display','block');
 }
 
 initialize_map();

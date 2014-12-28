@@ -2,14 +2,9 @@
 - @meta = "TopTierTraveling, Italy, Hawaii, Florence, Rome, Venice, Maui, Oahu, Big Island"
 .welcome-show.section
 	.welcome.owl-carousel
-		.item
-			%h1 1
-		.item
-			%h1 2
-		.item
-			%h1 3
-		.item
-			%h1 4
+		.item=image_tag("home_1.png")
+		.item=image_tag("home_2.png")
+		.item=image_tag("home_3.png")
 	.description-welcome
 		%h1 Our Mission
 		%p At TopTierTraveling, we deliver global corporate travel solutions that meet the complex demands of companies and their travelers. Building on TopTierTraveling's legacy of innovation in online travel and its multinational footprint, we offer a full service and fully integrated approach to travel and expense management. By combining leading technology with expert support, we've helped hundreds of consumers achieve the savings they need.
@@ -21,7 +16,7 @@
 		.row
 			%div{"data-desc" => "#{INFO["Hawaii"]["description"]}"}
 				%h1 Hawaii
-				=image_tag("big2.jpg")
+				=image_tag("big3.jpg")
 			%div{"data-desc" => "#{INFO["Italy"]["description"]}"}
 				%h1 Italy
 				=image_tag("rome3.jpg")
@@ -34,7 +29,7 @@
 				=image_tag("rome3.jpg")
 			%div{"data-desc" => "#{INFO["Random"]["description"]}"}
 				%h1 Random
-				=image_tag("random.jpg")
+				=image_tag("random.png")
 
 -# 	.adjust-height
 -# 		.vacation.owl-carousel.inline-home

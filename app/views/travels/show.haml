@@ -1,89 +1,91 @@
 - @title=@dest
 - @meta=INFO[@dest]["meta"]
 
+%script{:async => "", :defer => "defer", :src => "https://apis.google.com/js/platform.js"}
+
 %section.module.parallax.parallax-1{style: "background-image: url(#{asset_path INFO[@dest]["first_image"]})"}
-  .container
-    %h1 Welcome to #{@dest}
-    %p=INFO[@dest]["description"]
-    %p{style: "text-align: right;"}=INFO[@dest]["from"]
+	.container
+		%h1 Welcome to #{@dest}
+		%p=INFO[@dest]["description"]
+		%p{style: "text-align: right;"}=INFO[@dest]["from"]
 %section.module.content
-  .container
-    %h1 Learn about our destinations!
-    .map
-      #hawaii-map.leaflet
-    .map-images
-      - (0..2).each do |i|
-        .image
-          %span
-            = image_tag INFO[@dest]["cities"][i]["images"][0], data: {desc: "desc-#{i+1}"}
-          %h2=INFO[@dest]["cities"][i]["name"]
-    .descriptions
-      - (0..2).each do |i|
-        %div{class: "desc-#{i+1}"}
-          %h1 #{INFO[@dest]["cities"][i]["name"]}
-          %p=INFO[@dest]["cities"][i]["description"]
+	.container
+		%h1 Learn about our destinations!
+		.map
+			#hawaii-map.leaflet
+		.map-images
+			- (0..2).each do |i|
+				.flip-container{class: "desc-#{i+1}"}
+					.flipper
+						.front.image
+							%span
+								= image_tag INFO[@dest]["cities"][i]["images"][0], data: {desc: "desc-#{i+1}"}
+							%h2=INFO[@dest]["cities"][i]["name"]
+						.back
+							%h1 #{INFO[@dest]["cities"][i]["name"]}
+							%p=INFO[@dest]["cities"][i]["description"]
 %section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
-  .container
-    .weather-data
-      .weather-day.single-day
-        %p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
-        %p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
-        %p.weather-time=@weatherData[@weatherData.length - 1]
-        %div
-          =image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
-          %p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
-        %p.bold #{@weatherData[0]["conditions"]}
-      .multiple-days
-        - @weatherData = @weatherData[1..4] #Grabs the first three days of weather
-        - @weatherData.each do |element|
-          .weather-day.inline
-            %p.bold.day=element["date"]["weekday"]
-            =image_tag(element["icon_url"], size: "75")
-            %p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
-            %p.bold=element["conditions"]
+	.container
+		.weather-data
+			.weather-day.single-day
+				%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
+				%p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
+				%p.weather-time=@weatherData[@weatherData.length - 1]
+				%div
+					=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
+					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
+				%p.bold #{@weatherData[0]["conditions"]}
+			.multiple-days
+				- @weatherData = @weatherData[1..4] #Grabs the first three days of weather
+				- @weatherData.each do |element|
+					.weather-day.inline
+						%p.bold.day=element["date"]["weekday"]
+						=image_tag(element["icon_url"], size: "75")
+						%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
+						%p.bold=element["conditions"]
 %section.module.content{style: "min-height: 1000px"}
-  .container
-    %h1 Select your packages
-    .chk-selections.left
-      - @ID = 0
-      - (0..2).each do |i|
-        .new-activities
-          %h1=INFO[@dest]["cities"][i]["name"]
-          - (0...INFO[@dest]["cities"][i]["activities"].length).each do |j|
-            .dest-activities
-              .squareChkBox
-                %input{id: "#{@ID}", name: "#{INFO[@dest]['cities'][i]['name'].downcase.gsub(/\s+/, "")}",
-                type: 'checkbox', value: INFO[@dest]['cities'][i]["activities"][j]["cost"], "data-days" => INFO[@dest]['cities'][i]["activities"][j]["nights"]}/
-              -# %input{id: i + ' ' + j, name: INFO[@dest]['cities'][i]['name'].lowercase, type: "checkbox", value: INFO[@dest]['cities'][i]['name']['cost'], "data-days" : INFO[@dest]['cities'][i]['nights']}/
-                %label{:for => "#{@ID}"}
-                - @ID+=1
-              .activity-title
-                %p=INFO[@dest]["cities"][i]["activities"][j]["name"]
-      .calculations
-        .price
-          %span Total Price: $
-          %span#total-price 0
-        .nights
-          %span Estimated Days:
-          %span#estimated-days 0
-    .pk-selections.right
-      %h2 Available Packages
-      .all-packages
-        - (0...INFO[@dest]["packages"].length).each do |i|
-          .package{"data-include" => INFO[@dest]["packages"][i]["included"]}
-            .pk-image
-              = image_tag INFO[@dest]["packages"][i]["image"], class: 'package-img'
-            .pk-desc
-              %h2=link_to INFO[@dest]["packages"][i]["name"], INFO[@dest]["packages"][i]["link"]
-              %span=INFO[@dest]["packages"][i]["cost"]
-    .conditions
-      = render "shared/social"
-      %h2 Terms and Conditions
-      %p.terms
-        Prices are in U.S Dollars, are true and accurate at time of printing, are valid for travel as specified, are valid for new bookings only.
-        All offers and inclusions are subject to availability and may change or be terminated without notice. Seasonal surcharge, availability, blackout dates and restrictions may apply.
-        Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash.
-        Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees.
-        It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
+	.container
+		%h1 Select your packages
+		.chk-selections.left
+			- @ID = 0
+			- (0..2).each do |i|
+				.new-activities
+					%h1=INFO[@dest]["cities"][i]["name"]
+					- (0...INFO[@dest]["cities"][i]["activities"].length).each do |j|
+						.dest-activities
+							.squareChkBox
+								%input{id: "#{@ID}", name: "#{INFO[@dest]['cities'][i]['name'].downcase.gsub(/\s+/, "")}",
+								type: 'checkbox', value: INFO[@dest]['cities'][i]["activities"][j]["cost"], "data-days" => INFO[@dest]['cities'][i]["activities"][j]["nights"]}/
+							-# %input{id: i + ' ' + j, name: INFO[@dest]['cities'][i]['name'].lowercase, type: "checkbox", value: INFO[@dest]['cities'][i]['name']['cost'], "data-days" : INFO[@dest]['cities'][i]['nights']}/
+								%label{:for => "#{@ID}"}
+								- @ID+=1
+							.activity-title
+								%p=INFO[@dest]["cities"][i]["activities"][j]["name"]
+			.calculations
+				.price
+					%span Total Price: $
+					%span#total-price 0
+				.nights
+					%span Estimated Days:
+					%span#estimated-days 0
+		.pk-selections.right
+			%h2 Available Packages
+			.all-packages
+				- (0...INFO[@dest]["packages"].length).each do |i|
+					.package{"data-include" => INFO[@dest]["packages"][i]["included"]}
+						.pk-image
+							= image_tag INFO[@dest]["packages"][i]["image"], class: 'package-img'
+						.pk-desc
+							%h2=link_to INFO[@dest]["packages"][i]["name"], INFO[@dest]["packages"][i]["link"]
+							%span=INFO[@dest]["packages"][i]["cost"]
+		.conditions
+			= render "shared/social"
+			%h2 Terms and Conditions
+			%p.terms
+				Prices are in U.S Dollars, are true and accurate at time of printing, are valid for travel as specified, are valid for new bookings only.
+				All offers and inclusions are subject to availability and may change or be terminated without notice. Seasonal surcharge, availability, blackout dates and restrictions may apply.
+				Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash.
+				Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees.
+				It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
 %p#currencyRate{style: "display: none"}=@currencyData
 %p#dest{style: "display: none"}=@dest

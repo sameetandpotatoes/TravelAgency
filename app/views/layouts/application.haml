@@ -18,7 +18,7 @@
 		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= csrf_meta_tags
-	%body
+	%body{:itemscope => "", :itemtype => "https://www.toptiertraveling.com"}
 		%a#twitter-mention-button{"data-dnt" => "true", "data-related" => "toptiertravelin", "data-size" => "large", :href => "https://twitter.com/intent/tweet?screen_name=toptiertravelin&text=BlahBlahBlah", style: "display: none"} Tweet to @toptiertravelin
 		-if (current_page?(about_path) or current_page?(contact_path) or current_page?(home_path))
 			%header.header

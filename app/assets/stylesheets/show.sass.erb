@@ -1,6 +1,6 @@
 .parallax-1 > .container
 	position: relative
-	top: 10%
+	top: 4%
 
 .map
 	width: 50%
@@ -11,7 +11,7 @@
 	height: 480px
 .map-images
 	span
-		display: inline-block
+		// display: inline-block
 		background: black
 		&:hover img
 			opacity: 0.7
@@ -65,6 +65,7 @@
 	background-color: rgba(0, 0, 0, 0.6)
 	font-size: 18px
 	color: white
+	padding: 10px
 	.day
 		font-size: 22px
 		padding-bottom: 15px
@@ -236,6 +237,42 @@
 		opacity: 1
 .activity-title
 	display: inline-block
+
+//Flip stuff
+.flip-container
+	perspective: 1000
+	width: 500px
+	height: 157px
+
+.flipped
+	transform: rotateY(180deg)
+
+/* flip the pane when hovered
+.front, .back
+
+/* flip speed goes here
+.flipper
+	transition: 0.6s
+	transform-style: preserve-3d
+	position: relative
+
+/* hide back of pane during swap
+.front, .back
+	backface-visibility: hidden
+
+/* front pane, placed above back
+.front
+	z-index: 2
+	/* for firefox 31
+	transform: rotateY(0deg)
+
+/* back, initially hidden pane
+.back
+	transform: rotateY(180deg)
+	position: absolute
+	top: -20px
+	p
+		font-size: 11px
 
 @media all and (min-device-width: 320px) and (max-device-width: 480px)
 	.multiple-days

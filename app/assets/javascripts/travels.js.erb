@@ -46,13 +46,18 @@ $('.dest-activities input').change(function(e){
 
 //Handle selection of map images
 $('.map-images img').click(function(e){
+		//Makes it so that only one can be flipped currently
+		$('.flipper').removeClass("flipped");
+
 		var clickedImage = $(e.target);
-		var allDesc =$('.descriptions').children();
-		for (var i = 0; i < allDesc.length; i++){
-			$(allDesc[i]).css("display","none");
-		}
-		var desc = $(clickedImage).data("desc");
-		$("."+desc).css("display","block");
+		$(clickedImage).closest('.flipper').addClass("flipped");
+});
+$('.back').click(function(e){
+		//Makes it so that only one can be flipped currently
+		$('.flipper').removeClass("flipped");
+		
+		var clickedText = $(e.target);
+		$(clickedText).closest('.flipper').removeClass("flipped");
 });
 
 //Currency Handler
@@ -71,7 +76,9 @@ $('.facebook-social').on('click', function(){
 });
 
 $('.twitter-social').on('click', function(){
-	// window.location.href = 'https://twitter.com/intent/tweet?screen_name=toptiertravelin&button_hashtag=ThanksTopTier'
+	var text = document.title.split("| ")[1];
+	window.open('https://twitter.com/intent/tweet?url=&text=' + text + '&via=toptiertravelin&hashtags=ThanksTTT', '_blank');
 });
 
+//Travel package selections min height adjustment
 $($('.module')[3]).css("min-height", $('.pk-selections').height() + 150);

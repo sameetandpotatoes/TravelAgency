@@ -23,8 +23,7 @@ $('.row > div').on('click', function(){
 		setTimeout(function(){
 			$('.desc').css("opacity","1");
 			$('.desc p').text(vac_desc);
-			var html = '<a class="button-'+dest+' pure-button" href="/travels/'+dest+'">Find out more!</a>';
-			console.log(html);
+			var html = '<a class="pure-button" href="/travels/'+dest+'">Find out more!</a>';
 			var htmlObject = document.createElement('div');
 			htmlObject.className = "createdButton";
 			htmlObject.innerHTML = html;
@@ -39,11 +38,3 @@ $('.arrow').on('click', function(){
 		scrollTop : nextDiv.offset().top - 40
 	}, 500);
 });
-
-// $('.button-hawaii').on('click', function(){
-// 	window.location.href = "/travels/hawaii"
-// });
-//
-// $('.button-italy').on('click', function(){
-// 	window.location.href = "/travels/italy"
-// });
