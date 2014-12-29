@@ -19,12 +19,4 @@ TravelAgency::Application.configure do
     :enable_starttls_auto => true
   }
   config.static_cache_control = 'public, max-age=31536000'
-	# Use Pry instead of IRB
-  silence_warnings do
-    begin
-      require 'pry'
-      IRB = Pry
-    rescue LoadError
-    end
-  end
 end

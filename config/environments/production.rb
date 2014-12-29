@@ -22,5 +22,5 @@ TravelAgency::Application.configure do
       :authentication => "plain",
       :enable_starttls_auto => true
   }
-  config.static_cache_control = "public, max-age=2419200"
+  config.static_cache_control = "public, max-age=31536000"
 end
