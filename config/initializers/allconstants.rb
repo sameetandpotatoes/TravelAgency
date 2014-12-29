@@ -2,7 +2,7 @@ INFO = {
   'Hawaii' => {
     'meta' => "Hawaii, TopTierTraveling, Oahu, Maui, Big Island, Wailea Beach Marriott Resort",
     'first_image' => 'oahu2.jpg',
-    'second_image' => 'big2.jpg',
+    'second_image' => 'big3.jpg',
     'location' => [20.5114, -156.4964],
     'description'=> "The fresh, floral air energizes you. The warm, tranquil waters refresh you.
     The breathtaking, natural beauty renews you. Look around. There’s no place on earth like Hawaii.
@@ -15,11 +15,10 @@ INFO = {
         'name' => 'Oahu',
         'location' => [-157.9833, 21.4667],
         'images' => ['oahu1.jpg', 'oahu2.jpg', 'oahu3.jpg'],
-        'description'=> 'On the island of Oahu, learn to ride the waves in Waikiki where surfing was born
+        'description'=> 'On the island of Oahu, ride the waves in Waikiki where surfing was born
         or catch a big-wave surf meet on Oahu’s famed North Shore. Between sunrise and sunset, you’ll have
         hours to explore the hottest farm to table restaurants, browse the latest designer and local fashions,
-        check out the urban art scene in Chinatown or stroll into Hawaii’s history at Iolani Palace. When the
-        sun goes down, the “Heartbeat of Hawaii” awakens to a new beat, and it’s time to put on your dancing shoes.',
+        check out the urban art scene in Chinatown or stroll into Hawaii’s history at Iolani Palace.',
         'activities' => [{
           'name'=> 'Diamond Head',
           'cost'=> 100,
@@ -55,7 +54,7 @@ INFO = {
         local favorites that have been around for generations. Head to Wailuku for pastries from a “mom and pop”
         bakery, or head to Lahaina for a taste of Maui’s famed farm to table cuisine. From shimmering beaches and
         sacred Iao Valley to migrating humpback whales and sunset on Haleakala, it’s not surprising Maui was voted
-        the “Best Island” by the readers of Conde Nast Traveler for 19 years.',
+        the “Best Island” for 19 years.',
         'activities' => [{
           'name'=> 'Haleakalā National Park',
           'cost'=> 100,
@@ -65,7 +64,7 @@ INFO = {
           'cost'=> 100,
           'nights'=> 1
         },{
-          'name'=> 'King Kamehameha Golf Course Clubhouse',
+          'name'=> 'King Kamehameha Clubhouse',
           'cost'=> 100,
           'nights'=> 1
         },{
@@ -120,49 +119,49 @@ INFO = {
       }],
     'packages' => [{
         'name' => 'Hawaii Island: Hilton Waikoloa Village® Value Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Hawaii-Island/Offers/HAWBIGHILTONWVPKG2009052',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Hawaii-Island/Offers/HAWBIGHILTONWVPKG2009052',
         'cost' => '5 Nights from $719 per person',
         'image'=> 'costcotravel.png',
         'included'=> 'bigisland'
       },{
         'name' => 'Oahu: AULANI, A Disney Resort & Spa Spring Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWHNLAULANI20141107',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWHNLAULANI20141107',
         'cost' => '5 Nights from $1,055 per person',
         'image'=> 'costcotravel.png',
         'included'=> 'oahu'
       },{
         'name' => 'Maui: The Ritz-Carlton, Kapalua Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Maui/Offers/HAWOGGRITZKAPALUA20131218',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Maui/Offers/HAWOGGRITZKAPALUA20131218',
         'cost' => '5 Nights from $1,405 per person',
         'image'=> 'costcotravel.png',
         'included'=> 'maui'
       },{
         'name' => 'Oahu and Maui 2-Island Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWHNLOGG20140307',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWHNLOGG20140307',
         'cost' => '>7 Nights from $',
         'image'=> 'costcotravel.png',
         'included'=> 'oahu,maui'
       },{
         'name' => 'Oahu and Hawaii Island Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWHNLKOA20140313',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWHNLKOA20140313',
         'cost' => '>7 Nights from $',
         'image'=> 'costcotravel.png',
         'included'=> 'oahu,bigisland'
       },{
         'name' => 'Maui and Oahu: 2-Island Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWOAHTURTLEBAYBC20140121',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Oahu/Offers/HAWOAHTURTLEBAYBC20140121',
         'cost' => '>7 Nights from $',
         'image'=> 'costcotravel.png',
         'included'=> 'oahu,maui'
       },{
         'name' => 'Maui and Oahu: 2-Island Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWKOAHNL20140313',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWKOAHNL20140313',
         'cost' => '>7 Nights from $',
         'image'=> 'costcotravel.png',
         'included'=> 'oahu,maui'
       },{
         'name' => 'Maui and Hawaii Island: 2-Island Package',
-        'link'=> 'http=>//www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWOGGKOA20140313',
+        'link'=> 'http://www.costcotravel.com/Vacation-Packages/hawaii/Offers/HAWOGGKOA20140313',
         'cost' => '>7 Nights from $',
         'image'=> 'costcotravel.png',
         'included'=> 'maui,bigisland'
@@ -175,26 +174,19 @@ INFO = {
     'location' => [41.9000, 12.4833],
     'description'=> "Popularly known as the world's 'living art gallery', Italy is an exotic place of both
     art and architectural masterpieces created throughout history, attracting hundreds of thousands of travelers
-    each year. No visit to Italy is complete without a trip to see the most remarkable cathedral in Europe, the
-    Leaning Tower of Pisa. You can visit Rome to look for antique treasures from several of the world's most famous
+    each year. You can visit Rome to look for antique treasures from several of the world's most famous
     painters. Florence is awash in history with ancient churches, villas, and palazzos. Every turn in Venice is a
-    piece of history, whether it's a 13th century church, renaissance piazza, or monument. The Doge's Palace and the
-    Bridge of Sighs are just a couple landmarks.",
+    piece of history, whether it's a 13th century church, renaissance piazza, or monument.",
     'from' => '~ From the Country of Italy',
     'currency'=> 'EUR',
     'cities'=> [{
       'name' => 'Rome',
       'location' => [12.5000,41.9000],
       'images' => ['rome1.jpg', 'rome2.jpg', 'rome3.jpg'],
-      'description'=> 'Rome is the capital city of Italy and is Italy`s largest and most populous city. It is
+      'description'=> 'Rome is the capital city of Italy and is Italy`s most populous city. It is
       located in the central-western portion of the Italian peninsula, on the Tiber river. Rome`s history as a
       city spans over two and a half thousand years, as one of the founding cities of Western Civilization.
-      Even outside of the history of the Roman Empire, Rome has a significant place in the story of Christianity up
-      to the present day, for it endures as the home of the papacy. Today, Rome is a modern, cosmopolitan city, and
-      the third most-visited tourist destination in the European Union. The city, which is globally perceived as the
-      second most exciting and attractive city in the world according to City Brands Index, attracts over 26 million
-      tourists per year. Due to its influence in politics, media, the arts and culture, Rome has been described as a
-      global city.',
+      Today, Rome is a modern, cosmopolitan city, and the third most-visited tourist destination in the European Union.',
       'activities' => [{
         'name'=> 'Rome City Bike Tour',
         'cost'=> 100,
@@ -212,17 +204,12 @@ INFO = {
       'name' => 'Florence',
       'location' => [11.2500,43.7833],
       'images'=> [
-      'florence1.jpg', 'florence2.jpg', 'florence3.jpg'
+      'florence3.jpg', 'florence2.jpg', 'florence1.jpg'
       ],
-      'description'=> 'The birthplace of the Renaissance, Florence (Firenze) is possibly the most beautifully preserved
+      'description'=> 'The birthplace of the Renaissance, Florence is possibly the most beautifully preserved
       and artistically rich city in the world.  Here, artistic treasures and architectural masterpieces of the past blend
       with ancient streets lined with elegant boutiques, peaceful parks, streetside cafes offering steaming hot expresso
-      and fresh biscotti, unforgettable dining establishments and breathtaking views at every turn. Set in a valley on
-      the banks of the Arno, surrounded by olive groves and vineyards, Florence (Firenze) is one of the best-known and
-      best-loved cities of the world.  Striking buildings, treasure-filled galleries and ancient churches attest to the
-      nature of the Florentines to proudly display their riches for all to enjoy. With the historical part of the city
-      largely contained in a small area, many of the places to visit can be reached easily on foot where pedestrians often
-      mingle between the popular mopeds dashing through the city streets.',
+      and fresh biscotti, unforgettable dining establishments and breathtaking views at every turn.',
       'activities' => [{
         'name'=> 'Cupola del Brunelleschi',
         'cost'=> 100,
@@ -257,10 +244,7 @@ INFO = {
       'description'=> "Venice is a city in northern Italy, the capital of the region Veneto and is world famous
       for its canals. It is built on an archipelago of 118 islands formed by approximately 150 canals in a shallow
         lagoon. The islands are connected by around 400 bridges. Transportation within the city is by foot or on water.
-        It is considered by many to be one of the most beautiful cities in the world. Venice was also a very important
-        centre of commerce especially for silk, grain and spice trade and art in the 13th century up to the end of the
-        17th century. The classical Venetian boat is the gondola, although it is now mostly used for tourists, or for
-        weddings/funerals. Most Venetians now travel by motorised waterbuses (vaporetti) which ply regular routes along
+        The classical Venetian boat is the gondola, although it is now mostly used for tourists. Most Venetians now travel by motorised waterbuses (vaporetti) which ply regular routes along
         the major canals and between the city's islands.",
       'activities' => [{
         'name'=> 'Gondola Ride',
@@ -327,6 +311,6 @@ INFO = {
       }]
   },
   'Random' => {
-    'description' => "This is like Google's I'm Feeling Lucky button. Not sure where to go? Let us surprise you!"
+    'description' => "Not sure where to go? Let us surprise you with a random selections of one of our destination packages!"
   }
 }

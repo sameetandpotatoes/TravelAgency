@@ -79,13 +79,15 @@
 							%h2=link_to INFO[@dest]["packages"][i]["name"], INFO[@dest]["packages"][i]["link"]
 							%span=INFO[@dest]["packages"][i]["cost"]
 		.conditions
-			= render "shared/social"
-			%h2 Terms and Conditions
-			%p.terms
-				Prices are in U.S Dollars, are true and accurate at time of printing, are valid for travel as specified, are valid for new bookings only.
-				All offers and inclusions are subject to availability and may change or be terminated without notice. Seasonal surcharge, availability, blackout dates and restrictions may apply.
-				Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash.
-				Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees.
-				It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
+			.social
+				= render "shared/social"
+			.terms_conditions
+				%h2 Terms and Conditions
+				%p.terms
+					Prices are in U.S Dollars, are true and accurate at time of printing, are valid for travel as specified, are valid for new bookings only.
+					All offers and inclusions are subject to availability and may change or be terminated without notice. Seasonal surcharge, availability, blackout dates and restrictions may apply.
+					Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash.
+					Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees.
+					It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
 %p#currencyRate{style: "display: none"}=@currencyData
 %p#dest{style: "display: none"}=@dest

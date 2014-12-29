@@ -1,6 +1,6 @@
 .parallax-1 > .container
-	position: relative
-	top: 4%
+	position: absolute
+	bottom: 10px
 
 .map
 	width: 50%
@@ -19,13 +19,12 @@
 		width: 500px
 		height: 157px
 		display: block
-		-webkit-transition: all 0.3s linear
-		-moz-transition: all 0.3s linear
-		-ms-transition: all 0.3s linear
-		-o-transition: all 0.3s linear
-		transition: all 0.3s linear
-		&:hover
-			cursor: pointer
+		-webkit-transition: all 0.2s linear
+		-moz-transition: all 0.2s linear
+		-ms-transition: all 0.2s linear
+		-o-transition: all 0.2s linear
+		transition: all 0.2s linear
+
 .image
 	width: 100%
 	position: relative
@@ -44,9 +43,14 @@
 
 .single-day
 	float: left
-	display: inline-block
+	position: absolute
+	top: -125px
+	left: 0px
 .multiple-days
 	float: right
+	position: absolute
+	top: -125px
+	right: -75px
 	display: inline-block
 	width: 60%
 
@@ -82,7 +86,6 @@
 
 .show-header
 	font-size: 1.5em
-	font-family: 'Open Sans'
 	text-align: center
 	padding-top: 30px
 	padding-bottom: 10px
@@ -124,7 +127,7 @@
 .dest-activities
 	text-align: left
 	padding-left: 15%
-	font-size: 14px
+	font-size: 16px
 
 .package
 	min-width: 100%
@@ -149,7 +152,7 @@
 
 .terms
 	text-align: left
-	font-size: 9px
+	font-size: 12px
 
 .chk-selections
 	display: inline-block
@@ -161,11 +164,17 @@
 	display: inline-block
 	margin: 0 2%
 	width: 60%
+	overflow-y: scroll
 	h2
 		margin: 0
 
+.pk-desc a
+	color: #010133
+
 .conditions
 	clear: both
+	position: relative
+	top: 100px
 
 .currency_input
 	padding: 10px
@@ -243,6 +252,9 @@
 	perspective: 1000
 	width: 500px
 	height: 157px
+	padding: 2px 0
+	&:hover
+		cursor: pointer
 
 .flipped
 	transform: rotateY(180deg)
@@ -271,8 +283,19 @@
 	transform: rotateY(180deg)
 	position: absolute
 	top: -20px
+	h1
+		margin-bottom: 0px
 	p
-		font-size: 11px
+		font-size: 15px
+		text-align: left
+
+.social
+	display: inline
+	float: left
+	width: 33%
+
+.terms_conditions
+	display: inline
 
 @media all and (min-device-width: 320px) and (max-device-width: 480px)
 	.multiple-days

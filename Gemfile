@@ -29,6 +29,8 @@ end
 group :development do
 	gem 'quiet_assets'
 	gem 'pry-rails'
+  gem "thin"
+  gem 'better_errors'
 end
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
@@ -36,4 +38,6 @@ group :assets do
 end
 group :production, :staging do
   gem 'rails_12factor'
+  gem 'unicorn'
+  gem 'unicorn-rails'
 end

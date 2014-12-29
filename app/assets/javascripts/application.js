@@ -6,13 +6,13 @@
 //= require facebook.js.erb
 
 $(document).ready(function() {
-	if (isMobile.any()){
+	if (isMobile.any() || !home_page()){
 		$(".header").addClass('smaller');
 		$('.header-logo').addClass('smaller');
 	}
 	$(window).scroll(function() {
 			var scroll = $(window).scrollTop();
-			if (scroll >= 300 || isMobile.any()) {
+			if (scroll >= 300 || isMobile.any() || !home_page()) {
 					$(".header").addClass('smaller');
 					$('.header-logo').addClass('smaller');
 			} else {
@@ -25,6 +25,9 @@ $(document).ready(function() {
 		window.location.href = '/'
 	});
 });
+function home_page(){
+	return window.location.pathname == "/";
+}
 var isMobile = {
 	Android: function() {
 		return navigator.userAgent.match(/Android/i);
