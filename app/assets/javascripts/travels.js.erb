@@ -44,20 +44,8 @@ $('.dest-activities input').change(function(e){
 	});
 });
 
-//Handle selection of map images
-$('.map-images img').click(function(e){
-		// //Makes it so that only one can be flipped currently
-		// $('.flipper').removeClass("flipped");
-
-		var clickedImage = $(e.target);
-		$(clickedImage).closest('.flipper').addClass("flipped");
-});
-$('.back').click(function(e){
-		// //Makes it so that only one can be flipped currently
-		// $('.flipper').removeClass("flipped");
-
-		var clickedText = $(e.target);
-		$(clickedText).closest('.flipper').removeClass("flipped");
+$('.flipper').click(function(e){
+	$(e.currentTarget).toggleClass('flip');
 });
 
 //Currency Handler
@@ -81,5 +69,6 @@ $('.twitter-social').on('click', function(){
 });
 
 //Travel package selections min height adjustment
+$('section.module.parallax').css("min-height",$(window).height() + 100);
 $($('.module')[3]).css("min-height", $('.pk-selections').height() + 300);
 $('.pk-selections').css("height",$('.chk-selections').height());

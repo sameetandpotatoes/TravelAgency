@@ -42,10 +42,10 @@ function mapClickHandler(e){
   // $('.flipper').removeClass("flipped");
 
   //Toggle
-  if ($('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').hasClass("flipped")){
-    $('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').removeClass('flipped');
+  if ($('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').hasClass("flip")){
+    $('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').removeClass('flip');
   } else{
-    $('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').addClass('flipped');
+    $('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').addClass('flip');
   }
 }
 initialize_map();

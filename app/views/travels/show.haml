@@ -22,7 +22,7 @@
 								= image_tag INFO[@dest]["cities"][i]["images"][0], data: {desc: "desc-#{i+1}"}
 							%h2=INFO[@dest]["cities"][i]["name"]
 						.back
-							%h1 #{INFO[@dest]["cities"][i]["name"]}
+							%h1=INFO[@dest]["cities"][i]["name"]
 							%p=INFO[@dest]["cities"][i]["description"]
 %section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
 	.container
@@ -36,7 +36,7 @@
 					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
 				%p.bold #{@weatherData[0]["conditions"]}
 			.multiple-days
-				- @weatherData = @weatherData[1..4] #Grabs the first three days of weather
+				- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
 				- @weatherData.each do |element|
 					.weather-day.inline
 						%p.bold.day=element["date"]["weekday"]
