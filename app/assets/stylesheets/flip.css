@@ -19,6 +19,9 @@
 
   position: relative;
 }
+.flipper:hover{
+  cursor: pointer;
+}
 
 .front, .back {
   -webkit-backface-visibility: hidden;

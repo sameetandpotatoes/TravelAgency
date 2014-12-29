@@ -125,8 +125,13 @@ a, a:hover, a:visited
 
 .vacspots a, .info-links a
   border-radius: 3px
+  -webkit-transition: all 0.3s
+  -moz-transition: all 0.3s
+  -ms-transition: all 0.3s
+  -o-transition: all 0.3s
   transition: all 0.3s
   padding: 5px 10px
+  text-decoration: none
   &:hover, .active
     background-color: gray
 
@@ -148,7 +153,7 @@ footer a
   vertical-align: top
 
 .vacation-show
-  margin: 40px 0
+  margin: 20px 0
 
 .description
   width: 49%
@@ -168,6 +173,8 @@ footer a
     width: 30%
     top: 100px
     right: 0
+  img
+    max-height: 400px
 
 .arrow
   background: rgb(0, 0, 0)
@@ -247,11 +254,10 @@ footer a
     font-size: 20px
 
 .centered
-  margin-top: 5%
   width: 100%
   text-align: center
   h1
-    margin-bottom: 0px
+    margin: 0 auto
 
 .grayscale
   -webkit-filter: grayscale(100%)

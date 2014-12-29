@@ -76,7 +76,7 @@
 						.pk-image
 							= image_tag INFO[@dest]["packages"][i]["image"], class: 'package-img'
 						.pk-desc
-							%h2=link_to INFO[@dest]["packages"][i]["name"], INFO[@dest]["packages"][i]["link"]
+							%h2=link_to INFO[@dest]["packages"][i]["name"], INFO[@dest]["packages"][i]["link"], target: "_blank"
 							%span=INFO[@dest]["packages"][i]["cost"]
 		.conditions
 			.social

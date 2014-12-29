@@ -150,6 +150,10 @@
 	h2
 		margin: 0
 		font-size: 18px
+	a
+		color: #2A5DB0
+		&:hover
+			color: #2200CC
 
 .terms
 	text-align: left
@@ -168,9 +172,6 @@
 	overflow-y: scroll
 	h2
 		margin: 0
-
-.pk-desc a
-	color: #010133
 
 .conditions
 	clear: both
@@ -362,6 +363,8 @@
 		width: 100%
 
 @media (max-width: 768px)
+	.multiple-days > .weather-day:nth-child(n+2)
+		display: none
 	section.module.parallax .container > h1
 		font-size: 1.5em
 	section.module.parallax .container > p

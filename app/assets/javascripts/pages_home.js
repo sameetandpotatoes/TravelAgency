@@ -35,6 +35,6 @@ $('.row > div').on('click', function(){
 $('.arrow').on('click', function(){
 	var nextDiv = $(this).parent().next();
 	$('body,html').animate({
-		scrollTop : nextDiv.offset().top - 40
+		scrollTop : nextDiv.offset().top - 80
 	}, 500);
 });

@@ -25,10 +25,10 @@
 			.content#content#adjust-content
 				= yield
 		-else
-		%header.header
-			= render partial: "/pages/headercontent"
-		.content#content
-			= yield
+			%header.header
+				= render partial: "/pages/headercontent"
+			.content#content
+				= yield
 		%footer
 			.info-links
 				.info-link
