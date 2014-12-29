@@ -3,7 +3,7 @@ TravelAgency::Application.configure do
   config.eager_load = true
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.serve_static_assets = false
+  config.serve_static_assets = true
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
   config.assets.compile = false
@@ -22,5 +22,5 @@ TravelAgency::Application.configure do
       :authentication => "plain",
       :enable_starttls_auto => true
   }
-  config.static_cache_control = 'public, max-age=31536000'
+  config.static_cache_control = "public, max-age=2419200"
 end

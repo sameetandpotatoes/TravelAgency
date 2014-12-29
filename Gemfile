@@ -23,6 +23,7 @@ gem 'rack-cache'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'compass-rails'
 gem "compass", "~> 0.12.1"
+gem 'newrelic_rpm'
 group :doc do
   gem 'sdoc', require: false
 end
