@@ -44,6 +44,7 @@
 						%i.fa.fa-comments-o
 						%span Contact
 			#fb-root
+		%script{:async => "", :defer => "defer", :src => "https://apis.google.com/js/platform.js"}
 		= javascript_include_tag "#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}"
 		= javascript_include_tag params[:controller]
 		:javascript
