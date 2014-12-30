@@ -8,4 +8,5 @@ TravelAgency::Application.routes.draw do
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
   post '/contact', to: 'pages#create', as: 'send'
+  post '/favorites' => 'favorites#create'
 end

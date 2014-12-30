@@ -67,3 +67,16 @@ $('.twitter-social').on('click', function(){
 $('section.module.parallax').css("min-height",$(window).height() + 100);
 $($('.module')[3]).css("min-height", $('.pk-selections').height() + 300);
 $('.pk-selections').css("height",$('.chk-selections').height());
+
+$('.favorite').on('click', function(e){
+	e.preventDefault();
+	params = {}
+	params['package'] = $(e.currentTarget).attr("href");
+	params['activities'] = $('.squareChkBox input:checked').map(function() { return this.id } ).toArray();
+	$.ajax({
+		type: "POST",
+		url: '/favorites',
+		dataType: "script",
+		data: params
+	});
+});

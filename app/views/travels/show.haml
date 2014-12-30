@@ -45,20 +45,18 @@
 	.container
 		%h1 Select your packages
 		.chk-selections.left
-			- @ID = 0
-			- (0..2).each do |i|
+			- 3.times do |i|
 				.new-activities
 					%h1=INFO[@dest]["cities"][i]["name"]
-					- (0...INFO[@dest]["cities"][i]["activities"].length).each do |j|
+					- @list_activities = INFO[@dest]["cities"][i]["activities"]
+					- @list_activities.each do |activity_id|
 						.dest-activities
 							.squareChkBox
-								%input{id: "#{@ID}", name: "#{INFO[@dest]['cities'][i]['name'].downcase.gsub(/\s+/, "")}",
-								type: 'checkbox', value: INFO[@dest]['cities'][i]["activities"][j]["cost"], "data-days" => INFO[@dest]['cities'][i]["activities"][j]["nights"]}/
-							-# %input{id: i + ' ' + j, name: INFO[@dest]['cities'][i]['name'].lowercase, type: "checkbox", value: INFO[@dest]['cities'][i]['name']['cost'], "data-days" : INFO[@dest]['cities'][i]['nights']}/
-								%label{:for => "#{@ID}"}
-								- @ID+=1
+								%input{id: "#{activity_id}", name: "#{INFO[@dest]['cities'][i]['name'].downcase.gsub(/\s+/, "")}",
+								type: 'checkbox', value: ACTIVITIES[activity_id]["cost"], "data-days" => ACTIVITIES[activity_id]["nights"]}/
+								%label{:for => "#{activity_id}"}
 							.activity-title
-								%p=INFO[@dest]["cities"][i]["activities"][j]["name"]
+								%p=ACTIVITIES[activity_id]["name"]
 			.calculations
 				.price
 					%span Total Price: $
@@ -69,13 +67,15 @@
 		.pk-selections.right
 			%h2 Available Packages
 			.all-packages
-				- (0...INFO[@dest]["packages"].length).each do |i|
-					.package{"data-include" => INFO[@dest]["packages"][i]["included"]}
+				- @packages = INFO[@dest]["packages"]
+				- @packages.each do |pk_id|
+					.package{"data-include" => PACKAGES[pk_id]["included"]}
 						.pk-image
-							= image_tag INFO[@dest]["packages"][i]["image"], class: 'package-img'
+							= image_tag PACKAGES[pk_id]["image"], class: 'package-img'
 						.pk-desc
-							%h2=link_to INFO[@dest]["packages"][i]["name"], INFO[@dest]["packages"][i]["link"], target: "_blank"
-							%span=INFO[@dest]["packages"][i]["cost"]
+							%h2=link_to PACKAGES[pk_id]["name"], PACKAGES[pk_id]["link"], target: "_blank"
+							%span=PACKAGES[pk_id]["cost"]
+							%a.favorite{href: "#{pk_id}"} Favorite
 		.conditions
 			.social
 				= render "shared/social"
