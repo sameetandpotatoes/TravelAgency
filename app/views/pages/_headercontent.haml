@@ -5,8 +5,17 @@
 	\#{image_tag("logo.png", :class=>"header-logo")}
 %nav.vacspots
 	%span
-		= link_to "Hawaii", hawaii_path
+		-if(current_page?(hawaii_path))
+			= link_to "Hawaii", hawaii_path, class: 'active_tab'
+		-else
+			= link_to "Hawaii", hawaii_path
 	%span
-		= link_to "Italy", italy_path
+		-if(current_page?(italy_path))
+			= link_to "Italy", italy_path, class: 'active_tab'
+		-else
+			= link_to "Italy", italy_path
 	%span
-		= link_to "Vac 3", "/"
+		-if(current_page?(china_path))
+			= link_to "China", china_path, class: 'active_tab'
+		-else
+			= link_to "China", china_path

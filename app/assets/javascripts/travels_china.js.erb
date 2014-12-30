@@ -1,4 +1,4 @@
-<% current_dest = 'Italy' %>
+<% current_dest = 'China' %>
 var dest_1 = "<%= INFO[current_dest]['cities'][0]['name'].downcase.gsub(/\s+/, '') %>";
 var dest_2 = "<%= INFO[current_dest]['cities'][1]['name'].downcase.gsub(/\s+/, '') %>";
 var dest_3 = "<%= INFO[current_dest]['cities'][2]['name'].downcase.gsub(/\s+/, '') %>";
@@ -12,7 +12,7 @@ var colors = ['#f86767','#f86767','#f86767'];
 function initialize_map(){
   L.mapbox.accessToken = "<%= ENV['MAPBOX_ACCESS'] %>";
   map = L.mapbox.map('hawaii-map', "<%= ENV['MAPBOX_MAP'] %>");
-  map.setView(<%= INFO[current_dest]['location'] %>, 5);
+  map.setView(<%= INFO[current_dest]['location'] %>, 4);
   map.dragging.disable();
   map.touchZoom.disable();
   map.doubleClickZoom.disable();

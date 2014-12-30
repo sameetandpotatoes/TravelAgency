@@ -13,13 +13,13 @@
 			%h1 Geographically and visually understand the individual cities we have to offer
 	.description-welcome
 		%h1 Our Mission
-		%p At TopTierTraveling, we deliver global corporate travel solutions that meet the complex demands of companies and their travelers. Building on TopTierTraveling's legacy of innovation in online travel and its multinational footprint, we offer a full service and fully integrated approach to travel and expense management. By combining leading technology with expert support, we've helped hundreds of consumers achieve the savings they need.
+		%p At TopTierTraveling, we deliver global corporate travel solutions that meet the complex demands of companies and their travelers. Building on TopTierTraveling's legacy of innovation in online travel and its multinational footprint, we offer a full service and fully integrated approach to travel and expense management. By combining leading technology with expert support, we've helped hundreds of consumers discover the world's wonders.
 	.arrow
 		%i.fa.fa-angle-down.fa-lg
 .vacation-show.section
 	.centered
 		%h1 Learn about our destinations!
-		.row
+		.row#moveLeft
 			%div{"data-desc" => "#{INFO["Hawaii"]["description"]}"}
 				%h1 Hawaii
 				=image_tag("big3.jpg")
@@ -29,10 +29,10 @@
 		.desc-texts
 			.desc
 				%p
-		.row
-			%div{"data-desc" => "#{INFO["Hawaii"]["description"]}"}
-				%h1 Vac 3
+		.row#moveRight
+			%div{"data-desc" => "#{INFO["China"]["description"]}"}
+				%h1 China
 				=image_tag("rome3.jpg")
 			%div{"data-desc" => "#{INFO["Random"]["description"]}"}
-				%h1 Random
+				%h1 Lucky?
 				=image_tag("random.png")

@@ -6,7 +6,7 @@
 %section.module.parallax.parallax-1{style: "background-image: url(#{asset_path INFO[@dest]["first_image"]})"}
 	.container
 		%h1 Welcome to #{@dest}
-		%p=INFO[@dest]["description"]
+		%p "#{INFO[@dest]["description"]}"
 		%p{style: "text-align: right;"}=INFO[@dest]["from"]
 %section.module.content
 	.container

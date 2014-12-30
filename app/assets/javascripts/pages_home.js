@@ -17,7 +17,7 @@ $('.row > div').on('click', function(){
 	$('.desc').css("opacity","0");
 	$('.desc p').text("");
 	$('.desc').css("width","0px");
-	$('.createdButton').remove()
+	$('.createdButton').remove();
 	setTimeout(function(){
 		$('.desc').css("width","600px");
 		setTimeout(function(){
@@ -38,3 +38,19 @@ $('.arrow').on('click', function(){
 		scrollTop : nextDiv.offset().top - 80
 	}, 500);
 });
+
+$('#moveLeft div').hover(
+	function(){ //Mouse on
+		$(this).stop().animate({right: 20}, 100);
+	}, function() { //Mouse off
+		$(this).stop().animate({right: 0}, 100);
+	}
+);
+
+$('#moveRight div').hover(
+	function(){ //Mouse on
+		$(this).stop().animate({left: 20}, 100);
+	}, function() { //Mouse off
+		$(this).stop().animate({left: 0}, 100);
+	}
+);

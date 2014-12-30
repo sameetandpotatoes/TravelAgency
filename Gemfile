@@ -7,8 +7,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'asset_packager', '~> 0.2.0'
-gem 'newrelic_rpm'
 gem 'sitemap_generator'
+gem 'jscrollpane-rails'
 gem 'actionpack-page_caching'
 gem 'figaro'
 gem 'haml'
@@ -16,8 +16,6 @@ gem 'haml-rails'
 gem 'cloudinary'
 gem 'rack-cache'
 gem 'rack-cors', :require => 'rack/cors'
-# gem 'compass-rails'
-# gem "compass", "~> 0.12.1"
 gem 'newrelic_rpm'
 group :doc do
   gem 'sdoc', require: false

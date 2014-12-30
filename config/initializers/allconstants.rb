@@ -1,14 +1,13 @@
 INFO = {
   'Hawaii' => {
-    'meta' => "Hawaii, TopTierTraveling, Oahu, Maui, Big Island, Wailea Beach Marriott Resort",
+    'meta' => "Hawaii, TopTierTraveling, Oahu, Maui, Big Island",
     'first_image' => 'oahu2.jpg',
     'second_image' => 'big3.jpg',
     'location' => [20.5114, -156.4964],
-    'description'=> "The fresh, floral air energizes you. The warm, tranquil waters refresh you.
-    The breathtaking, natural beauty renews you. Look around. There’s no place on earth like Hawaii.
-    Whether you're a new visitor or returning, our six unique islands offer distinct experiences that
-    will entice any traveler. We warmly invite you to explore our islands and discover your ideal
-    travel experience.",
+    'description'=> "Tantalized by the fresh smelling air. Calmed by the refreshing waters. Awed by the breathtaking,
+    natural beauty that renews you. Look around. There’s no place on earth quite like Hawaii.
+    Whether you're a new visitor or a familiar face, our six unique islands offer distinct experiences that
+    will entice any traveler. We warmly invite you to explore our islands and discover the top tier difference.",
     'from' => '~ From the State of Hawaii',
     'currency'=> 'USD',
     'cities'=> [{
@@ -309,6 +308,156 @@ INFO = {
       'image'=> 'costcotravel.png',
       'included'=> 'florence,venice'
       }]
+  },
+  'China' => {
+    'meta' => "",
+    'first_image' => 'beijing2.jpg',
+    'second_image' => 'tibet1.jpg',
+    'location' => [35.0000, 103.0000],
+    'description'=> "China, an ancient, mysterious and beautiful land, is always appealing to adventurous foreign
+    visitors. As the third largest country in the world occupying an area of 9,600,000 sq km, A wide variety of
+    terrain and climate shape its numerous natural attractions. Abundant in a variety of resources, plants,
+    animals, and minerals, the land has nurtured countless generations of Chinese people.",
+    'from' => "~ From the People's Republic of China",
+    'currency'=> 'CNY',
+    'cities'=> [{
+      'name' => 'Beijing',
+      'location' => [116.3917,39.9139],
+      'images' => ['beijing1.jpg', 'beijing2.jpg', 'beijing1.jpg'],
+      'description'=> "Beijing, the heart of China, is always the first choice of travelers who are willing to
+      know a time-honored and developed city of China. It has been the political, economic and cultural center
+      of China for over 800 years from the Yuan Dynasty. The numerous royal buildings with long history endow it
+      with incomparable charm, not only the 'Nation's Best', but also the 'World's Best'.",
+      'activities' => [{
+        'name'=> 'Great Wall at Mutianyu',
+        'cost'=> 80,
+        'nights'=> 1
+      },{
+        'name'=> 'Great Wall at Huanghuacheng',
+        'cost'=> 80,
+        'nights'=> 1
+      },{
+        'name'=> 'The Great Wall of Jiankou',
+        'cost'=> 80,
+        'nights'=> 1
+      },{
+        'name'=> 'Summer Palace (Yiheyuan)',
+        'cost'=> 219,
+        'nights'=> 1
+      },{
+        'name'=> 'Jingshan Park',
+        'cost'=> 75,
+        'nights'=> 1
+      },{
+        'name'=> 'Golden Mask Dynasty Show',
+        'cost'=> 80,
+        'nights'=> 1
+      }]
+    },{
+      'name' => "Xi'an",
+      'location' => [108.9000,34.2667],
+      'images'=> ['xian1.jpg'],
+      'description'=> "Xian, located in central-northwest China, records the great changes of the country
+      just like a living history book. Called Chang'an (meaning the eternal city) in ancient times, it is
+      one of the birthplaces of the ancient Chinese civilization in the Yellow River Basin area. As the
+      eastern terminal of the Silk Road and the site of the famous Terracotta Warriors of the Qin Dynasty,
+      the city has won a historical and cultural reputation all over the world.",
+      'activities' => [{
+        'name'=> 'Terracotta Warriors Tour',
+        'cost'=> 100,
+        'nights'=> 1
+      },{
+        'name'=> 'The Museum of Qin Terracotta',
+        'cost'=> 327,
+        'nights'=> 1
+      },{
+        'name'=> 'Tomb of Empror Jingdi',
+        'cost'=> 90,
+        'nights'=> 1
+      },{
+        'name'=> 'Shaanxi History Museum',
+        'cost'=> 70,
+        'nights'=> 1
+      },{
+        'name'=> "Big Wild Goose Pagoda",
+        'cost'=> 1690,
+        'nights'=> 1
+      },{
+        'name'=> "Xi'an Museum",
+        'cost'=> 29,
+        'nights'=> 1
+      }]
+  },{
+    'name' => 'Tibet',
+    'location' => [87.0900, 32.2700],
+    'images'=> ['tibet2.jpg', 'tibet1.jpg'],
+    'description'=> "A country steeped in mysticism and sublime natural beauty Tibet is for
+    the dreamer, the wanderer, the adventurer, and those of us just looking to relax. With
+    its beautiful monasteries, blaadlfkasldkfjadsf, and a;lsdkgja;lsdkfjasl;dfj, your
+    journey is sure to be eventful.",
+    'activities' => [{
+      'name'=> 'Jokhang Temple',
+      'cost'=> 1625,
+      'nights'=> 1
+    },{
+      'name'=> 'Xianzu Island',
+      'cost'=> 100,
+      'nights'=> 1
+    },{
+      'name'=> "Luozi Peak",
+      'cost'=> 100,
+      'nights'=> 1
+    },{
+      'name'=> "Paxia Monastery",
+      'cost'=> 100,
+      'nights'=> 1
+    },{
+      'name'=> 'Yalong Scenic Resort',
+      'cost'=> 100,
+      'nights'=> 1
+    },{
+      'name'=> 'Xiuba Ancient Castle',
+      'cost'=> 100,
+      'nights'=> 1
+    }]
+  }],
+  'packages' => [{
+    'name' => 'Taste of Rome and Tuscany: Your Way',
+    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURROMFLRPKG20080324',
+    'cost' => '7 Nights',
+    'image'=> 'costcotravel.png',
+    'included'=> 'rome,florence'
+  },{
+    'name' => 'Venice, Florence and Rome: Your Way',
+    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURVCEFLRROM20081219',
+    'cost' => '9 Nights',
+    'image'=> 'costcotravel.png',
+    'included'=> 'rome,florence,venice'
+  },{
+    'name' => 'Sorrento, Rome, Florence and Venice: Your Way',
+    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURRROROMFLRVCE20120817',
+    'cost' => '12 Nights',
+    'image'=> 'costcotravel.png',
+    'included'=> 'rome,florence,venice'
+  },{
+    'name' => 'Rome: Your Way Package',
+    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Italy/Offers/EURROMYOURWAY20081031',
+    'cost' => '3 Nights',
+    'image'=> 'costcotravel.png',
+    'included'=> 'rome'
+  },{
+    'name' => 'Rome, Florence and Paris',
+    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURROMFLRPARDAY20110801',
+    'cost' => '10 Nights',
+    'image'=> 'costcotravel.png',
+    'included'=> 'rome,florence'
+  },{
+    'name' => 'Florence and Venice: Your Way Package',
+    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURFLRVCEPKG20090909',
+    'cost' => '7 Nights',
+    'image'=> 'costcotravel.png',
+    'included'=> 'florence,venice'
+  }]
   },
   'Random' => {
     'description' => "Not sure where to go? Let us surprise you with a random selections of one of our destination packages!"

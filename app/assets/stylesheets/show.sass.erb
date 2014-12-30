@@ -167,9 +167,9 @@
 
 .pk-selections
 	display: inline-block
-	margin: 0 0%
+	margin: 0
 	width: 70%
-	overflow-y: scroll
+	overflow: auto
 	h2
 		margin: 0
 
@@ -202,151 +202,9 @@
 	margin: 1px auto
 	position: relative
 	display: inline-block
-	// label
-	// 	cursor: pointer
-	// 	position: absolute
-	// 	width: 20px
-	// 	height: 20px
-	// 	top: 0
-	// 	border-radius: 4px
-	// 	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5)
-	// 	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5)
-	// 	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5)
-	// 	background: #fcfff4
-	// 	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%)
-	// 	background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%)
-	// 	background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%)
-	// 	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%)
-	// 	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%)
-	// 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 )
-	// 	&:after
-	// 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
-	// 		filter: alpha(opacity = 0)
-	// 		opacity: 0
-	// 		content: ''
-	// 		position: absolute
-	// 		width: 9px
-	// 		height: 5px
-	// 		background: transparent
-	// 		top: 4px
-	// 		left: 4px
-	// 		border: 3px solid #333
-	// 		border-top: none
-	// 		border-right: none
-	// 		-webkit-transform: rotate(-45deg)
-	// 		-moz-transform: rotate(-45deg)
-	// 		-o-transform: rotate(-45deg)
-	// 		-ms-transform: rotate(-45deg)
-	// 		transform: rotate(-45deg)
-	// 	&:hover::after
-	// 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"
-	// 		filter: alpha(opacity = 30)
-	// 		opacity: 0.5
-	// input[type=checkbox]:checked + label:after
-	// 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
-	// 	filter: alpha(opacity = 100)
-	// 	opacity: 1
 
 .activity-title
 	display: inline-block
-
-// .flip-container
-// 	perspective: 1000
-// 	width: 500px
-// 	height: 157px
-// 	padding: 2px 0
-// 	transform-style: preserve-3d
-// 	&:hover
-// 		.back
-// 			transform: rotateY(0deg)
-// 		.front
-// 			transform: rotateY(180deg)
-//
-// .flipped:hover .front
-// 	transform: rotateY(180deg)
-//
-// .flipper
-// 	transition: 0.6s
-// 	transform-style: preserve-3d
-// 	position: relative
-//
-// .front, .back
-// 	backface-visibility: hidden
-// 	transition: 0.6s
-// 	transform-style: preserve-3d
-// 	position: absolute
-// 	top: 0
-// 	left: 0
-//
-// .front
-// 	z-index: 2
-// 	transform: rotateY(0deg)
-//
-// .back
-// 	transform: rotateY(-180deg)
-// 	position: absolute
-// 	top: -20px
-// 	h1
-// 		margin-bottom: 0px
-// 	p
-// 		font-size: 15px
-// 		text-align: left
-//
-// .vertical
-// 	&.flip-container
-// 		position: relative
-// 	.back
-// 		transform: rotateX(180deg)
-// 	&.flip-container:hover
-// 		.back
-// 			transform: rotateX(0deg)
-// 		.front
-// 			transform: rotateX(180deg)
-
-// //Flip stuff
-// .flip-container
-// 	perspective: 1000
-// 	width: 500px
-// 	height: 157px
-// 	padding: 2px 0
-// 	&:hover
-// 		cursor: pointer
-//
-// .flip-container:hover .flipper, .flip-container.hover .flipper
-// 	transform: rotateY(180deg)
-//
-// .flipped
-// 	transform: rotateY(180deg)
-//
-// /* flip the pane when hovered
-// .front, .back
-//
-// /* flip speed goes here
-// .flipper
-// 	transition: 0.6s
-// 	transform-style: preserve-3d
-// 	position: relative
-//
-// /* hide back of pane during swap
-// .front, .back
-// 	backface-visibility: hidden
-//
-// /* front pane, placed above back
-// .front
-// 	z-index: 2
-// 	/* for firefox 31
-// 	transform: rotateY(0deg)
-//
-// /* back, initially hidden pane
-// .back
-// 	transform: rotateY(180deg)
-// 	position: absolute
-// 	top: -20px
-// 	h1
-// 		margin-bottom: 0px
-// 	p
-// 		font-size: 15px
-// 		text-align: left
 
 .social
 	display: inline
@@ -355,6 +213,16 @@
 
 .terms_conditions
 	display: inline
+
+//Scrollbar
+.jspDrag
+	background: none repeat scroll 0 0 #A9A9A9 !important
+
+.jspTrack
+	background: none repeat scroll 0 0 #F5F5F5 !important
+
+.jspArrow
+	background: none repeat scroll 0 0 #878787 !important
 
 @media (max-width: 414px)
 	.multiple-days

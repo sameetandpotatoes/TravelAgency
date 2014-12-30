@@ -1,11 +1,6 @@
-// var link = document.createElement('a');
-// link.setAttribute('href', 'https://twitter.com/share');
-// link.setAttribute('class', 'twitter-share-button');
-// link.setAttribute('style', 'width: 48px; height: 48px;');
-// link.setAttribute("data-text" , "TopTierTraveling is awesome" );
-// link.setAttribute("data-size" ,"large");
-// document.getElementById('twitter-social').appendChild(link);
-// twttr.widgets.load();
+$(document).ready(function(){
+	$('.pk-selections').jScrollPane({showArrows: true,horizontalGutter: 10});
+});
 
 //Individual Activities Handler
 $('.dest-activities input').change(function(e){

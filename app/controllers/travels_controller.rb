@@ -14,7 +14,13 @@ class TravelsController < ApplicationController
 		render "show"
 	end
 
+	def china
+		@dest = "China"
+		@weatherData = get_weather(INFO[@dest]["location"])
+		render "show"
+	end
+
 	def random
-		send([:hawaii, :italy].sample)
+		send([:hawaii, :italy, :china].sample)
 	end
 end

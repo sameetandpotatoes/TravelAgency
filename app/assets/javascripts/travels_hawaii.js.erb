@@ -3,7 +3,7 @@ var dest_1 = "<%= INFO[current_dest]['cities'][0]['name'].downcase.gsub(/\s+/, '
 var dest_2 = "<%= INFO[current_dest]['cities'][1]['name'].downcase.gsub(/\s+/, '') %>";
 var dest_3 = "<%= INFO[current_dest]['cities'][2]['name'].downcase.gsub(/\s+/, '') %>";
 var map;
-
+var myLayer;
 var coords = [<%= INFO[current_dest]['cities'][0]['location'] %>, <%= INFO[current_dest]['cities'][1]['location'] %>, <%= INFO[current_dest]['cities'][2]['location'] %>];
 var titles = ["<%= INFO[current_dest]['cities'][0]['name'] %>", "<%= INFO[current_dest]['cities'][1]['name'] %>", "<%= INFO[current_dest]['cities'][2]['name'] %>"];
 var desc = ['desc-1', 'desc-2', 'desc-3'];
@@ -13,40 +13,50 @@ function initialize_map(){
 	L.mapbox.accessToken = "<%= ENV['MAPBOX_ACCESS'] %>";
 	map = L.mapbox.map('hawaii-map', "<%= ENV['MAPBOX_MAP'] %>");
 	map.setView(<%= INFO[current_dest]['location'] %>, 7);
-	// map.dragging.disable();
+	map.dragging.disable();
 	map.touchZoom.disable();
 	map.doubleClickZoom.disable();
 	map.scrollWheelZoom.disable();
 	if (map.tap) map.tap.disable();
+	myLayer = L.mapbox.featureLayer().addTo(map);
 }
 
 function overlay_markers(){
+	var features = [];
 	for (var i = 0; i < 3; i++){
-		L.mapbox.featureLayer({
+		var hash = {
 			type: 'Feature',
+			properties: {
+				title: titles[i],
+				'marker-color': colors[i],
+				'marker-size': 'large',
+				'marker-symbol': 'star',
+				dest: desc[i]
+			},
 			geometry: {
 				type: 'Point',
 				coordinates: coords[i]
-			},
-			properties: {
-				title: titles[i],
-				dest: desc[i],
-				'marker-color': colors[i]
 			}
-		}).addTo(map).on('click', mapClickHandler);
+		};
+		features.push(hash);
 	}
+	var geojson = {
+		type: 'FeatureCollection',
+		features: features
+	};
+	myLayer.setGeoJSON(geojson);
+	myLayer.on('mouseover', function(e) {
+		e.layer.openPopup();
+		mapClickHandler(e);
+	});
+	myLayer.on('mouseout', function(e) {
+		e.layer.closePopup();
+		mapClickHandler(e);
+	});
 }
 
 function mapClickHandler(e){
-	// //Makes it so that only one can be flipped currently
-	// $('.flipper').removeClass("flipped");
-
-	//Toggle
-	if ($('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').hasClass("flip")){
-		$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').removeClass('flip');
-	} else{
-		$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').addClass('flip');
-	}
+	$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').toggleClass("flip");
 }
 
 initialize_map();
