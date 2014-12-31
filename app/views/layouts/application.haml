@@ -18,18 +18,17 @@
 		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= csrf_meta_tags
 	%body{:itemscope => "", :itemtype => "https://www.toptiertraveling.com"}
-		%a#twitter-mention-button{"data-dnt" => "true", "data-related" => "toptiertravelin", "data-size" => "large", :href => "https://twitter.com/intent/tweet?screen_name=toptiertravelin&text=BlahBlahBlah", style: "display: none"} Tweet to @toptiertravelin
-		-if (current_page?(about_path) or current_page?(contact_path) or current_page?(home_path))
+		-if !request.path.starts_with?("/travels")
 			%header.header
 				= render partial: "/pages/headercontent"
-			.content#content#adjust-content
+			.content
 				= yield
 		-else
-			%header.header
+			%header.header.fixed
 				= render partial: "/pages/headercontent"
 			.content#content
 				= yield
-		%footer
+		.footer
 			.info-links
 				.info-link
 					%a{href: "/"}

@@ -22,33 +22,46 @@ $('.dest-activities input').change(function(e){
 			}
 		}
 	});
+	$('.package').removeClass('active');
 
 	$('#total-price').text(sum);
-	$('#estimated-days').text(nights + " nights");
+	var conversion = parseFloat($('#currencyRate').text());
+	if (conversion != 1){
+		var unit = $('#currencyUnit').text();
+		$('#currency_convert').text("(" + Number((conversion * sum).toFixed(2)) + " " + unit + ")");
+		$('#estimated-days').text(nights + " nights");
+	}
 
 	//Display relevant packages
 	$('.package').each(function(){
 		var dest = this;
 		if ($(dest).attr("data-include") != packages && packages != ""){
 			$(dest).fadeOut(500);
-			// $(dest).css("display","none");
 		} else{
 			$(dest).fadeIn(500);
 			$(dest).css("display","inline-block");
 		}
 	});
+
+	//Make scroller scroll to top after checkbox is selected
+	$('.pk-selections').data('jsp').scrollTo(0,0);
 });
 
 $('.flipper').click(function(e){
 	$(e.currentTarget).toggleClass('flip');
 });
 
-//Currency Handler
-$('.currency_input').bind('input', function() {
-  var userinput = $(this).val();
-  var conversion = parseInt($('#currencyRate').text());
-  $('.currency_result').text(conversion * userinput);
-});
+$('.package').click(function(e){
+	//Hide all
+	$('.package').removeClass('active');
+	$('.pk-fav a').css("display", "none");
+
+	//Show selected
+	$(e.currentTarget).addClass('active');
+
+	//Show Favorite
+	$('.package.active').children().children().last().css("display", "block");
+})
 
 //Social Handlers
 $('.facebook-social').on('click', function(){
@@ -70,6 +83,11 @@ $('.pk-selections').css("height",$('.chk-selections').height());
 
 $('.favorite').on('click', function(e){
 	e.preventDefault();
+	if ($(e.currentTarget).hasClass("disabled")){
+		return;
+	}
+	$(e.currentTarget).addClass("disabled");
+	$(e.currentTarget).text("Favorited");
 	params = {}
 	params['package'] = $(e.currentTarget).attr("href");
 	params['activities'] = $('.squareChkBox input:checked').map(function() { return this.id } ).toArray();

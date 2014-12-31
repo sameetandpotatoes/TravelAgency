@@ -12,10 +12,7 @@
 	height: 480px
 .map-images
 	span
-		// display: inline-block
 		background: black
-		// &:hover img
-		// 	opacity: 0.7
 	img
 		width: 500px
 		height: 157px
@@ -133,20 +130,23 @@
 .package
 	min-width: 100%
 	padding: 1.2em 0
-	// -webkit-transition: all 1.0s linear
-	// moz-transition: all 1.0s linear
-	// -ms-transition: all 1.0s linear
-	// -o-transition: all 1.0s linear
-	// transition: all 1.0s linear
+	text-align: left
+	&:hover
+		background-color: rgba(0,0,0,0.2)
+
+.package.active
+	background-color: rgba(0,0,0,0.2)
 
 .pk-image
-	float: left
+	display: inline-block
 	img
 		max-width: 100px
 		max-height: 100px
 
 .pk-desc
 	text-align: left
+	display: inline-block
+	min-width: 60%
 	h2
 		margin: 0
 		font-size: 18px
@@ -154,6 +154,25 @@
 		color: #2A5DB0
 		&:hover
 			color: #2200CC
+
+.pk-fav
+	display: inline-block
+	color: black
+	a
+		border-radius: 5px
+		display: none
+		-webkit-transition: all 0.3s
+		-moz-transition: all 0.3s
+		-ms-transition: all 0.3s
+		-o-transition: all 0.3s
+		transition: all 0.3s
+		padding: 5px 10px
+		text-decoration: none
+		background-color: green
+		&:hover
+			opacity: 0.5
+	.disabled
+		background-color: gray
 
 .terms
 	text-align: left
@@ -163,7 +182,7 @@
 	display: inline-block
 	margin: 0
 	vertical-align: top
-	width: 30%
+	width: 29%
 
 .pk-selections
 	display: inline-block
@@ -176,16 +195,7 @@
 .conditions
 	clear: both
 	position: relative
-	top: 100px
-
-.currency_input
-	padding: 10px
-	border: solid 5px #c9c9c9
-	box-shadow: inset 0 0 0 1px #707070
-	transition: box-shadow 0.3s, border 0.3s
-
-.currency_input:focus
-	border: solid 5px #969696
+	top: 50px
 
 .parallax-1
 	color: white

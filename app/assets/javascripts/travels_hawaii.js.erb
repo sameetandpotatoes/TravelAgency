@@ -47,11 +47,13 @@ function overlay_markers(){
 	myLayer.setGeoJSON(geojson);
 	myLayer.on('mouseover', function(e) {
 		e.layer.openPopup();
-		mapClickHandler(e);
+		$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').addClass("flip");
+		// mapClickHandler(e);
 	});
 	myLayer.on('mouseout', function(e) {
 		e.layer.closePopup();
-		mapClickHandler(e);
+		$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').removeClass("flip");
+		// mapClickHandler(e);
 	});
 }
 

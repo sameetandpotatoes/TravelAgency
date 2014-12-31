@@ -1,0 +1,11 @@
+$('.delete').click(function(e){
+  e.preventDefault();
+  params = {};
+  params['package_id'] = $(e.currentTarget).attr("href");
+  $.ajax({
+		type: "POST",
+		url: '/delete_fav',
+		dataType: "script",
+		data: params
+	});
+});
