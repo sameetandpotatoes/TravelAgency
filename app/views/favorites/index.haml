@@ -11,23 +11,22 @@
         %tr
           %td
             .package
-              -# %h2 Package
               .pk-image
                 = image_tag PACKAGES[package_id]["image"], class: 'package-img'
               .pk-desc
                 %h2=link_to PACKAGES[package_id]["name"], PACKAGES[package_id]["link"], target: "_blank"
           %td
             .activities
-              -# %h2 Selected Activities
-              - activity_array.each do |activity_id|
-                %li=ACTIVITIES[activity_id]["name"]
+              - if activity_array != nil
+                - activity_array.each do |activity_id|
+                  %li=ACTIVITIES[activity_id]["name"]
+              - else
+                %li None selected
           %td
             .cost
-              -# %h2 Cost
               %span=PACKAGES[package_id]["cost"]
           %td
             .remove
-              -# %h2 Delete
               = link_to image_tag('delete.png'), "#{package_id}", class: 'delete'
   - else
     .no_favorites
