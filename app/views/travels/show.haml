@@ -17,30 +17,30 @@
 					.flipper
 						.front.image
 							%span
-								= image_tag INFO[@dest]["cities"][i]["images"][0], data: {desc: "desc-#{i+1}"}
+								= image_tag INFO[@dest]["cities"][i]["images"], data: {desc: "desc-#{i+1}"}
 							%h2=INFO[@dest]["cities"][i]["name"]
 						.back
 							%h1=INFO[@dest]["cities"][i]["name"]
 							%p=INFO[@dest]["cities"][i]["description"]
--# %section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
--# 	.container
--# 		.weather-data
--# 			.weather-day.single-day
--# 				%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
--# 				%p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
--# 				%p.weather-time=@weatherData[@weatherData.length - 1]
--# 				%div
--# 					=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
--# 					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
--# 				%p.bold #{@weatherData[0]["conditions"]}
--# 			.multiple-days
--# 				- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
--# 				- @weatherData.each do |element|
--# 					.weather-day.inline
--# 						%p.bold.day=element["date"]["weekday"]
--# 						=image_tag(element["icon_url"], size: "75")
--# 						%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
--# 						%p.bold=element["conditions"]
+%section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
+	.container
+		.weather-data
+			.weather-day.single-day
+				%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
+				%p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
+				%p.weather-time=@weatherData[@weatherData.length - 1]
+				%div
+					=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
+					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
+				%p.bold #{@weatherData[0]["conditions"]}
+			.multiple-days
+				- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
+				- @weatherData.each do |element|
+					.weather-day.inline
+						%p.bold.day=element["date"]["weekday"]
+						=image_tag(element["icon_url"], size: "75")
+						%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
+						%p.bold=element["conditions"]
 %section.module.content{style: "min-height: 1000px"}
 	.container
 		%h1 Select your packages

@@ -14,7 +14,7 @@ INFO = {
     'cities'=> [{
         'name' => 'Oahu',
         'location' => [-157.9833, 21.4667],
-        'images' => ['oahu1.jpg', 'oahu2.jpg', 'oahu3.jpg'],
+        'images' => 'oahu1.jpg',
         'description'=> 'On the island of Oahu, ride the waves in Waikiki where surfing was born
         or catch a big-wave surf meet on Oahu’s famed North Shore. Between sunrise and sunset, you’ll have
         hours to explore the hottest farm to table restaurants, browse the latest designer and local fashions,
@@ -23,9 +23,7 @@ INFO = {
       },{
         'name' => 'Maui',
         'location' => [-156.3333, 20.8000],
-        'images'=> [
-          'maui1.jpg', 'maui2.jpg', 'maui3.jpg'
-        ],
+        'images'=> 'maui1.jpg',
         'description'=> 'Known as the “Valley Isle,” Maui is dotted with quaint towns, artist communities and
         local favorites that have been around for generations. Head to Wailuku for pastries from a “mom and pop”
         bakery, or head to Lahaina for a taste of Maui’s famed farm to table cuisine. From shimmering beaches and
@@ -35,9 +33,7 @@ INFO = {
       },{
         'name' => 'Big Island',
         'location' => [-155.5000, 19.5667],
-        'images'=> [
-          'big1.jpg', 'big2.jpg', 'big3.jpg'
-        ],
+        'images'=> 'big1.jpg',
         'description'=> 'Hawaii Island is the youngest and largest island in the Hawaiian chain, but it’s remarkable
         for more than just its size. Picture yourself visiting Kilauea, one of the most active volcanoes in the world,
         or talk story with a cultural demonstrator at Puuhonua o Honaunau, a historic park that was once a place of
@@ -63,7 +59,7 @@ INFO = {
     'cities'=> [{
       'name' => 'Rome',
       'location' => [12.5000,41.9000],
-      'images' => ['rome1.jpg', 'rome2.jpg', 'rome3.jpg'],
+      'images' => 'rome1.jpg',
       'description'=> 'Rome is the capital city of Italy and is Italy`s most populous city. It is
       located in the central-western portion of the Italian peninsula, on the Tiber river. Rome`s history as a
       city spans over two and a half thousand years, as one of the founding cities of Western Civilization.
@@ -72,7 +68,7 @@ INFO = {
       },{
       'name' => 'Florence',
       'location' => [11.2500,43.7833],
-      'images'=> ['florence3.jpg', 'florence2.jpg', 'florence1.jpg'],
+      'images'=> 'florence3.jpg',
       'description'=> 'The birthplace of the Renaissance, Florence is possibly the most beautifully preserved
       and artistically rich city in the world.  Here, artistic treasures and architectural masterpieces of the past blend
       with ancient streets lined with elegant boutiques, peaceful parks, streetside cafes offering steaming hot expresso
@@ -81,9 +77,7 @@ INFO = {
       },{
       'name' => 'Venice',
       'location' => [12.3358,45.4375],
-      'images'=> [
-      'venice1.jpg', 'venice2.jpg', 'venice3.jpg'
-      ],
+      'images'=> 'venice3.jpg',
       'description'=> "Venice is a city in northern Italy, the capital of the region Veneto and is world famous
       for its canals. It is built on an archipelago of 118 islands formed by approximately 150 canals in a shallow
         lagoon. The islands are connected by around 400 bridges. Transportation within the city is by foot or on water.
@@ -108,7 +102,7 @@ INFO = {
     'cities'=> [{
       'name' => 'Beijing',
       'location' => [116.3917,39.9139],
-      'images' => ['beijing1.jpg', 'beijing2.jpg', 'beijing1.jpg'],
+      'images' => 'beijing1.jpg',
       'description'=> "Beijing, the heart of China, is always the first choice of travelers who are willing to
       know a time-honored and developed city of China. It has been the political, economic and cultural center
       of China for over 800 years from the Yuan Dynasty. The numerous royal buildings with long history endow it
@@ -117,7 +111,7 @@ INFO = {
     },{
       'name' => "Xi'an",
       'location' => [108.9000,34.2667],
-      'images'=> ['xian1.jpg'],
+      'images'=> 'xian1.jpg',
       'description'=> "Xian, located in central-northwest China, records the great changes of the country
       just like a living history book. Called Chang'an (meaning the eternal city) in ancient times, it is
       one of the birthplaces of the ancient Chinese civilization in the Yellow River Basin area. As the
@@ -127,7 +121,7 @@ INFO = {
   },{
     'name' => 'Tibet',
     'location' => [87.0900, 32.2700],
-    'images'=> ['tibet2.jpg', 'tibet1.jpg'],
+    'images'=> 'tibet2.jpg',
     'description'=> "A country steeped in mysticism and sublime natural beauty Tibet is for
     the dreamer, the wanderer, the adventurer, and those of us just looking to relax. With
     its beautiful monasteries, blaadlfkasldkfjadsf, and a;lsdkgja;lsdkfjasl;dfj, your
