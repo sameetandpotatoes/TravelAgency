@@ -11,10 +11,10 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    @title = "Favorites"
     session[:favorites].delete(params[:package_id])
     @all_favs = session[:favorites]
-    redirect_to favorites_path
-    # render "index"
+    render layout: false
   end
 
   def clear_all

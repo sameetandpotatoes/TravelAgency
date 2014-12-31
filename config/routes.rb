@@ -11,5 +11,5 @@ TravelAgency::Application.routes.draw do
   get '/favorites' => 'favorites#index', as: 'favorites'
   post '/favorites' => 'favorites#create'
   post '/clearall' => 'favorites#clear_all', as: 'delete_all'
-  post '/delete_fav' => 'favorites#destroy'
+  delete '/favorites/:package_id' => 'favorites#destroy'
 end
