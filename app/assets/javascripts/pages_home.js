@@ -7,8 +7,6 @@ $(".welcome").owlCarousel({
 	itemsMobile : true
 });
 
-$('.welcome-show').css("min-height", $(window).height() - $('.header').height() - $('.arrow').height() - 10);
-
 $('.row > div').on('click', function(){
 	var vac_desc = $(this).attr("data-desc");
 	var dest = $($(this).children()[0]).text().toLowerCase();
@@ -30,6 +28,13 @@ $('.row > div').on('click', function(){
 			$('.desc').append(htmlObject);
 		},200);
 	},400);
+});
+
+$('.item img').css("height", 0.50 * $(window).height());
+$('.welcome-show').css("min-height", $(window).height() - $('.header').height() - $('.arrow').height() - 10);
+$(window).resize(function(e){
+	$('.item img').css("height", 0.50 * $(window).height());
+	$('.welcome-show').css("min-height", $(window).height() - $('.header').height() - $('.arrow').height() - 10);
 });
 
 $('.arrow').on('click', function(){
