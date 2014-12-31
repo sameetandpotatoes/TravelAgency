@@ -22,25 +22,25 @@
 						.back
 							%h1=INFO[@dest]["cities"][i]["name"]
 							%p=INFO[@dest]["cities"][i]["description"]
-%section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
-	.container
-		.weather-data
-			.weather-day.single-day
-				%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
-				%p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
-				%p.weather-time=@weatherData[@weatherData.length - 1]
-				%div
-					=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
-					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
-				%p.bold #{@weatherData[0]["conditions"]}
-			.multiple-days
-				- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
-				- @weatherData.each do |element|
-					.weather-day.inline
-						%p.bold.day=element["date"]["weekday"]
-						=image_tag(element["icon_url"], size: "75")
-						%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
-						%p.bold=element["conditions"]
+-# %section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
+-# 	.container
+-# 		.weather-data
+-# 			.weather-day.single-day
+-# 				%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
+-# 				%p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
+-# 				%p.weather-time=@weatherData[@weatherData.length - 1]
+-# 				%div
+-# 					=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
+-# 					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
+-# 				%p.bold #{@weatherData[0]["conditions"]}
+-# 			.multiple-days
+-# 				- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
+-# 				- @weatherData.each do |element|
+-# 					.weather-day.inline
+-# 						%p.bold.day=element["date"]["weekday"]
+-# 						=image_tag(element["icon_url"], size: "75")
+-# 						%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
+-# 						%p.bold=element["conditions"]
 %section.module.content{style: "min-height: 1000px"}
 	.container
 		%h1 Select your packages
@@ -95,3 +95,68 @@
 %p#currencyRate{style: "display: none"}=@currencyRate
 %p#currencyUnit{style: "display: none"}=@currencyUnit
 %p#dest{style: "display: none"}=@dest
+:javascript
+	var dest_1 = "#{INFO[@dest]['cities'][0]['name'].downcase.gsub(/\s+/, '')}";
+	var dest_2 = "#{INFO[@dest]['cities'][1]['name'].downcase.gsub(/\s+/, '')}";
+	var dest_3 = "#{INFO[@dest]['cities'][2]['name'].downcase.gsub(/\s+/, '')}";
+	var map;
+	var myLayer;
+	var coords = [#{INFO[@dest]['cities'][0]['location']}, #{INFO[@dest]['cities'][1]['location']}, #{INFO[@dest]['cities'][2]['location']}];
+	var titles = ["#{INFO[@dest]['cities'][0]['name']}", "#{INFO[@dest]['cities'][1]['name']}", "#{INFO[@dest]['cities'][2]['name']}"];
+	var desc = ['desc-1', 'desc-2', 'desc-3'];
+	var colors = ['#f86767','#f86767','#f86767'];
+
+	function initialize_map(){
+		L.mapbox.accessToken = "#{ENV['MAPBOX_ACCESS']}";
+		map = L.mapbox.map('hawaii-map', "#{ENV['MAPBOX_MAP']}");
+		map.setView(#{INFO[@dest]['location']}, #{INFO[@dest]['zoom_level']});
+		map.dragging.disable();
+		map.touchZoom.disable();
+		map.doubleClickZoom.disable();
+		map.scrollWheelZoom.disable();
+		if (map.tap) map.tap.disable();
+		myLayer = L.mapbox.featureLayer().addTo(map);
+	}
+
+	function overlay_markers(){
+		var features = [];
+		for (var i = 0; i < 3; i++){
+			var hash = {
+				type: 'Feature',
+				properties: {
+					title: titles[i],
+					'marker-color': colors[i],
+					'marker-size': 'large',
+					'marker-symbol': 'star',
+					dest: desc[i]
+				},
+				geometry: {
+					type: 'Point',
+					coordinates: coords[i]
+				}
+			};
+			features.push(hash);
+		}
+		var geojson = {
+			type: 'FeatureCollection',
+			features: features
+		};
+		myLayer.setGeoJSON(geojson);
+		myLayer.on('mouseover', function(e) {
+			e.layer.openPopup();
+			$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').addClass("flip");
+			// mapClickHandler(e);
+		});
+		myLayer.on('mouseout', function(e) {
+			e.layer.closePopup();
+			$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').removeClass("flip");
+			// mapClickHandler(e);
+		});
+	}
+
+	function mapClickHandler(e){
+		$('.flip-container.'+e.layer.feature.properties['dest'] + ' .flipper').toggleClass("flip");
+	}
+
+	initialize_map();
+	overlay_markers();
