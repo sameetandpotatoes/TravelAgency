@@ -22,20 +22,43 @@
 .vacation-show.section
 	.centered
 		%h1 Learn about our destinations!
-		.row#moveLeft
-			%div{"data-desc" => "#{INFO["Hawaii"]["description"]}"}
-				%h1 Hawaii
-				=image_tag("big3.jpg")
-			%div{"data-desc" => "#{INFO["Italy"]["description"]}"}
-				%h1 Italy
-				=image_tag("rome3.jpg")
-		.desc-texts
-			.desc
-				%p
-		.row#moveRight
-			%div{"data-desc" => "#{INFO["China"]["description"]}"}
-				%h1 China
-				=image_tag("xian1.jpg")
-			%div{"data-desc" => "#{INFO["Random"]["description"]}"}
-				%h1 Lucky?
-				=image_tag("random.png")
+		.desktop
+			.row#moveLeft
+				%div{"data-desc" => "#{INFO["Hawaii"]["description"]}"}
+					%h1 Hawaii
+					=image_tag("big3.jpg")
+				%div{"data-desc" => "#{INFO["Italy"]["description"]}"}
+					%h1 Italy
+					=image_tag("rome3.jpg")
+			.desc-texts
+				.desc
+					%p
+			.row#moveRight
+				%div{"data-desc" => "#{INFO["China"]["description"]}"}
+					%h1 China
+					=image_tag("xian1.jpg")
+				%div{"data-desc" => "#{INFO["Random"]["description"]}"}
+					%h1 Lucky?
+					=image_tag("random.png")
+		.mobile
+			.row
+				.image
+					=image_tag "big3.jpg"
+				.desc
+					%p=INFO["Hawaii"]["description"]
+				.createdButton
+					=link_to "Find out more!", hawaii_path, class: 'pure-button'
+			.row
+				.image
+					=image_tag "rome3.jpg"
+				.desc
+					%p=INFO["Italy"]["description"]
+				.createdButton
+					=link_to "Find out more!", italy_path, class: 'pure-button'
+			.row
+				.image
+					=image_tag "xian1.jpg"
+				.desc
+					%p=INFO["China"]["description"]
+				.createdButton
+					=link_to "Find out more!", china_path, class: 'pure-button'

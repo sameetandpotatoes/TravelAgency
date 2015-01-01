@@ -38,9 +38,8 @@ $(window).resize(function(e){
 });
 
 $('.arrow').on('click', function(){
-	var nextDiv = $(this).parent().next();
 	$('body,html').animate({
-		scrollTop : nextDiv.offset().top - 80
+		scrollTop: $('.centered > h1').offset().top - 80
 	}, 500);
 });
 

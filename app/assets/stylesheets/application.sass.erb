@@ -210,7 +210,6 @@ a, a:hover, a:visited
   height: 50px
   display: block
   text-decoration: none
-  // float: right
   position: absolute
   right: 10px
   bottom: 10px
@@ -232,15 +231,14 @@ a, a:hover, a:visited
     &:hover
       cursor: pointer
 
-.row, .desc-texts
-  // display: table-cell
+.desktop .row, .desktop .desc-texts
   display: inline-block
 
-.desc-texts
+.desktop .desc-texts
   vertical-align: top
   margin-top: 10%
 
-.row
+.desktop .row
   margin: 0 30px
   div
     position: relative
@@ -255,7 +253,7 @@ a, a:hover, a:visited
     min-height: 200px
     border-radius: 100px
 
-.desc-texts > div
+.desktop .desc-texts > div
   -webkit-transition: all 0.3s ease
   -moz-transition: all 0.3s ease
   -ms-transition: all 0.3s ease
@@ -264,7 +262,6 @@ a, a:hover, a:visited
   max-width: 90%
   padding: 0 5%
   text-align: left
-  // display: none
   opacity: 0
   p
     margin-bottom: 5%
@@ -286,8 +283,26 @@ a, a:hover, a:visited
   text-align: center
   font-size: 20px
 
+.mobile
+  display: none
+  .image img
+    max-height: 200px
+  .desc
+    margin: 0 2%
+    text-align: left
+  .row
+    margin: 5% 0
+
 //Smartphones portrait and landscape
 @media all and (min-device-width: 320px) and (max-device-width: 480px)
+  .item h1
+    width: 100%
+    top: 50px
+    right: 0
+  .desktop
+    display: none
+  .mobile
+    display: block
   .header
     height: auto !important
     font-size: 1.0em
