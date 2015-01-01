@@ -101,45 +101,66 @@ PACKAGES = {
   },
   #CHINA
   '15'=>{
-    'name' => 'Taste of Rome and Tuscany: Your Way',
-    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURROMFLRPKG20080324',
-    'cost' => '7 Nights',
-    'image'=> 'costcotravel.png',
-    'included'=> 'rome,florence'
+    'name' => 'A Taste of China',
+    'link'=> 'http://www.friendlyplanet.com/taste-of-china.html',
+    'cost' => '10 nights from $1799 per person',
+    'image'=> 'friendly_planet.png',
+    'included'=> "beijing,xi'an"
   },
   '16'=>{
-    'name' => 'Venice, Florence and Rome: Your Way',
-    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURVCEFLRROM20081219',
-    'cost' => '9 Nights',
-    'image'=> 'costcotravel.png',
-    'included'=> 'rome,florence,venice'
+    'name' => "Tibet, Xi'an, Beijing",
+    'link'=> 'http://www.thechinaguide.com/itineraries/tibet/train_16_tour.php',
+    'cost' => '16 nights',
+    'image'=> 'china_guide.png',
+    'included'=> "beijing,xi'an,tibet"
   },
   '17'=>{
-    'name' => 'Sorrento, Rome, Florence and Venice: Your Way',
-    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURRROROMFLRVCE20120817',
-    'cost' => '12 Nights',
-    'image'=> 'costcotravel.png',
-    'included'=> 'rome,florence,venice'
+    'name' => 'Tibet Train Travel Experience',
+    'link'=> 'http://www.travelchinaguide.com/tour/tibet/tours13d.htm',
+    'cost' => '10 nights from $1639 per person',
+    'image'=> 'travel_china.gif',
+    'included'=> 'tibet'
   },
   '18'=>{
-    'name' => 'Rome: Your Way Package',
-    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Italy/Offers/EURROMYOURWAY20081031',
-    'cost' => '3 Nights',
-    'image'=> 'costcotravel.png',
-    'included'=> 'rome'
+    'name' => 'China & Holy Tibet',
+    'link'=> 'http://www.travelchinaguide.com/tour/tibet1.htm',
+    'cost' => '11 nights from $1659 per person',
+    'image'=> 'travel_china.gif',
+    'included'=> "beijing,xi'an"
   },
   '19'=>{
-    'name' => 'Rome, Florence and Paris',
-    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURROMFLRPARDAY20110801',
-    'cost' => '10 Nights',
-    'image'=> 'costcotravel.png',
-    'included'=> 'rome,florence'
+    'name' => 'China & Holy Tibet',
+    'link'=> 'http://www.travelchinaguide.com/tour/tibet/tour-501.htm',
+    'cost' => '12 nights from $2229 per person',
+    'image'=> 'travel_china.gif',
+    'included'=> "beijing,xi'an"
   },
   '20'=>{
-    'name' => 'Florence and Venice: Your Way Package',
-    'link'=> 'http://www.costcotravel.com/Vacation-Packages/europe/Offers/EURFLRVCEPKG20090909',
-    'cost' => '7 Nights',
-    'image'=> 'costcotravel.png',
-    'included'=> 'florence,venice'
+    'name' => 'Historical Xian',
+    'link'=> 'http://www.travelchinaguide.com/package/xian/',
+    'cost' => '3 nights from $239 per person',
+    'image'=> 'travel_china.gif',
+    'included'=> "xi'an"
+  },
+  '21'=>{
+    'name' => 'Best Beijing Tours',
+    'link'=> 'http://www.travelchinaguide.com/package/beijing01.htm',
+    'cost' => '5 nights from $729 per person',
+    'image'=> 'travel_china.gif',
+    'included'=> 'beijing'
+  },
+  '22'=>{
+    'name' => 'Golden Triangle',
+    'link'=> 'http://www.travelchinaguide.com/tour/memorable/tour-102.htm',
+    'cost' => '9 nights from $1299 per person',
+    'image'=> 'travel_china.gif',
+    'included'=> "beijing,xi'an"
+  },
+  '23'=>{
+    'name' => 'Best Beijing Tours',
+    'link'=> 'http://www.travelchinaguide.com/package/tour-bj01.htm',
+    'cost' => '4 nights from $339 per person',
+    'image'=> 'travel_china.gif',
+    'included'=> 'beijing'
   }
 }

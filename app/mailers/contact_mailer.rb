@@ -1,9 +1,9 @@
 class ContactMailer < ActionMailer::Base
-	default :from => "sameet.sapra@gmail.com"
-	default :to => "sameet.sapra@gmail.com"
+	default :from => "toptiertraveling@gmail.com"
+	default :to => "toptiertraveling@gmail.com"
 
 		def new_message(message)
 			@message = message
-			mail(:subject => "TopTierTraveling")
+			mail(:subject => "Email from toptiertraveling.com")
 		end
 end

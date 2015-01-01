@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @title = "Favorite"
+    @title = "Favorites"
     (session[:favorites] ||= {})[params[:package]] = params[:activities]
     @length = (session[:favorites] || {}).length
     render layout: false

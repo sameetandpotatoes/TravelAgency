@@ -128,7 +128,7 @@ INFO = {
     journey is sure to be eventful.",
     'activities' => ['47','48','49','50','51','52']
   }],
-  'packages' => ['15','16','17','18','19','20']
+  'packages' => ['15','16','17','18','19','20','21','22','23']
   },
   'Random' => {
     'description' => "Not sure where to go? Let us surprise you with a random selections of one of our destination packages!"
