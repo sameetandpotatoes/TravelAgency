@@ -5,7 +5,7 @@
 	\#{image_tag("logo.png", :class=>"header-logo")}
 %nav.vacspots
 	%span
-		= link_to "Bookmarks (#{(session[:favorites] ||= {}).length})", favorites_path, id: 'bookmark_num'
+		= link_to "Favorites (#{(session[:favorites] ||= {}).length})", favorites_path, id: 'bookmark_num'
 	%span
 		-if(current_page?(hawaii_path))
 			= link_to "Hawaii", hawaii_path, class: 'active_tab'
