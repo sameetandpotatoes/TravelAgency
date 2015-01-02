@@ -14,6 +14,7 @@ class FavoritesController < ApplicationController
     @title = "Favorites"
     session[:favorites].delete(params[:package_id])
     @all_favs = session[:favorites]
+    @length = (session[:favorites] || {}).length
     render layout: false
   end
 

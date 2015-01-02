@@ -80,7 +80,7 @@
 							- if session[:favorites].has_key?(pk_id) #Disabled
 								%a.favorite.disabled{href: "#"} Favorited
 							- else
-								%a.favorite{href: "#{pk_id}"} Favorite
+								%a.favorite{href: "#{pk_id}"} Favorite this package
 		.conditions
 			.social
 				= render "shared/social"

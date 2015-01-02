@@ -25,6 +25,7 @@ $('.row > div').on('click', function(){
 			var htmlObject = document.createElement('div');
 			htmlObject.className = "createdButton";
 			htmlObject.innerHTML = html;
+			$('.createdButton').remove();
 			$('.desc').append(htmlObject);
 		},200);
 	},400);
