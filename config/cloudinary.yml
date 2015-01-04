@@ -5,15 +5,18 @@ development:
   api_secret: tIZx6chNsRz46GrltmV0yK43YgU
   enhance_image_tag: false
   static_image_support: false
+  cdn_subdomain: true
 production:
   cloud_name: hsoyblbe6
   api_key: '715944821793796'
   api_secret: tIZx6chNsRz46GrltmV0yK43YgU
   enhance_image_tag: true
   static_image_support: true
+  cdn_subdomain: true
 test:
   cloud_name: hsoyblbe6
   api_key: '715944821793796'
   api_secret: tIZx6chNsRz46GrltmV0yK43YgU
   enhance_image_tag: true
   static_image_support: false
+  cdn_subdomain: true
