@@ -28,7 +28,7 @@
 				= render partial: "/pages/headercontent"
 			.content#content
 				= yield
-		- @length = ActiveSupport::JSON.decode(cookies[:favorites] || {}).length
+		- @length = ActiveSupport::JSON.decode(cookies[:favorites] || "{}").length
 		:javascript
 			$('#bookmark_num').html("Favorites (#{@length})");
 		.footer
