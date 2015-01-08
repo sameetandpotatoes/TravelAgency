@@ -20,13 +20,13 @@ module Location
 		result = JSON.parse(res.body)
 	end
 	def self.get_currency(currency_name)
-		currencyURL = "http://openexchangerates.org/api/latest.json?app_id=438a5d36861b441b806053dfe7e01bdd"
+		currencyURL = "http://rate-exchange.appspot.com/currency?from=USD&to="+currency_name
 		url = URI.parse(currencyURL)
 		req = Net::HTTP::Get.new(url.to_s)
 		res = Net::HTTP.start(url.host, url.port) {|http|
 		  http.request(req)
 		}
 		result = JSON.parse(res.body)
-		result["rates"][currency_name]
+		result["rate"]
 	end
 end

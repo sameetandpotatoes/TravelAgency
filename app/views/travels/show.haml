@@ -9,78 +9,84 @@
 %section.module.content
 	.container
 		%h1 Learn about our destinations!
-		.map
-			#hawaii-map.leaflet
-		.map-images
-			- (0..2).each do |i|
-				.flip-container{class: "desc-#{i+1}"}
-					.flipper
-						.front.image
-							%span
-								= image_tag INFO[@dest]["cities"][i]["images"], data: {desc: "desc-#{i+1}"}
-							%h2=INFO[@dest]["cities"][i]["name"]
-						.back
-							%h1=INFO[@dest]["cities"][i]["name"]
-							%p=INFO[@dest]["cities"][i]["description"]
+		.scrollme.map
+			.animateme{"data-from" => "0.5", "data-to" => "0", "data-translatex" => "500", "data-when" => "span"}
+				#hawaii-map.leaflet
+		.scrollme.map-images
+			.animateme{"data-from" => "0.5", "data-to" => "0", "data-translatex" => "-500", "data-when" => "span"}
+				- (0..2).each do |i|
+					.flip-container{class: "desc-#{i+1}"}
+						.flipper
+							.front.image
+								%span
+									= image_tag INFO[@dest]["cities"][i]["images"], data: {desc: "desc-#{i+1}"}
+								%h2=INFO[@dest]["cities"][i]["name"]
+							.back
+								%h1=INFO[@dest]["cities"][i]["name"]
+								%p=INFO[@dest]["cities"][i]["description"]
 %section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
 	.container
 		.weather-data
-			.weather-day.single-day
-				%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
-				%p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
-				%p.weather-time=@weatherData[@weatherData.length - 1]
-				%div
-					=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
-					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
-				%p.bold #{@weatherData[0]["conditions"]}
-			.multiple-days
-				- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
-				- @weatherData.each do |element|
-					.weather-day.inline
-						%p.bold.day=element["date"]["weekday"]
-						=image_tag(element["icon_url"], size: "75")
-						%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
-						%p.bold=element["conditions"]
-%section.module.content{style: "min-height: 1000px"}
+			.scrollme
+				.weather-day.single-day.animateme{"data-from" => "0.5", "data-to" => "0", "data-translatex" => "500", "data-when" => "span"}
+					%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today
+					%p.show-header #{@weatherData[0]["date"]["tz_long"]} Weather
+					%p.weather-time=@weatherData[@weatherData.length - 1]
+					%div
+						=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
+						%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
+					%p.bold #{@weatherData[0]["conditions"]}
+			.scrollme
+				.multiple-days.animateme{"data-from" => "0.5", "data-to" => "0", "data-translatex" => "-500", "data-when" => "span"}
+					- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
+					- @weatherData.each do |element|
+						.weather-day.inline
+							%p.bold.day=element["date"]["weekday"]
+							=image_tag(element["icon_url"], size: "75")
+							%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
+							%p.bold=element["conditions"]
+%section.module.content
 	.container
 		%h1 Select your packages
-		.chk-selections.left
-			- 3.times do |i|
-				.new-activities
-					%h1=INFO[@dest]["cities"][i]["name"]
-					- @list_activities = INFO[@dest]["cities"][i]["activities"]
-					- @list_activities.each do |activity_id|
-						.dest-activities
-							.squareChkBox
-								%input{id: "#{activity_id}", name: "#{INFO[@dest]['cities'][i]['name'].downcase.gsub(/\s+/, "")}",
-								type: 'checkbox', value: ACTIVITIES[activity_id]["cost"], "data-days" => ACTIVITIES[activity_id]["nights"]}/
-								%label{:for => "#{activity_id}"}
-							.activity-title
-								%p=ACTIVITIES[activity_id]["name"]
-			.calculations
-				.price
-					%span Total Price: $
-					%span#total-price 0
-					%span#currency_convert
-				.nights
-					%span Estimated Days:
-					%span#estimated-days 0
-		.pk-selections.right
-			%h2 Available Packages
-			.all-packages
-				- @packages = INFO[@dest]["packages"]
-				- @packages.each do |pk_id|
-					.package{"data-include" => PACKAGES[pk_id]["included"]}
-						.pk-image
-							= image_tag PACKAGES[pk_id]["image"], class: 'package-img'
-						.pk-desc
-							%h2=link_to PACKAGES[pk_id]["name"], PACKAGES[pk_id]["link"], target: "_blank"
-							%span=PACKAGES[pk_id]["cost"]
-						.pk-fav
-							- if ActiveSupport::JSON.decode(cookies[:favorites] || "{}").has_key?(pk_id) #Disabled
-								%a.favorite.disabled{href: "#"} Favorited
-							- else
-								%a.favorite{href: "#{pk_id}"} Favorite this package
+		.scrollme
+			.chk-selections.left.animateme{"data-from" => "0.5", "data-to" => "0", "data-translatex" => "500", "data-when" => "span"}
+				- 3.times do |i|
+					.new-activities
+						%h1=INFO[@dest]["cities"][i]["name"]
+						- @list_activities = INFO[@dest]["cities"][i]["activities"]
+						- @list_activities.each do |activity_id|
+							.dest-activities
+								.squareChkBox
+									%input{id: "#{activity_id}", name: "#{INFO[@dest]['cities'][i]['name'].downcase.gsub(/\s+/, "")}",
+									type: 'checkbox', value: ACTIVITIES[activity_id]["cost"], "data-days" => ACTIVITIES[activity_id]["nights"]}/
+									%label{:for => "#{activity_id}"}
+								.activity-title
+									%p=ACTIVITIES[activity_id]["name"]
+				.calculations
+					.price
+						%span Total Price: $
+						%span#total-price 0
+						%span#currency_convert
+					.nights
+						%span Estimated Days:
+						%span#estimated-days 0
+		.scrollme
+			.pk-selections.right.animateme{"data-from" => "0.5", "data-to" => "0", "data-translatex" => "-500", "data-when" => "span"}
+				%h2 Available Packages
+				.all-packages
+					- @packages = INFO[@dest]["packages"]
+					- @packages.each do |pk_id|
+						.package{"data-include" => PACKAGES[pk_id]["included"]}
+							.pk-image
+								= image_tag PACKAGES[pk_id]["image"], class: 'package-img'
+							.pk-desc
+								%h2=link_to PACKAGES[pk_id]["name"], PACKAGES[pk_id]["link"], target: "_blank"
+								%span=PACKAGES[pk_id]["cost"]
+							.pk-fav
+								- if ActiveSupport::JSON.decode(cookies[:favorites] || "{}").has_key?(pk_id) #Disabled
+									%a.favorite.disabled{href: "#"} Favorited
+								- else
+									%a.favorite{href: "#{pk_id}"} Favorite this package
 		.conditions
 			.social
 				= render "shared/social"

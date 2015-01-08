@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$('.pk-selections').jScrollPane({showArrows: true,horizontalGutter: 10});
+	$($('.module.content')[1]).css("height", $('.chk-selections').height() + $('.social').height() + 100);
 });
 //Individual Activities Handler
 $('.dest-activities input').change(function(e){
@@ -27,9 +28,8 @@ $('.dest-activities input').change(function(e){
 	if (conversion != 1){
 		var unit = $('#currencyUnit').text();
 		$('#currency_convert').text("(" + Number((conversion * sum).toFixed(2)) + " " + unit + ")");
-		$('#estimated-days').text(nights + " nights");
 	}
-
+	$('#estimated-days').text(nights + " nights");
 	//Display relevant packages
 	$('.package').each(function(){
 		var dest = this;
@@ -76,8 +76,7 @@ $('.twitter-social').on('click', function(){
 });
 
 //Travel package selections min height adjustment
-$('section.module.parallax').css("min-height",$(window).height() + 100);
-$($('.module')[3]).css("min-height", $('.pk-selections').height() + 300);
+$('section.module.parallax').css("min-height",$(window).height());
 $('.pk-selections').css("height",$('.chk-selections').height());
 
 $('.favorite').on('click', function(e){
