@@ -70,7 +70,8 @@ $('.facebook-social').on('click', function(){
 });
 
 $('.twitter-social').on('click', function(){
-	var text = document.title.split("| ")[1];
+	var dest = document.title.split("| ")[1];
+	var text = "Check out TopTierTraveling! I booked my vacation (hotels, flights, and activities) to " + dest + "!";
 	window.open('https://twitter.com/intent/tweet?url=&text=' + text + '&via=toptiertravelin&hashtags=ThanksTTT', '_blank');
 });
 

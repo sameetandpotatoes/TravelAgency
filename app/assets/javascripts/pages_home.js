@@ -1,3 +1,5 @@
+var firstTimeClick = true;
+
 $(".welcome").owlCarousel({
 	autoPlay: 3000, //Set AutoPlay to 3 seconds
 	items : 1,
@@ -9,6 +11,10 @@ $(".welcome").owlCarousel({
 
 $('.row > div').on('click', function(){
 	var vac_desc = $(this).attr("data-desc");
+	if (!firstTimeClick && !$($(this).children()[1]).hasClass("grayscale")){
+		return;
+	}
+	firstTimeClick = false;
 	var dest = $($(this).children()[0]).text().toLowerCase();
 	$('.row > div > img').addClass("grayscale");
 	$($(this).children()[1]).removeClass("grayscale");

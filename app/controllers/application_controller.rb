@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
     result_array = result.to_a
     forecastdata = result_array[1][1]["simpleforecast"]["forecastday"]
     forecastdata[forecastdata.length] = result_array[1][1]["txt_forecast"]["date"]
-
     forecastdata
   end
 
