@@ -23,30 +23,24 @@
     %td 2015
 %h1.text-header The Team
 %section.team
-  .scrollme
-    .animateme{"data-from" => "0.5", "data-opacity" => "0", "data-to" => "0", "data-translatex" => "-500", "data-when" => "span"}
-      %article
-        %figure
-          .inline.aboutimages
-            = image_tag("sameet.png", :class => "contact", :alt => "Sameet Sapra")
-          .inline.caption
-            %figcaption Sameet Sapra
-            %p Web Developer
-  .scrollme
-    .animateme{"data-from" => "0.5", "data-opacity" => "0", "data-to" => "0", "data-translatex" => "500", "data-when" => "span"}
-      %article
-        %figure
-          .inline.aboutimages
-            = image_tag("andrew.png", :class => "contact", :alt => "Andrew Merkley")
-          .inline.caption
-            %figcaption Andrew Merkley
-            %p Content Researcher
-  .scrollme
-    .animateme{"data-from" => "0.5", "data-opacity" => "0", "data-to" => "0", "data-translatex" => "-500", "data-when" => "span"}
-      %article
-        %figure
-          .inline.aboutimages
-            = image_tag("john.png", :class => "contact", :alt => "John Stavropoulos")
-          .inline.caption
-            %figcaption John Stavropoulos
-            %p Responsive Design / SEO
+  %article
+    %figure
+      .inline.aboutimages
+        = image_tag("sameet.png", :class => "contact", :alt => "Sameet Sapra")
+      .inline.caption
+        %figcaption Sameet Sapra
+        %p Web Developer
+  %article
+    %figure
+      .inline.aboutimages
+        = image_tag("andrew.png", :class => "contact", :alt => "Andrew Merkley")
+      .inline.caption
+        %figcaption Andrew Merkley
+        %p Content Researcher
+  %article
+    %figure
+      .inline.aboutimages
+        = image_tag("john.png", :class => "contact", :alt => "John Stavropoulos")
+      .inline.caption
+        %figcaption John Stavropoulos
+        %p Responsive Design / SEO
