@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       ContactMailer.new_message(@message).deliver
       redirect_to home_path, flash: {success: "Message was successfully sent."}
     else
-      redirect_to home_path, flash: {error: "Please fill in all parameters."}
+      redirect_to contact_path, flash: {error: "Please fill in all parameters."}
     end
   end
 

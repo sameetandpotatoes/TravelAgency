@@ -1,5 +1,9 @@
 - @title = "Home"
 - @meta = "TopTierTraveling, Italy, Hawaii, Florence, Rome, Venice, Maui, Oahu, Big Island"
+- if flash[:success]
+	%p.alert.success
+		%i.fa.fa-check
+		Message was successfully sent.
 .welcome-show.section
 	.welcome.owl-carousel
 		.item
@@ -38,7 +42,7 @@
 					%h1 China
 					=image_tag("xian1.jpg")
 				.select-dest{"data-desc" => "#{INFO["Random"]["description"]}"}
-					%h1 Lucky?
+					%h1.black a
 					=image_tag("random.png")
 		.mobile
 			.row

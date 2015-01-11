@@ -44,6 +44,7 @@ figure > *
     background: rgba(0, 0, 0, 0.1)
 
 .aboutimages, .caption
+  display: inline-block
   min-width: 20%
 
 #about
@@ -84,6 +85,10 @@ figure > p
   margin: 0px
 
 @media all and (max-width: 800px)
+  .aboutimage, .caption
+    display: block
+  .caption
+    padding: 0
   .team article
     float: none
   #about

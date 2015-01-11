@@ -3,15 +3,18 @@
 %h1
 	Contact us at
 	=link_to "toptiertraveling@gmail.com", "mailto:toptiertraveling@gmail.com?Subject=Hello%20TopTierTraveling"
-= form_for @message, :url => send_path, :method => "post" do |form|
-	%fieldset.fields
-		.field.name
-			= form.label :name, "Name"
-			= form.text_field :name, :placeholder => "&#xf007; John Smith".html_safe
-		.field.email
-			= form.label :email, "Email"
-			= form.text_field :email, :placeholder => "&#xf003; example@123.com".html_safe
-		.field.body
-			= form.label :body, "Content"
-			= form.text_area :body, :placeholder => ""
-	%fieldset.actions= form.submit "&#xf1d9; Send".html_safe, :id => "submit", class: 'fa fa-send-o'
+- if flash[:error]
+	%p.alert.error
+		%i.fa.fa-close
+		Please fill in all parameters.
+= form_for @message, url: send_path, method: "post" do |form|
+	.field
+		= form.label :name, "Name"
+		= form.text_field :name, placeholder: "&#xf007; John Smith".html_safe, class: 'name'
+	.field
+		= form.label :name, "Email"
+		= form.text_field :email, placeholder: "&#xf003; example@123.com".html_safe, class: 'email'
+	.field
+		= form.label :body, "Content"
+		= form.text_area :body, placeholder: "", class: 'body'
+	= form.submit "&#xf1d9; Send".html_safe, id: "submit", class: 'fa fa-send-o'

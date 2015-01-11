@@ -28,10 +28,18 @@ $(document).ready(function() {
 	$('.header h1').on('click', function(){
 		window.location.href = '/'
 	});
+	footerFix();
+	$(window).resize(function(){
+		footerFix();
+	});
+});
+function footerFix(){
 	if (($(window).height() - $('.footer').height()) - ($('.content').height()+$('.header').height()) > 10){
 		$('.footer').addClass("sticky");
+	} else{
+		$('.footer').removeClass("sticky");
 	}
-});
+}
 function home_page(){
 	return window.location.pathname == "/";
 }

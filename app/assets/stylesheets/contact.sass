@@ -1,36 +1,38 @@
-.fields
-	height: 300px
+.new_message
+	margin: auto
+	padding-top: 10px
+	text-align: center
+
+.alert
+	border-radius: 3px
+	color: #fff
+	padding: 10px
+	width: 250px
+	margin: 0 auto
+
+.error
+	background-color: #c00
+
+.success
+	background-color: #008000
 
 .field
-	display: inline-block
-	margin: 10px 0
+	width: 100%
+	margin: 1.0em 0
+	label
+		display: block
 
-.field.email
-	padding-left: 10px
-
-.field.body
-	display: block
-	margin: 0 auto
-	width: 580px
-	height: 150px
-
-%fieldset.actions
-	margin: 0 auto
-
-input
+input[type="text"], textarea
 	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3)
 	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3)
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3)
+	border: 1px solid #aaa
+	font-size: 14px
+	height: 20px
+	padding: 5px 0 5px 10px
 
-input[type="text"]
-	width: 275px
-	border: 1px solid #999
-	height: 25px
 	font-family: 'FontAwesome', 'HN-Thin'
 	font-size: 1.0em
-	padding: 5px
-	position: relative
-
 input[type="submit"]
 	border: 1px solid #f44c0e
 	color: #fff
@@ -46,34 +48,6 @@ input[type="submit"]
 	transition: all 0.3s
 	&:hover
 		background: #f44c0e
-
-label
-	display: block
-	text-align: left
-
 textarea
-	width: 590px
-	height: 150px
-	font: 1.0em 'HN-Thin'
-	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3)
-	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3)
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3)
-
-@media (max-width: 414px)
-	.fields
-		text-align: left
-		height: auto
-
-@media (max-width: 768px)
-	.field
-		display: block
-	label
-		display: inline
-	input[type="text"]
-		width: auto
-	textarea
-		width: 100%
-		height: 100px
-		margin: 0 1.0em
-	.actions
-		margin: 1.0em 0
+	height: 125px
+	margin-bottom: 25px

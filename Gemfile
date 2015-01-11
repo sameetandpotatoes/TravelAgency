@@ -16,6 +16,7 @@ gem 'cloudinary'
 gem 'rack-cache'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'newrelic_rpm'
+
 group :doc do
   gem 'sdoc', require: false
 end
