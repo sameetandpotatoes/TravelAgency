@@ -52,13 +52,9 @@ $('.flipper').click(function(e){
 $('.package').hover(function(e){
 	//Hide all
 	$('.package').removeClass('active');
-	$('.pk-fav a').css("display", "none");
 
 	//Show selected
 	$(e.currentTarget).addClass('active');
-
-	//Show Favorite
-	$('.package.active').children().children().last().css("display", "block");
 })
 
 //Social Handlers

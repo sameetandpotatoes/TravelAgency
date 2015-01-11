@@ -24,6 +24,7 @@
 							%p=INFO[@dest]["cities"][i]["description"]
 %section.module.parallax.parallax-2{style: "background-image: url(#{asset_path INFO[@dest]["second_image"]})"}
 	.container
+		%h1.weather_title #{@weatherData[0]["conditions"]} skies today in #{@dest}
 		.weather-data
 			.weather-day.single-day
 				%p.show-header{style: 'font-variant: small-caps; text-align: center;'} Today

@@ -11,17 +11,22 @@ $(".welcome").owlCarousel({
 
 $('.row > div').on('click', function(){
 	var vac_desc = $(this).attr("data-desc");
-	if (!firstTimeClick && !$($(this).children()[1]).hasClass("grayscale")){
-		return;
-	}
-	firstTimeClick = false;
 	var dest = $($(this).children()[0]).text().toLowerCase();
-	$('.row > div > img').addClass("grayscale");
-	$($(this).children()[1]).removeClass("grayscale");
+
 	$('.desc').css("opacity","0");
 	$('.desc p').text("");
 	$('.desc').css("width","0px");
 	$('.createdButton').remove();
+
+	if (!firstTimeClick && !$($(this).children()[1]).hasClass("grayscale")){
+		$('.row > div > img').removeClass("grayscale");
+		firstTimeClick = true;
+		return;
+	}
+	firstTimeClick = false;
+	$('.row > div > img').addClass("grayscale");
+	$($(this).children()[1]).removeClass("grayscale");
+
 	setTimeout(function(){
 		$('.desc').css("width","600px");
 		setTimeout(function(){
