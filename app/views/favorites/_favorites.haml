@@ -8,7 +8,7 @@
     - @all_favs.each do |package_id, activity_array|
       %tr
         %td
-          .package
+          .package.table
             .pk-image
               = image_tag PACKAGES[package_id]["image"], class: 'package-img'
             .pk-desc

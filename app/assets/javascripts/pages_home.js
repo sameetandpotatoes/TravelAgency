@@ -9,7 +9,7 @@ $(".welcome").owlCarousel({
 	itemsMobile : true
 });
 
-$('.row > div').on('click', function(){
+$('.select-dest').on('click', function(){
 	var vac_desc = $(this).attr("data-desc");
 	var dest = $($(this).children()[0]).text().toLowerCase();
 
@@ -18,14 +18,14 @@ $('.row > div').on('click', function(){
 	$('.desc').css("width","0px");
 	$('.createdButton').remove();
 
-	if (!firstTimeClick && !$($(this).children()[1]).hasClass("grayscale")){
-		$('.row > div > img').removeClass("grayscale");
+	if (!firstTimeClick && !$(this).hasClass("grayscale")){
+		$('.select-dest').removeClass("grayscale");
 		firstTimeClick = true;
 		return;
 	}
 	firstTimeClick = false;
-	$('.row > div > img').addClass("grayscale");
-	$($(this).children()[1]).removeClass("grayscale");
+	$('.select-dest').addClass("grayscale");
+	$(this).removeClass("grayscale");
 
 	setTimeout(function(){
 		$('.desc').css("width","600px");

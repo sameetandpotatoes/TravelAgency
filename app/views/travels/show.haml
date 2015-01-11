@@ -32,7 +32,7 @@
 				%p.weather-time=@weatherData[@weatherData.length - 1]
 				%div
 					=image_tag(@weatherData[0]["icon_url"], size: "100", class: 'inline')
-					%p.inline{style: 'font-size: 30px'} #{@weatherData[0]["high"]["fahrenheit"]}°F
+					%p.inline{style: 'font-size: 1.6em'} #{@weatherData[0]["high"]["fahrenheit"]}°F
 				%p.bold #{@weatherData[0]["conditions"]}
 			.multiple-days
 				- @weatherData = @weatherData[1..4] #Grabs the first four days of weather
@@ -40,11 +40,11 @@
 					.weather-day.inline
 						%p.bold.day=element["date"]["weekday"]
 						=image_tag(element["icon_url"], size: "75")
-						%p{style: 'font-size: 40px'} #{element["high"]["fahrenheit"]}°F
+						%p{style: 'font-size: 2.1em'} #{element["high"]["fahrenheit"]}°F
 						%p.bold=element["conditions"]
 %section.module.content
 	.container
-		%h1 Select your packages
+		%h1 Select your activities
 		.chk-selections
 			- 3.times do |i|
 				.new-activities
@@ -60,14 +60,14 @@
 								%p=ACTIVITIES[activity_id]["name"]
 			.calculations
 				.price
-					%span Total Price: $
+					%span Price of Activities: $
 					%span#total-price 0
 					%span#currency_convert
 				.nights
-					%span Estimated Days:
+					%span Estimated Days Needed:
 					%span#estimated-days 0
 		.pk-selections
-			%h2 Available Packages
+			%h2 View relevant packages and favorite the ones you like!
 			.all-packages
 				- @packages = INFO[@dest]["packages"]
 				- @packages.each do |pk_id|
@@ -93,9 +93,9 @@
 					Any unused portion(s) of inclusions are nontransferable, nonrefundable, and not redeemable for cash.
 					Cancellation and charge fees may apply. Rental car includes unlimited mileage, one additional driver, all taxes and service fees.
 					It does not include gasoline, optional insurance charges, underage driver charges, upgrades, overtime, drop charges or infant-child seats.
-%p#currencyRate{style: "display: none"}=@currencyRate
-%p#currencyUnit{style: "display: none"}=@currencyUnit
-%p#dest{style: "display: none"}=@dest
+%p#currencyRate=@currencyRate
+%p#currencyUnit=@currencyUnit
+%p#dest=@dest
 :javascript
 	var dest_1 = "#{INFO[@dest]['cities'][0]['name'].downcase.gsub(/\s+/, '')}";
 	var dest_2 = "#{INFO[@dest]['cities'][1]['name'].downcase.gsub(/\s+/, '')}";

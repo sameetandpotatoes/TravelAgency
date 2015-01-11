@@ -24,20 +24,20 @@
 		%h1 Learn about our destinations!
 		.desktop
 			.row#moveLeft
-				%div{"data-desc" => "#{INFO["Hawaii"]["description"]}"}
+				.select-dest{"data-desc" => "#{INFO["Hawaii"]["description"]}"}
 					%h1 Hawaii
 					=image_tag("big3.jpg")
-				%div{"data-desc" => "#{INFO["Italy"]["description"]}"}
+				.select-dest{"data-desc" => "#{INFO["Italy"]["description"]}"}
 					%h1 Italy
 					=image_tag("rome3.jpg")
 			.desc-texts
 				.desc
 					%p
 			.row#moveRight
-				%div{"data-desc" => "#{INFO["China"]["description"]}"}
+				.select-dest{"data-desc" => "#{INFO["China"]["description"]}"}
 					%h1 China
 					=image_tag("xian1.jpg")
-				%div{"data-desc" => "#{INFO["Random"]["description"]}"}
+				.select-dest{"data-desc" => "#{INFO["Random"]["description"]}"}
 					%h1 Lucky?
 					=image_tag("random.png")
 		.mobile

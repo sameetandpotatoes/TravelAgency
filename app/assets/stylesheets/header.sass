@@ -1,0 +1,134 @@
+$header-orig-height: 150px
+$header-small-height: 70px
+$logo-orig-size: 70px
+$logo-small-size: 50px
+
+#adjust-content
+  margin-top: $header-orig-height
+
+.header
+  background-color: #232323
+  color: white
+  width: 100%
+  position: static
+  height: $header-small-height
+  top: 0
+  left: 0
+  overflow: hidden
+  z-index: 10
+  -webkit-transition: all 0.3s
+  moz-transition: all 0.3s
+  -ms-transition: all 0.3s
+  -o-transition: all 0.3s
+  transition: all 0.3s
+  h1:hover
+    cursor: pointer
+
+.fixed
+  position: fixed
+
+.big-header
+  height: $header-orig-height
+
+.header p
+  display: inline-block
+  padding: 0
+  margin: 0
+  margin-right: -5px
+  &::first-letter
+    font-size: 180%
+
+.header > h1
+  display: inline-block
+  height: $header-orig-height
+  font-size: 2.2em
+  margin-left: 30px
+  font-weight: 100
+  -webkit-transition: all 0.3s
+  moz-transition: all 0.3s
+  -ms-transition: all 0.3s
+  -o-transition: all 0.3s
+  transition: all 0.3s
+
+.header-logo
+  width: $logo-orig-size
+  height: $logo-orig-size
+  vertical-align: bottom
+  -webkit-transition: all 0.3s
+  moz-transition: all 0.3s
+  -ms-transition: all 0.3s
+  -o-transition: all 0.3s
+  transition: all 0.3s
+
+header.smaller
+  height: $header-small-height
+
+header.smaller > h1
+  height: $header-small-height - 40
+  font-size: 1.4em
+  margin-top: 5px
+
+header.smaller .vacspots span
+  line-height: $header-small-height
+
+.header-logo.smaller
+  width: $logo-small-size
+  height: $logo-small-size
+
+.vacspots
+  font-size: 1.2em
+  float: right
+  margin-right: 30px
+  span
+    line-height: $header-orig-height
+    margin-left: 20px
+    font-weight: 700
+    float: left
+    -webkit-transition: all 0.3s
+    -moz-transition: all 0.3s
+    -ms-transition: all 0.3s
+    -o-transition: all 0.3s
+    transition: all 0.3s
+
+.vacspots a, .info-links a
+  border-radius: 3px
+  -webkit-transition: all 0.3s
+  -moz-transition: all 0.3s
+  -ms-transition: all 0.3s
+  -o-transition: all 0.3s
+  transition: all 0.3s
+  padding: 5px 10px
+  text-decoration: none
+  &:hover, .active
+    background-color: gray
+
+.vacspots a.active_tab
+  background-color: gray
+
+.info-links, .info-link
+  display: inline-block
+  color: white
+  padding: 0 5px
+  vertical-align: top
+  i
+    padding: 0 4px
+
+@media (max-width: 500px)
+  .header
+    height: auto !important
+    font-size: 1.0em
+    h1
+      height: auto !important
+      font-size: 1.0em
+      margin-left: 10px
+  .header-logo
+    height: 35px !important
+    width: 35px !important
+  .vacspots
+    float: none !important
+    font-size: 0.8em
+    width: 100%
+    text-align: center
+    span
+      line-height: 25px !important
+      margin-left: 10px

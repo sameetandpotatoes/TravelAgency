@@ -53,7 +53,7 @@
 .multiple-days
 	float: right
 	position: absolute
-	top: -10px
+	top: -75px
 	right: -175px
 	display: inline-block
 	width: 80%
@@ -83,7 +83,7 @@
 	font-size: 26px
 
 .weather-day.inline
-	font-size: 16px
+	font-size: 1.2em
 	min-width: 100px
 	padding: 20px
 
@@ -121,20 +121,30 @@
 
 .new-activities
 	display: inline-block
-	width: 33%
+	width: 27%
+	margin: 0 3%
+	white-space: normal
 	vertical-align: top
 	h1
 		margin: 0
 		padding: 0
+		text-align: left
 
 .dest-activities
 	text-align: left
 	font-size: 16px
 
 .package
-	min-width: 100%
+	display: inline-table
+	width: 33%
+	min-width: 33%
 	padding: 1.2em 0
 	text-align: left
+
+.package.table
+	width: 100%
+	min-width: 100%
+	display: block
 
 .all-packages .package:hover
 	background-color: #DCDCDC
@@ -148,18 +158,21 @@
 .pk-desc
 	text-align: left
 	display: inline-block
-	min-width: 60%
+	vertical-align: middle
+	width: 70%
 	h2
 		margin: 0
-		font-size: 18px
-	a
-		color: #2A5DB0
-		&:hover
-			color: #2200CC
+		font-size: 16px
+		a
+			color: #2A5DB0
+			&:hover
+				color: #2200CC
+	span
+		font-size: 15px
 
 .pk-fav
-	display: inline-block
-	color: black
+	margin-top: 0.3em
+	text-align: center
 	a
 		border-radius: 5px
 		color: white
@@ -182,10 +195,12 @@
 
 .chk-selections
 	margin: 0
+	white-space: nowrap
+	max-width: 99%
 	vertical-align: top
 
 .pk-selections
-	margin: 0
+	margin-top: 1.5em
 	width: 100%
 	overflow: auto
 	h2
@@ -193,8 +208,7 @@
 
 .conditions
 	clear: both
-	position: relative
-	top: 50px
+	margin-top: 3.5em
 
 .parallax-1
 	color: white
@@ -226,21 +240,9 @@
 .social > h2
 	margin: 0
 
-//Scrollbar
-.jspDrag
-	background: none repeat scroll 0 0 #A9A9A9 !important
-
-.jspTrack
-	background: none repeat scroll 0 0 #F5F5F5 !important
-
-.jspArrow
-	background: none repeat scroll 0 0 #878787 !important
-
 @media (max-width: 414px)
 	.multiple-days
 		display: none
-	.chk-selections, .pk-selections
-		width: 100%
 
 @media (max-width: 768px)
 	.multiple-days > .weather-day:nth-child(n+2)
@@ -257,7 +259,18 @@
 		height: 300px
 	.flip-container, .map-images img
 		width: 100%
+	.package
+		width: 100%
+		min-width: 100%
+	.new-activities
+		display: block
+		width: 85%
+		margin: 0 auto
+	.social
+		float: none
 
+#currencyRate, #currencyUnit, #dest
+	display: none
 
 @media (max-width : 1024px)
 	.map, .map-images

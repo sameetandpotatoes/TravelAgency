@@ -8,11 +8,6 @@
   padding: 2px 0;
 }
 
-/*.flip-container, .front, .back {
-  width: 320px;
-  height: 480px;
-}*/
-
 .flipper {
   -moz-transform: perspective(1000px);
   -moz-transform-style: preserve-3d;
@@ -73,7 +68,6 @@
   transform: rotateY(0deg);
 }
 
-/*.flip-container:hover .front, .flip-container.hover .front, .flip .front {*/
 .flip-container .flip .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);

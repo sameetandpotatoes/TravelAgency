@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.jscrollpane
 //= require jquery.mousewheel.min.js
 //= require owl.carousel.min.js
 //= require mapbox.js
