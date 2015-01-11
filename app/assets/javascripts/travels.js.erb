@@ -1,7 +1,3 @@
-$(document).ready(function(){
-	$('.pk-selections').jScrollPane({showArrows: true,horizontalGutter: 10});
-	$($('.module.content')[1]).css("height", $('.chk-selections').height() + $('.social').height() + 100);
-});
 //Individual Activities Handler
 $('.dest-activities input').change(function(e){
 	//Loop through, add to sum price, add to night counter
@@ -73,7 +69,6 @@ $('.twitter-social').on('click', function(){
 
 //Travel package selections min height adjustment
 $('section.module.parallax').css("min-height",$(window).height());
-$('.pk-selections').css("height",$('.chk-selections').height());
 
 $('.favorite').on('click', function(e){
 	e.preventDefault();
