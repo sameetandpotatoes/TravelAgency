@@ -14,7 +14,7 @@
 
 @font-face
   font-family: "HN-Regular"
-  src: url(<%= asset_path 'HN-Light.ttf' %>)
+  src: url(<%= asset_path 'HN-Thin.otf' %>)
 
 @font-face
   font-family: "HN-Thin"
@@ -167,7 +167,6 @@ a, a:hover, a:visited
 .grayscale
   -webkit-filter: grayscale(100%)
   filter: grayscale(100%)
-  filter: gray
   filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale")
 
 .createdButton
@@ -185,9 +184,12 @@ a, a:hover, a:visited
     margin: 5% 0
 
 //Smartphones portrait and landscape
-@media (max-width: 500px)
-  .item h1
-    display: none
+@media (max-width: 768px)
+  .item
+    h1
+      display: none
+    img
+      left: 0%
   .desktop
     display: none
   .mobile

@@ -7,17 +7,17 @@
 	%span
 		= link_to "Favorites (#{(session[:favorites] ||= {}).length})", favorites_path, id: 'bookmark_num'
 	%span
-		-if(current_page?(hawaii_path))
+		-if(@dest == "Hawaii")
 			= link_to "Hawaii", hawaii_path, class: 'active_tab'
 		-else
 			= link_to "Hawaii", hawaii_path
 	%span
-		-if(current_page?(italy_path))
+		-if(@dest == "Italy")
 			= link_to "Italy", italy_path, class: 'active_tab'
 		-else
 			= link_to "Italy", italy_path
 	%span
-		-if(current_page?(china_path))
+		-if(@dest == "China")
 			= link_to "China", china_path, class: 'active_tab'
 		-else
 			= link_to "China", china_path
