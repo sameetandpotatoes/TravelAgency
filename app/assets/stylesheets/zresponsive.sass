@@ -1,0 +1,91 @@
+//Smartphones portrait and landscape
+@media (max-width: 768px)
+  .item
+    h1
+      display: none
+    img
+      left: 0%
+  .desktop
+    display: none
+  .mobile
+    display: block
+  .vacation
+    width: 100%
+
+@media all and (max-width: 800px)
+  .aboutimage, .caption
+    display: block
+  .caption
+    padding: 0
+  .team article
+    float: none
+  #about
+    width: 90% !important
+  .averagecost
+    tr
+      border-width: 0px
+    td
+      font-size: 15px !important
+  #about td
+    padding: 5px !important
+
+@media (max-width: 768px)
+  .header
+    height: auto !important
+    font-size: 1.0em
+    h1
+      height: auto !important
+      font-size: 1.0em
+      margin-left: 10px
+  .header-logo
+    height: 35px !important
+    width: 35px !important
+  .vacspots
+    float: none !important
+    font-size: 0.8em
+    width: 100%
+    text-align: center
+    span
+      line-height: 25px !important
+      margin-left: 10px
+  input[type="text"], textarea
+    width: 90%
+
+@media (max-width: 414px)
+  .multiple-days
+    display: none
+
+@media (max-width: 768px)
+  .multiple-days > .weather-day:nth-child(n+2)
+    display: none
+  section.module.parallax .container > h1
+    font-size: 1.5em
+  section.module.parallax .container > p
+    font-size: 0.95em
+  .single-day
+    float: none
+  .back > p
+    font-size: 12px
+  #height
+    height: 300px
+  .flip-container, .map-images img
+    width: 100%
+  .package
+    width: 100%
+    min-width: 100%
+  .new-activities
+    display: block
+    width: 85%
+    margin: 0 auto
+  .social
+    float: none
+
+@media (max-width : 1024px)
+  .map, .map-images
+    margin: 0
+  #hawaii-map
+    height: 400px
+  .multiple-days > .weather-day:nth-child(n+3)
+    display: none
+  .map
+    width: 100%

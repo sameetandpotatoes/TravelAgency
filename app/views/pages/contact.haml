@@ -1,6 +1,6 @@
 - @title = "Contact"
 - @meta = "Contact, Sameet Sapra, Andrew Merkley, John Stavropoulos, TopTierTraveling, toptiertraveling@gmail.com"
-%h1
+%h2
 	Contact us at
 	=link_to "toptiertraveling@gmail.com", "mailto:toptiertraveling@gmail.com?Subject=Hello%20TopTierTraveling"
 - if flash[:error]
@@ -15,6 +15,6 @@
 		= form.label :name, "Email"
 		= form.text_field :email, placeholder: "&#xf003; example@123.com".html_safe, class: 'email'
 	.field
-		= form.label :body, "Content"
+		= form.label :body, "Message"
 		= form.text_area :body, placeholder: "", class: 'body'
 	= form.submit "&#xf1d9; Send".html_safe, id: "submit", class: 'fa fa-send-o'

@@ -69,6 +69,10 @@ $('.twitter-social').on('click', function(){
 
 //Travel package selections min height adjustment
 $('section.module.parallax').css("min-height",$(window).height());
+$('.social').css("height", $('.terms_conditions').height());
+$(window).resize(function(){
+	$('.social').css("height", $('.terms_conditions').height());
+});
 
 $('.favorite').on('click', function(e){
 	e.preventDefault();
