@@ -13,6 +13,8 @@
 		%title="TopTierTraveling | " + @title
 		%meta{content: "#{@meta}", name: "description"}/
 		%link{rel: "icon", type: "image/x-icon", href: "#{asset_path("favicon.ico")}"}/
+		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= csrf_meta_tags
 	%body{:itemscope => "", :itemtype => "https://www.toptiertraveling.com"}
 		-if !request.path.starts_with?("/travels")
@@ -42,8 +44,6 @@
 						%span Contact
 			#fb-root
 		%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= javascript_include_tag "#{params[:controller]}_#{params[:action]}", async: true if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}"
 		= javascript_include_tag params[:controller], async: true
 		%script{:async => "", :defer => "defer", :src => "https://apis.google.com/js/platform.js"}
