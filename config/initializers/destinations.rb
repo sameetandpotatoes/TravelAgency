@@ -1,6 +1,6 @@
 INFO = {
   'Hawaii' => {
-    'meta' => "Hawaii, TopTierTraveling, Oahu, Maui, Big Island",
+    'meta' => "Hawaii, top tier traveling, top tier, Oahu, Maui, Big Island",
     'zoom_level' => 7,
     'first_image' => 'oahu2.jpg',
     'second_image' => 'big3.jpg',
@@ -43,7 +43,7 @@ INFO = {
     'packages' => ['1','2','3','4','5','6','7','8']
   },
   'Italy' => {
-    'meta' => "Italy, Hotel Pierre, Hotel Delle Nazioni, Papadopoli Venezia, Rome, Florence, Venice",
+    'meta' => "top tier, top tier traveling, Italy, Hotel Pierre, Hotel Delle Nazioni, Papadopoli Venezia, Rome, Florence, Venice",
     'zoom_level' => 5,
     'first_image' => 'rome3.jpg',
     'second_image' => 'florence2.jpg',
@@ -85,7 +85,7 @@ INFO = {
     'packages' => ['9','10','11','12','13','14']
   },
   'China' => {
-    'meta' => "",
+    'meta' => "top tier, top tier traveling, China, Beijing, Xi'an, Tibet",
     'zoom_level' => 4,
     'first_image' => 'beijing2.jpg',
     'second_image' => 'tibet1.jpg',
