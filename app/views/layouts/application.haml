@@ -15,9 +15,9 @@
 		%link{rel: "icon", type: "image/x-icon", href: "#{asset_path("favicon.ico")}"}/
 		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 		%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= javascript_include_tag "#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}"
 		= javascript_include_tag params[:controller]
-		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= csrf_meta_tags
 	%body{:itemscope => "", :itemtype => "https://www.toptiertraveling.com"}
 		-if !request.path.starts_with?("/travels")
