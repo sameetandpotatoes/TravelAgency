@@ -14,6 +14,9 @@
 		%meta{content: "#{@meta}", name: "description"}/
 		%link{rel: "icon", type: "image/x-icon", href: "#{asset_path("favicon.ico")}"}/
 		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+		%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+		= javascript_include_tag "#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}"
+		= javascript_include_tag params[:controller]
 		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= csrf_meta_tags
 	%body{:itemscope => "", :itemtype => "https://www.toptiertraveling.com"}
@@ -43,9 +46,6 @@
 						%i.fa.fa-comments-o
 						%span Contact
 			#fb-root
-		%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-		= javascript_include_tag "#{params[:controller]}_#{params[:action]}", async: true if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}"
-		= javascript_include_tag params[:controller], async: true
 		%script{:async => "", :defer => "defer", :src => "https://apis.google.com/js/platform.js"}
 		:javascript
 			window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
