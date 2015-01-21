@@ -34,7 +34,7 @@ $(document).ready(function() {
 	});
 });
 function footerFix(){
-	if (($(window).height() - $('.footer').height()) - ($('.content').height()+$('.header').height()) > 10){
+	if (($(window).height() - $('.footer').height()) - ($('.content').height()+$('.header').height()) > 0){
 		$('.footer').addClass("sticky");
 	} else{
 		$('.footer').removeClass("sticky");
