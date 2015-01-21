@@ -28,7 +28,9 @@ $(document).ready(function() {
 	$('.header h1').on('click', function(){
 		window.location.href = '/'
 	});
-	footerFix();
+	$(window).load(function(){
+		footerFix();
+	});
 	$(window).resize(function(){
 		footerFix();
 	});
