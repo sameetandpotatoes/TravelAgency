@@ -12,6 +12,8 @@ $('.dest-activities input').change(function(e){
 			if (activity.name == dest_1 && packages.indexOf(dest_1) < 0){
 				packages = dest_1;
 			} else if (activity.name == dest_2 && packages.indexOf(dest_2) < 0){
+				//If its first destination in packages array, then add only its name,
+				//otherwise add a comma too
 				packages += (packages == "") ? dest_2 : "," + dest_2;
 			} else if (activity.name == dest_3 && packages.indexOf(dest_3) < 0){
 				packages += (packages == "") ? dest_3 : "," + dest_3;
@@ -29,11 +31,11 @@ $('.dest-activities input').change(function(e){
 	//Display relevant packages
 	$('.package').each(function(){
 		var dest = this;
+		//only show destinations that have the same data-include
 		if ($(dest).attr("data-include") != packages && packages != ""){
 			$(dest).fadeOut(500);
 		} else{
 			$(dest).fadeIn(500);
-			// $(dest).css("display","inline-block");
 		}
 	});
 
@@ -41,6 +43,7 @@ $('.dest-activities input').change(function(e){
 	$('.pk-selections').data('jsp').scrollTo(0,0);
 });
 
+//toggle flip class with css 3d transformations
 $('.flipper').click(function(e){
 	$(e.currentTarget).toggleClass('flip');
 });
@@ -74,6 +77,7 @@ $(window).resize(function(){
 	$('.social').css("height", $('.terms_conditions').height());
 });
 
+//ajax post request to favorites controller to store favorites in the cookies
 $('.favorite').on('click', function(e){
 	e.preventDefault();
 	if ($(e.currentTarget).hasClass("disabled")){

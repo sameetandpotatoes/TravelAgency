@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
 	def create
     @message = Message.new(params[:message])
+		#verify message parameters
     if @message.valid?
       ContactMailer.new_message(@message).deliver
       redirect_to home_path, flash: {success: "Message was successfully sent."}

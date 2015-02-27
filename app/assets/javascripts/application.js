@@ -6,6 +6,7 @@
 //= require facebook.js.erb
 
 $(document).ready(function() {
+	//Remove header animation on mobile devices and non home-page devices
 	if (isMobile.any() || !home_page()){
 		$(".header").addClass('smaller');
 		$('.header-logo').addClass('smaller');
@@ -14,6 +15,7 @@ $(document).ready(function() {
 		$('.header').addClass("big-header fixed");
 		$('.content').css("margin-top", "150px");
 	}
+	//Handles animation of header from big to small
 	$(window).scroll(function() {
 			var scroll = $(window).scrollTop();
 			if (scroll >= 300 || isMobile.any() || !home_page()) {
@@ -24,7 +26,7 @@ $(document).ready(function() {
 					$('.header-logo').removeClass('smaller');
 			}
 	});
-
+	//Using h1 instead of link tag for styling purposes
 	$('.header h1').on('click', function(){
 		window.location.href = '/'
 	});
@@ -36,6 +38,7 @@ $(document).ready(function() {
 	});
 });
 function footerFix(){
+	//Makes footer sticky only when content fits on one page
 	if (($(window).height() - $('.footer').height()) - ($('.content').height()+$('.header').height()) > 0){
 		$('.footer').addClass("sticky");
 	} else{

@@ -5,6 +5,8 @@ class FavoritesController < ApplicationController
 
   def create
     @title = "Favorites"
+    #get favorites cookie array (or create one)
+    #cookies array is organized by a hash with a key of package id and value of activities array in ids
     all_favs = ActiveSupport::JSON.decode(cookies[:favorites] || "{}")
     all_favs[params[:package]] = params[:activities]
     cookies[:favorites] = { value: ActiveSupport::JSON.encode(all_favs), expires: 1.month.from_now }
@@ -22,6 +24,7 @@ class FavoritesController < ApplicationController
     render layout: false
   end
 
+  # method for debugging purposes, not available to users
   def clear_all
     cookies.delete :favorites
     @all_favs = cookies[:favorites]

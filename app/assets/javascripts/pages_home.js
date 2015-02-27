@@ -30,6 +30,7 @@ $(".welcome").owlCarousel({
 	itemsMobile : true
 });
 
+
 $('.select-dest').on('click', function(){
 	var vac_desc = $(this).attr("data-desc");
 	var dest = $($(this).children()[0]).text().toLowerCase();
@@ -39,6 +40,7 @@ $('.select-dest').on('click', function(){
 	$('.desc').css("width","0px");
 	$('.createdButton').remove();
 
+	//Make active destination colorful, grayscale the rest
 	if (!firstTimeClick && !$(this).hasClass("grayscale")){
 		$('.select-dest').removeClass("grayscale");
 		firstTimeClick = true;
@@ -48,6 +50,7 @@ $('.select-dest').on('click', function(){
 	$('.select-dest').addClass("grayscale");
 	$(this).removeClass("grayscale");
 
+	//Animate text description
 	setTimeout(function(){
 		$('.desc').css("width","600px");
 		setTimeout(function(){
@@ -63,6 +66,7 @@ $('.select-dest').on('click', function(){
 	},400);
 });
 
+//Make carousel images fit certain proportion of the page
 $('.item img').css("height", 0.50 * $(window).height());
 $('.welcome-show').css("min-height", $(window).height() - $('.header').height() - $('.arrow').height() - 10);
 $(window).resize(function(e){
@@ -76,6 +80,7 @@ $('.arrow').on('click', function(){
 	}, 500);
 });
 
+//Animation
 $('#moveLeft div').hover(
 	function(){ //Mouse on
 		$(this).stop().animate({right: 20}, 100);
@@ -92,6 +97,7 @@ $('#moveRight div').hover(
 	}
 );
 
+//Simple text and images on mobile sites
 if(isMobile.any()){
 	$('.desktop').css("display","none");
 	$('.mobile').css("display","block");
