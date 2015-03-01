@@ -43,6 +43,7 @@
 						%i.fa.fa-comments-o
 						%span Contact
 			#fb-root
+		/* load all js and css at the end to prevent interference with html loading */
 		%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}/
 		= javascript_include_tag "#{params[:controller]}_#{params[:action]}", async: true if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}"
 		= javascript_include_tag params[:controller], async: true

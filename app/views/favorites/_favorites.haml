@@ -25,6 +25,7 @@
             %span=PACKAGES[package_id]["cost"]
         %td
           .remove
+            /* Delete request to /favorites/package_id */
             = link_to image_tag('delete.png'), "/favorites/#{package_id}", class: 'delete', method: :delete, remote: true
 - else
   .no_favorites

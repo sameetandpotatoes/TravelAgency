@@ -1,2 +1,4 @@
+/* refreshes favorites table */
 $('.favorite_content').html("<%= j(render(:partial => 'favorites')) %>")
+/* update counter again */
 $('#bookmark_num').html("Favorites (<%= @length %>)")

@@ -21,6 +21,7 @@ var isMobile = {
 	}
 };
 
+//Initializing owlcarousel plugin
 $(".welcome").owlCarousel({
 	autoPlay: 3000, //Set AutoPlay to 3 seconds
 	items : 1,
@@ -35,6 +36,7 @@ $('.select-dest').on('click', function(){
 	var vac_desc = $(this).attr("data-desc");
 	var dest = $($(this).children()[0]).text().toLowerCase();
 
+	//If already opened, hide text description and created button
 	$('.desc').css("opacity","0");
 	$('.desc p').text("");
 	$('.desc').css("width","0px");
@@ -56,6 +58,7 @@ $('.select-dest').on('click', function(){
 		setTimeout(function(){
 			$('.desc').css("opacity","1");
 			$('.desc p').text(vac_desc);
+			//Create a clickable button
 			var html = '<a class="pure-button" href="/travels/'+dest+'">Find out more!</a>';
 			var htmlObject = document.createElement('div');
 			htmlObject.className = "createdButton";
@@ -66,7 +69,7 @@ $('.select-dest').on('click', function(){
 	},400);
 });
 
-//Make carousel images fit certain proportion of the page
+//Make carousel images fit a certain proportion of the page
 $('.item img').css("height", 0.50 * $(window).height());
 $('.welcome-show').css("min-height", $(window).height() - $('.header').height() - $('.arrow').height() - 10);
 $(window).resize(function(e){
